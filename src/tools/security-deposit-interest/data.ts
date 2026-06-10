@@ -75,12 +75,12 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     exempt: { fixed: 50, orOneMonthRent: true },
     payTiming: "Annually; interest accrues only on the qualifying excess amount.",
     summary:
-      "Deposits over $50 or one month's rent (whichever is greater) earn 5% per year once the tenant has occupied the unit for six months.",
+      "Deposits over $50 or one month's rent (whichever is greater) earn 5% per year on the excess, once the tenant has occupied the unit for six months, paid annually.",
     cite: {
       statute: "Ohio Rev. Code § 5321.16",
       statuteUrl: "https://codes.ohio.gov/ohio-revised-code/section-5321.16",
-      lastVerified: VERIFIED,
-      confidence: "medium",
+      lastVerified: "2026-06-10",
+      confidence: "high",
     },
   },
   MN: {
@@ -90,27 +90,28 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     minHoldingMonths: 0,
     payTiming: "When the deposit is returned, as simple non-compounded interest.",
     summary:
-      "Landlords must pay simple, non-compounded interest (currently 1% per year) on the full deposit.",
+      "Landlords must pay simple, non-compounded interest at 1% per year (since Aug 1, 2003) on the full deposit.",
     cite: {
       statute: "Minn. Stat. § 504B.178",
       statuteUrl: "https://www.revisor.mn.gov/statutes/cite/504B.178",
-      lastVerified: VERIFIED,
-      confidence: "medium",
+      lastVerified: "2026-06-10",
+      confidence: "high",
     },
   },
   CT: {
     required: "yes",
-    defaultRatePct: 0.1,
+    defaultRatePct: 0.49,
     rateBasis: "published-annually",
     minHoldingMonths: 0,
     payTiming: "Annually on the tenant's anniversary date, and at move-out.",
     summary:
-      "Interest is paid at the deposit-index rate the CT Banking Commissioner sets each January (a low single-digit or fractional rate); confirm the current year's rate.",
+      "Interest is paid at the deposit-index rate the CT Banking Commissioner sets each year. The 2026 deposit index is 0.49% — confirm the current year's rate before relying on it.",
     cite: {
       statute: "Conn. Gen. Stat. § 47a-21",
-      statuteUrl: "https://www.cga.ct.gov/current/pub/chap_830.htm",
-      lastVerified: VERIFIED,
-      confidence: "medium",
+      statuteUrl:
+        "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates",
+      lastVerified: "2026-06-10",
+      confidence: "high",
     },
   },
   IL: {
@@ -197,14 +198,15 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     defaultRatePct: 0.1,
     rateBasis: "bank-passbook",
     minHoldingMonths: 12,
-    payTiming: "Annually.",
+    exempt: { fixed: 0, orOneMonthRent: true },
+    payTiming: "Annually, at the end of each rental year.",
     summary:
-      "If the deposit exceeds one month's rent and the term is at least one year, the landlord must pay annual interest equal to the passbook savings rate.",
+      "On a lease of at least one year, if the deposit exceeds one month's rent, the landlord must pay annual interest at the passbook savings rate on the portion above one month's rent.",
     cite: {
       statute: "N.M. Stat. § 47-8-18",
       statuteUrl: "https://law.justia.com/codes/new-mexico/chapter-47/article-8/section-47-8-18/",
-      lastVerified: VERIFIED,
-      confidence: "low",
+      lastVerified: "2026-06-10",
+      confidence: "medium",
     },
   },
   NH: {
@@ -224,17 +226,49 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
   },
   DC: {
     required: "yes",
-    defaultRatePct: 0.1,
+    defaultRatePct: 1.5,
     rateBasis: "published-annually",
-    minHoldingMonths: 12,
+    minHoldingMonths: 0,
     payTiming: "At the end of the tenancy.",
     summary:
-      "Deposits earn interest at the statement-savings rate prevailing during the tenancy (published by DISB), paid when the tenancy ends.",
+      "Deposits earn interest at no less than the statement-savings rate prevailing on January 1 and July 1 for each 6-month period of the tenancy, paid when the tenancy ends. The prefilled 1.5% is an estimate — confirm the actual prevailing rate.",
     cite: {
       statute: "D.C. Mun. Regs. tit. 14, § 311",
-      statuteUrl: "https://www.dcregs.dc.gov/Common/DCMR/RuleList.aspx?ChapterNum=14-3",
-      lastVerified: VERIFIED,
-      confidence: "low",
+      statuteUrl: "http://dcrules.elaws.us/dcmr/14-311",
+      lastVerified: "2026-06-10",
+      confidence: "medium",
+    },
+  },
+
+  FL: {
+    required: "yes",
+    defaultRatePct: 5,
+    rateBasis: "fixed",
+    minHoldingMonths: 0,
+    payTiming: "At least annually, paid or credited toward rent.",
+    summary:
+      "Interest is only owed if the landlord holds the deposit in an interest-bearing account. If so, the tenant receives at least 75% of the account's annualized average rate OR 5% simple interest — the landlord's choice. No interest is owed if the deposit is in a non-interest account or covered by a surety bond.",
+    cite: {
+      statute: "Fla. Stat. § 83.49",
+      statuteUrl: "https://www.flsenate.gov/laws/statutes/2023/83.49",
+      lastVerified: "2026-06-10",
+      confidence: "high",
+    },
+  },
+
+  IA: {
+    required: "yes",
+    defaultRatePct: 0.1,
+    rateBasis: "bank-passbook",
+    minHoldingMonths: 60,
+    payTiming: "After five years; interest earned in the first five years is the landlord's.",
+    summary:
+      "Any interest earned on the deposit during the first five years of the tenancy belongs to the landlord. After five years, accrued interest is paid to the tenant.",
+    cite: {
+      statute: "Iowa Code § 562A.12",
+      statuteUrl: "https://www.legis.iowa.gov/docs/code/562A.12.pdf",
+      lastVerified: "2026-06-10",
+      confidence: "high",
     },
   },
 };
