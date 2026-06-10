@@ -47,7 +47,7 @@ export const TOOLS: ToolDef[] = [
       "Check your state's legal late-fee cap and grace period, then calculate a compliant late fee.",
     category: "Legal & compliance",
     stateAware: true,
-    status: "planned",
+    status: "live",
     priority: 3,
   },
   {
@@ -58,7 +58,7 @@ export const TOOLS: ToolDef[] = [
       "See your state's deposit return deadline and itemization rules, and generate an itemized deductions statement.",
     category: "Legal & compliance",
     stateAware: true,
-    status: "planned",
+    status: "live",
     priority: 4,
   },
   {
@@ -68,7 +68,7 @@ export const TOOLS: ToolDef[] = [
     blurb: "Create a professional lease renewal offer letter in seconds.",
     category: "Documents",
     stateAware: false,
-    status: "planned",
+    status: "live",
     priority: 5,
   },
   {
@@ -78,7 +78,7 @@ export const TOOLS: ToolDef[] = [
     blurb: "Generate a polished rent receipt PDF instantly — no signup.",
     category: "Documents",
     stateAware: false,
-    status: "planned",
+    status: "live",
     priority: 6,
   },
   {
@@ -88,7 +88,7 @@ export const TOOLS: ToolDef[] = [
     blurb: "Calculate fair prorated rent for a partial first or last month.",
     category: "Investing & finance",
     stateAware: false,
-    status: "planned",
+    status: "live",
     priority: 7,
   },
   {
@@ -99,7 +99,7 @@ export const TOOLS: ToolDef[] = [
       "Estimate monthly cash flow and cash-on-cash return on a rental property.",
     category: "Investing & finance",
     stateAware: false,
-    status: "planned",
+    status: "live",
     priority: 8,
   },
 ];

@@ -4,6 +4,8 @@ import { TOOLS } from "@/lib/tools";
 import { getStateByCode } from "@/lib/states";
 import { depositRuleStateCodes } from "@/tools/security-deposit-interest/data";
 import { rentIncreaseStateCodes } from "@/tools/rent-increase-notice/data";
+import { lateFeeStateCodes } from "@/tools/late-fee/data";
+import { depositReturnStateCodes } from "@/tools/security-deposit-return/data";
 import { publishedGuides } from "@/content/guides";
 
 /**
@@ -37,6 +39,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const stateAware: Record<string, string[]> = {
     "security-deposit-interest-calculator": depositRuleStateCodes(),
     "rent-increase-notice-generator": rentIncreaseStateCodes(),
+    "late-fee-calculator": lateFeeStateCodes(),
+    "security-deposit-return-tracker": depositReturnStateCodes(),
   };
   for (const [slug, codes] of Object.entries(stateAware)) {
     for (const code of codes) {

@@ -26,13 +26,15 @@ Page math toward 200–400 indexable pages:
 |---|---|---|
 | Security deposit interest | ~12 (only ~15 states require it) | 12 |
 | Rent increase notice | 50 + DC | 51 |
-| Late fee (planned) | 50 + DC | 51 |
-| Security deposit return (planned) | 50 + DC | 51 |
-| Prorated rent / cash flow / etc. (planned) | landing + variants | ~20 |
-| Guides | 10 cornerstone | 10 |
+| Late fee | 50 + DC | 51 |
+| Security deposit return | 50 + DC | 51 |
+| Non-state tools (lease renewal, receipt, prorate, cash flow) | landing each | 4 |
+| Tool landings, home, pricing, guides, legal | — | ~17 |
+| Guides | 2 published, 8 scaffolded | 2 |
 
-Live today: **63 state pages + 16 other pages = ~79**. The 200+ target is reached
-as tools 3–6 ship (≈1/week).
+Live today: **187 static pages (~165 state pages)**. All 8 launch tools shipped.
+Next growth: publish the 8 scaffolded guides (≈1/week) and deepen low-confidence
+state data.
 
 > **Note on the "crown jewel":** only ~15 states legally require security deposit
 > interest, so that tool is ~12–18 deep pages, **not** 50. Don't build thin "no

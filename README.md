@@ -4,22 +4,27 @@ Free, accurate, state-aware tools for small US landlords — monetized with a Pr
 subscription and (later) display ads. Built for organic search growth: every
 state-aware tool generates a static, substantive page per state.
 
-> **Status:** Foundation + first 2 tools shipped (validation milestone). See
-> [`BUSINESS.md`](./BUSINESS.md) for the model and [`launch-checklist.md`](./launch-checklist.md)
-> for the go-live playbook.
+> **Status:** All 8 launch tools shipped. See [`BUSINESS.md`](./BUSINESS.md) for
+> the model and [`launch-checklist.md`](./launch-checklist.md) for the go-live
+> playbook.
 
 ## What's built
 
 | Area | Status |
 |---|---|
 | Security Deposit Interest Calculator (state-aware, 12 rule states) | ✅ Live |
-| Rent Increase Notice Generator (all 50 states + DC) | ✅ Live |
+| Rent Increase Notice Generator (all 50 + DC) | ✅ Live |
+| Rent Late Fee Calculator (all 50 + DC) | ✅ Live |
+| Security Deposit Return Tracker (all 50 + DC, itemized PDF) | ✅ Live |
+| Lease Renewal Letter Generator (PDF) | ✅ Live |
+| Rent Receipt Generator (PDF) | ✅ Live |
+| Prorated Rent Calculator (3 methods) | ✅ Live |
+| Rental Cash Flow / Cash-on-Cash Calculator | ✅ Live |
 | Client-side PDF generation (free footer / Pro-removable) | ✅ |
-| Programmatic SEO state pages (63 today) + sitemap, robots, JSON-LD | ✅ |
+| Programmatic SEO: **187 static pages** (~165 state pages) + sitemap, robots, JSON-LD | ✅ |
 | Homepage, tool directory, pricing, 2 guides + 8 scaffolded, legal pages | ✅ |
-| Tests for all calculation/legal logic | ✅ (16 passing) |
+| Tests for all calculation/legal logic | ✅ (42 passing) |
 | Stripe / Supabase Pro flow | 🪝 Hooks in place; wire at launch (see DEPLOY.md) |
-| Tools 3–8 (late fee, deposit return, lease renewal, receipt, prorate, cash flow) | 📋 Registered, not built |
 
 ## Stack
 
