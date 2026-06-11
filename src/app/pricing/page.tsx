@@ -3,6 +3,8 @@ import { Container } from "@/components/ui/Container";
 import { Card, CardBody } from "@/components/ui/Card";
 import { ButtonLink } from "@/components/ui/Button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { GoProButton } from "@/components/pro/GoProButton";
+import { isStripeConfigured } from "@/lib/env";
 import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -76,16 +78,20 @@ export default function PricingPage() {
                 </li>
               ))}
             </ul>
-            {/*
-              HOOK: wire this button to Stripe Checkout once keys are set.
-              See DEPLOY.md → "Stripe". Until then it points at the free tools.
-            */}
-            <ButtonLink href="/tools" variant="accent" className="mt-6 w-full">
-              Go Pro
-            </ButtonLink>
-            <p className="mt-3 text-center text-xs text-ink/45">
-              Stripe checkout coming online at launch.
-            </p>
+            {isStripeConfigured() ? (
+              <GoProButton plan="monthly" className="mt-6 w-full">
+                Go Pro — ${SITE.proMonthly}/mo
+              </GoProButton>
+            ) : (
+              <>
+                <ButtonLink href="/account" variant="accent" className="mt-6 w-full">
+                  Go Pro
+                </ButtonLink>
+                <p className="mt-3 text-center text-xs text-ink/45">
+                  Stripe checkout coming online at launch.
+                </p>
+              </>
+            )}
           </CardBody>
         </Card>
       </div>

@@ -67,44 +67,55 @@ order. Times are rough estimates.
 
 ---
 
-## 5. Stripe — Pro subscription (30 min, optional at launch)
+## 5. Supabase — accounts (20 min, optional at launch)
 
-The UI hooks are in place (`/pricing` "Go Pro" button, `src/lib/site.ts`
-prices). To make checkout live:
+The auth + account code is **already built** (`/account`, magic-link sign-in,
+`src/lib/supabase/*`, `src/lib/pro.ts`). You just provide a project and run the
+schema. Do this before Stripe — billing ties subscriptions to a Supabase user.
 
-1. Create a Stripe account → **Test mode** first.
-2. **Products → Add product**: "LandlordKit Pro". Add two prices:
-   - $12.00 / month (recurring) → copy its price ID.
-   - $99.00 / year (recurring) → copy its price ID.
-3. Set env vars: `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PRICE_MONTHLY`,
-   `NEXT_PUBLIC_STRIPE_PRICE_ANNUAL`.
-4. Add a Checkout route. Create `src/app/api/checkout/route.ts` that creates a
-   Stripe Checkout Session (`mode: "subscription"`, the chosen price, success/
-   cancel URLs) and redirect the "Go Pro" button to it. Use Stripe's hosted
-   **Customer Portal** for cancellations (no custom billing UI needed).
-5. Add a webhook at `src/app/api/stripe/webhook/route.ts` for
-   `checkout.session.completed` and `customer.subscription.*`; set
-   `STRIPE_WEBHOOK_SECRET`. On these events, flip the user's `is_pro` flag in
-   Supabase (step 6).
-6. Test the full flow with Stripe's test card `4242 4242 4242 4242`. Switch the
-   keys to live mode only after a clean test run.
+1. Create a project at <https://supabase.com> (free tier).
+2. **SQL editor → New query**: paste the contents of `supabase/schema.sql` and
+   run it. This creates the `profiles` table (with Row Level Security) and a
+   trigger that makes a profile row on signup.
+3. **Authentication → Providers**: keep **Email** enabled (magic links). Under
+   **URL Configuration**, add your site URL and the redirect
+   `https://yourdomain.com/auth/callback`.
+4. **Project → Settings → API**, copy these into Vercel env vars:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+   - `SUPABASE_SERVICE_ROLE_KEY` (server-only — never expose to the browser)
+5. Redeploy. Visit `/account` — you should be able to request a sign-in link.
 
-> Until step 5 is done, the "Go Pro" button points to the free tools and the
-> page notes checkout is "coming online at launch" — safe to ship as-is.
+> With no Supabase keys set, `/account` shows a friendly "coming at launch"
+> message and the free tools are unaffected. Safe to ship without this.
 
 ---
 
-## 6. Supabase — Pro accounts (30 min, optional at launch)
+## 6. Stripe — Pro subscription (20 min, optional at launch)
 
-1. Create a project at <https://supabase.com> (free tier).
-2. Enable **Auth** (email magic links via Resend, or Google OAuth).
-3. Create tables: `profiles` (user_id, email, is_pro, stripe_customer_id),
-   `saved_documents`, `properties`. Turn on Row Level Security so users only see
-   their own rows.
-4. Set env vars `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
-   `SUPABASE_SERVICE_ROLE_KEY` (server-only).
-5. Gate Pro-only features on the `is_pro` flag. The free tools never touch
-   Supabase, so this only affects saved docs / batch / branding / dashboard.
+Checkout, the Customer Portal, and the webhook are **already built**
+(`src/app/api/checkout`, `/api/portal`, `/api/stripe/webhook`). You provide keys
+and create the products/webhook.
+
+1. Create a Stripe account → stay in **Test mode**.
+2. **Products → Add product**: "LandlordKit Pro" with two recurring prices —
+   $12.00/month and $99.00/year. Copy each **price ID** (`price_...`).
+3. Set env vars in Vercel (note: these are **server-side**, not `NEXT_PUBLIC_`):
+   - `STRIPE_SECRET_KEY` (`sk_test_...`)
+   - `STRIPE_PRICE_MONTHLY` = the monthly price ID
+   - `STRIPE_PRICE_ANNUAL` = the annual price ID
+4. **Developers → Webhooks → Add endpoint**:
+   - URL: `https://yourdomain.com/api/stripe/webhook`
+   - Events: `checkout.session.completed`, `customer.subscription.created`,
+     `customer.subscription.updated`, `customer.subscription.deleted`.
+   - Copy the **Signing secret** → env var `STRIPE_WEBHOOK_SECRET` (`whsec_...`).
+5. Redeploy. Sign in at `/account`, click **Go Pro**, and pay with the test card
+   `4242 4242 4242 4242` (any future expiry/CVC). After redirect, `/account`
+   should show **Pro** and **Manage billing** (the hosted Customer Portal).
+6. Only switch to **live-mode** keys after a clean end-to-end test run.
+
+> With no Stripe keys, the "Go Pro" buttons fall back to `/account` and note
+> checkout is "coming online at launch" — safe to ship as-is.
 
 ---
 
