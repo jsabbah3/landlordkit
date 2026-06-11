@@ -31,7 +31,7 @@
   --color-line: #e6e1d6;
 
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-display: var(--font-display), Georgia, "Times New Roman", serif;
 
   --radius-card: 0.9rem;
