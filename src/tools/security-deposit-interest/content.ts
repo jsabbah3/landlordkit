@@ -3,11 +3,39 @@ import type { USState } from "@/lib/states";
 import type { DepositInterestRule } from "./data";
 import { computeDepositInterest, resolveExemptAmount } from "./calc";
 
+/** Cross-referenced deposit-return facts (from the deposit-return tool's data),
+ *  passed in by the page so this module stays decoupled. */
+export interface ReturnInfo {
+  deadlineDays: number;
+  deadlineDaysIfDeducting?: number;
+  itemization: boolean;
+  penalty?: string;
+  statute: string;
+}
+
+/** A substantive paragraph on the state's deposit-return obligations, so even
+ *  "no interest required" pages carry real, state-specific value. */
+export function buildObligationsParagraph(
+  state: USState,
+  info: ReturnInfo,
+): string {
+  const deadline =
+    info.deadlineDaysIfDeducting && info.deadlineDaysIfDeducting !== info.deadlineDays
+      ? `${info.deadlineDays} days (or ${info.deadlineDaysIfDeducting} days if you're itemizing deductions)`
+      : `${info.deadlineDays} days`;
+  const itemize = info.itemization
+    ? " You must include an itemized statement of any deductions."
+    : "";
+  const penalty = info.penalty ? ` ${info.penalty}` : "";
+  return `Even where interest isn't required, ${state.name} still regulates the deposit itself: you generally must return it within ${deadline} of move-out (${info.statute}).${itemize}${penalty}`;
+}
+
 /** Stable, useful FAQ entries for a given state — used for on-page content
  *  AND FAQPage JSON-LD. Genuinely state-specific so pages aren't thin. */
 export function buildFaqs(
   state: USState,
   rule: DepositInterestRule,
+  returnInfo?: ReturnInfo,
 ): { q: string; a: string }[] {
   const faqs: { q: string; a: string }[] = [];
 
@@ -42,6 +70,18 @@ export function buildFaqs(
         a: `Not necessarily. ${rule.appliesTo} Check the statute (${rule.cite.statute}) for the exact scope.`,
       });
     }
+  }
+
+  if (returnInfo) {
+    faqs.push({
+      q: `When must a ${state.name} landlord return the security deposit?`,
+      a: `Generally within ${returnInfo.deadlineDays} days of move-out${
+        returnInfo.deadlineDaysIfDeducting &&
+        returnInfo.deadlineDaysIfDeducting !== returnInfo.deadlineDays
+          ? ` (${returnInfo.deadlineDaysIfDeducting} days if deductions are itemized)`
+          : ""
+      } (${returnInfo.statute}). Use the LandlordKit deposit return tracker for the exact rule and an itemized statement.`,
+    });
   }
 
   faqs.push({

@@ -10,20 +10,27 @@ import { Callout } from "@/components/ui/Callout";
 import { StatuteCitation } from "@/components/StatuteCitation";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { softwareAppLd, faqLd, breadcrumbLd } from "@/lib/seo";
-import { getStateBySlug, getStateByCode } from "@/lib/states";
+import { US_STATES, getStateBySlug, getStateByCode } from "@/lib/states";
 import {
   getDepositRule,
   depositRuleStateCodes,
 } from "@/tools/security-deposit-interest/data";
-import { buildFaqs, buildExample } from "@/tools/security-deposit-interest/content";
+import { getDepositReturnRule } from "@/tools/security-deposit-return/data";
+import {
+  buildFaqs,
+  buildExample,
+  buildObligationsParagraph,
+  type ReturnInfo,
+} from "@/tools/security-deposit-interest/content";
 
 const BASE = "/tools/security-deposit-interest-calculator";
+const RETURN_TOOL = "/tools/security-deposit-return-tracker";
 
-// Pre-render only states that have a substantive rule (avoids thin pages).
+// Generate a page for every state. States without an interest rule still get a
+// substantive page: the cited "no requirement" answer plus that state's real
+// deposit-return obligations (deadline, itemization, penalty) — not a stub.
 export function generateStaticParams() {
-  return depositRuleStateCodes().map((code) => ({
-    state: getStateByCode(code)!.slug,
-  }));
+  return US_STATES.map((s) => ({ state: s.slug }));
 }
 
 // Unknown states 404 rather than rendering an empty page.
@@ -54,11 +61,21 @@ export default async function Page({
   if (!state) notFound();
 
   const rule = getDepositRule(state.code);
-  const faqs = buildFaqs(state, rule);
+  const returnRule = getDepositReturnRule(state.code);
+  const returnInfo: ReturnInfo | undefined = returnRule
+    ? {
+        deadlineDays: returnRule.deadlineDays,
+        deadlineDaysIfDeducting: returnRule.deadlineDaysIfDeducting,
+        itemization: returnRule.itemization,
+        penalty: returnRule.penalty,
+        statute: returnRule.cite.statute,
+      }
+    : undefined;
+  const faqs = buildFaqs(state, rule, returnInfo);
   const example = buildExample(state, rule);
   const path = `${BASE}/${slug}`;
 
-  // Sibling states for internal linking.
+  // Internal links to the states that DO require interest (the money pages).
   const others = depositRuleStateCodes()
     .filter((c) => c !== state.code)
     .map((c) => getStateByCode(c)!);
@@ -120,6 +137,20 @@ export default async function Page({
           <StatuteCitation cite={rule.cite} />
         </div>
       </Section>
+
+      {returnInfo && (
+        <Section title={`${state.name} security deposit obligations`}>
+          <div className="max-w-2xl space-y-4 text-ink/75">
+            <p>{buildObligationsParagraph(state, returnInfo)}</p>
+            <p className="text-sm">
+              <Link href={`${RETURN_TOOL}/${slug}`} className="text-brand-700 underline">
+                Open the {state.name} deposit return tracker
+              </Link>{" "}
+              to confirm the deadline and build an itemized deductions statement.
+            </p>
+          </div>
+        </Section>
+      )}
 
       <Section title={`${state.name} security deposit interest FAQ`}>
         <FaqList faqs={faqs} />

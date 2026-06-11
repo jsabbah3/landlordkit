@@ -271,6 +271,22 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
       confidence: "high",
     },
   },
+
+  ND: {
+    required: "yes",
+    defaultRatePct: 0.1,
+    rateBasis: "bank-passbook",
+    minHoldingMonths: 9,
+    payTiming: "On deposit return, for tenancies of at least nine months.",
+    summary:
+      "The deposit must be held in an interest-bearing savings or checking account, and the interest is payable to the tenant when the tenancy is at least nine months long.",
+    cite: {
+      statute: "N.D. Cent. Code § 47-16-07.1",
+      statuteUrl: "https://ndlegis.gov/cencode/t47c16.pdf",
+      lastVerified: VERIFIED,
+      confidence: "medium",
+    },
+  },
 };
 
 /** Returned for any state not present in DEPOSIT_INTEREST above. */

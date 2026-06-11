@@ -5,7 +5,7 @@
 > **MEDIUM**. Check the box once you've confirmed the value against the cited
 > statute and updated `lastVerified`.
 
-**Totals:** 167 state rules — 87 low · 68 medium · 12 high.
+**Totals:** 168 state rules — 87 low · 69 medium · 12 high.
 
 Each tool's data lives in one file:
 - `src/tools/security-deposit-interest/data.ts`
@@ -103,7 +103,7 @@ Each tool's data lives in one file:
 - [ ] **Security deposit return — West Virginia** · `W. Va. Code § 37-6A-2` (verified 2026-06-01)
 - [ ] **Security deposit return — Wyoming** · `Wyo. Stat. § 1-21-1208` (verified 2026-06-01)
 
-### MEDIUM confidence (68)
+### MEDIUM confidence (69)
 
 - [ ] **Late fee — California** · `Cal. Civ. Code § 1671` (verified 2026-06-01)
 - [ ] **Late fee — Colorado** · `Colo. Rev. Stat. § 38-12-105` (verified 2026-06-01)
@@ -138,6 +138,7 @@ Each tool's data lives in one file:
 - [ ] **Security deposit interest — New Jersey** · `N.J. Stat. § 46:8-19` (verified 2026-06-01)
 - [ ] **Security deposit interest — New Mexico** · `N.M. Stat. § 47-8-18` (verified 2026-06-10)
 - [ ] **Security deposit interest — New York** · `N.Y. Gen. Oblig. Law § 7-103` (verified 2026-06-01)
+- [ ] **Security deposit interest — North Dakota** · `N.D. Cent. Code § 47-16-07.1` (verified 2026-06-01)
 - [ ] **Security deposit interest — Pennsylvania** · `68 Pa. Stat. § 250.511b` (verified 2026-06-01)
 - [ ] **Security deposit return — Alaska** · `Alaska Stat. § 34.03.070` (verified 2026-06-01)
 - [ ] **Security deposit return — Arizona** · `Ariz. Rev. Stat. § 33-1321` (verified 2026-06-01)

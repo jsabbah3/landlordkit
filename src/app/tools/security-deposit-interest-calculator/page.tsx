@@ -121,6 +121,27 @@ export default function Page() {
         </div>
       </Section>
 
+      <Section title="Every state">
+        <p className="mb-4 max-w-2xl text-ink/70">
+          Open your state for its interest rule (or confirmation that none
+          applies) plus its security deposit return deadline and rules.
+        </p>
+        <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+          {US_STATES.map((s) => (
+            <Link
+              key={s.code}
+              href={`${PATH}/${s.slug}`}
+              className="flex items-center justify-between rounded-lg border border-line bg-white px-3 py-2 text-sm hover:bg-brand-50"
+            >
+              <span className="text-ink/80">{s.name}</span>
+              <span className="text-ink/45">
+                {DEPOSIT_INTEREST[s.code] ? "interest" : "—"}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
       <Section title="Frequently asked questions">
         <FaqList faqs={nationalFaqs} />
       </Section>

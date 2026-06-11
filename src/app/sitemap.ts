@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/site";
 import { TOOLS } from "@/lib/tools";
-import { getStateByCode } from "@/lib/states";
-import { depositRuleStateCodes } from "@/tools/security-deposit-interest/data";
+import { US_STATES, getStateByCode } from "@/lib/states";
 import { rentIncreaseStateCodes } from "@/tools/rent-increase-notice/data";
 import { lateFeeStateCodes } from "@/tools/late-fee/data";
 import { depositReturnStateCodes } from "@/tools/security-deposit-return/data";
@@ -36,8 +35,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   // State pages per state-aware tool.
+  const allStateCodes = US_STATES.map((s) => s.code);
   const stateAware: Record<string, string[]> = {
-    "security-deposit-interest-calculator": depositRuleStateCodes(),
+    // Deposit interest now has a substantive page for every state.
+    "security-deposit-interest-calculator": allStateCodes,
     "rent-increase-notice-generator": rentIncreaseStateCodes(),
     "late-fee-calculator": lateFeeStateCodes(),
     "security-deposit-return-tracker": depositReturnStateCodes(),
