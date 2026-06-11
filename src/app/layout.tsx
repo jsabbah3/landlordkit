@@ -33,12 +33,20 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", site: SITE.twitter },
   robots: { index: true, follow: true },
   // Google Search Console "HTML tag" verification. Set GOOGLE_SITE_VERIFICATION
-  // in Vercel to the token GSC gives you (the content="..." value), then redeploy
-  // and click Verify. Renders <meta name="google-site-verification" ...>.
-  verification: process.env.GOOGLE_SITE_VERIFICATION
-    ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+  // in Vercel and redeploy, then click Verify. Accepts either the bare token OR
+  // the full <meta ... content="TOKEN" ...> tag (we extract the token), so a
+  // copy-paste mistake can't produce a malformed tag.
+  verification: googleVerification()
+    ? { google: googleVerification() }
     : undefined,
 };
+
+function googleVerification(): string | undefined {
+  const raw = process.env.GOOGLE_SITE_VERIFICATION?.trim();
+  if (!raw) return undefined;
+  const fromTag = raw.match(/content=["']?([^"'>\s]+)/i);
+  return (fromTag ? fromTag[1] : raw) || undefined;
+}
 
 export default function RootLayout({
   children,
