@@ -9,17 +9,33 @@ import { Input, Label } from "@/components/ui/Field";
 export function SignInForm() {
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errMsg, setErrMsg] = useState("");
 
   async function send(e: React.FormEvent) {
     e.preventDefault();
     const supabase = getBrowserSupabase();
-    if (!supabase) return;
+    if (!supabase) {
+      setErrMsg("Sign-in isn't configured (missing Supabase env vars).");
+      setState("error");
+      return;
+    }
     setState("sending");
-    const { error } = await supabase.auth.signInWithOtp({
-      email,
-      options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
-    });
-    setState(error ? "error" : "sent");
+    try {
+      const { error } = await supabase.auth.signInWithOtp({
+        email,
+        options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
+      });
+      if (error) {
+        setErrMsg(error.message);
+        setState("error");
+      } else {
+        setState("sent");
+      }
+    } catch (err) {
+      // Network/URL errors (e.g. a bad NEXT_PUBLIC_SUPABASE_URL) land here.
+      setErrMsg(err instanceof Error ? err.message : "Unexpected error");
+      setState("error");
+    }
   }
 
   if (state === "sent") {
@@ -48,7 +64,7 @@ export function SignInForm() {
       </Button>
       {state === "error" && (
         <p className="text-sm text-red-600">
-          Something went wrong. Please try again.
+          {errMsg || "Something went wrong. Please try again."}
         </p>
       )}
     </form>
