@@ -1,21 +1,22 @@
 "use client";
 
 /**
- * Privacy-friendly analytics shim. We funnel every meaningful event through
- * track() so the analytics provider can be swapped (Plausible -> GA4) by
- * editing one file. Events we care about for the funnel:
- *   - tool_used        (a calculation / document was produced)
- *   - pdf_downloaded   (free output created)
- *   - upgrade_prompt_shown / upgrade_clicked (free -> Pro funnel)
+ * Privacy-friendly analytics shim. Every meaningful event goes through track()
+ * so the provider can be swapped by editing one file. Two providers supported,
+ * both optional and env-gated (set one in Vercel):
+ *   - GA4:       NEXT_PUBLIC_GA_ID        (free forever, custom events included)
+ *   - Plausible: NEXT_PUBLIC_PLAUSIBLE_DOMAIN  (paid after trial, cookieless)
  *
- * Plausible is loaded via a <script> tag (see SiteHeader); if it's absent this
- * no-ops safely, so local dev and ad-blocked users never see errors.
+ * Funnel events used across the app:
+ *   tool_used, pdf_downloaded, result_shared,
+ *   email_signup (lead magnet), upgrade_prompt_shown, upgrade_clicked
  */
 type EventProps = Record<string, string | number | boolean>;
 
 declare global {
   interface Window {
     plausible?: (event: string, opts?: { props?: EventProps }) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -23,6 +24,7 @@ export function track(event: string, props?: EventProps): void {
   if (typeof window === "undefined") return;
   try {
     window.plausible?.(event, props ? { props } : undefined);
+    window.gtag?.("event", event, props ?? {});
   } catch {
     /* never let analytics break the app */
   }

@@ -5,6 +5,7 @@ import { Card, CardBody } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Callout";
 import { TOOLS } from "@/lib/tools";
 import { SITE } from "@/lib/site";
+import { EmailCapture } from "@/components/EmailCapture";
 
 export default function Home() {
   const live = TOOLS.filter((t) => t.status === "live");
@@ -103,6 +104,23 @@ export default function Home() {
           ))}
         </Container>
       </section>
+
+      {/* Lead magnet */}
+      <Container className="py-14">
+        <div className="rounded-card border border-line bg-white p-6 sm:p-8">
+          <div className="max-w-xl">
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              Free: the Landlord Year-End Tax Prep Checklist
+            </h2>
+            <p className="mt-2 mb-5 text-ink/70">
+              The income, deductions, depreciation items, and January deadlines
+              small landlords actually miss — on one page, ready for your tax
+              folder.
+            </p>
+            <EmailCapture source="homepage" />
+          </div>
+        </div>
+      </Container>
 
       {/* Pro CTA */}
       <Container className="py-16">

@@ -45,3 +45,15 @@ drop trigger if exists on_auth_user_created on auth.users;
 create trigger on_auth_user_created
   after insert on auth.users
   for each row execute function public.handle_new_user();
+
+-- Email list (lead magnet signups). Written only by the server with the
+-- service-role key; RLS is enabled with no policies, so anon/browser clients
+-- can neither read nor write it.
+create table if not exists public.subscribers (
+  id uuid primary key default gen_random_uuid(),
+  email text unique not null,
+  source text,                     -- where they signed up (e.g. 'homepage', 'guide:slug')
+  created_at timestamptz default now()
+);
+
+alter table public.subscribers enable row level security;

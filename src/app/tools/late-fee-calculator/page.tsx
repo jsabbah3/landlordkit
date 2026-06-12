@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { LateFeeTool } from "@/components/tools/LateFeeTool";
 import { FaqList } from "@/components/Faq";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { softwareAppLd, faqLd, breadcrumbLd } from "@/lib/seo";
+import { softwareAppLd, faqLd, breadcrumbLd, howToLd } from "@/lib/seo";
 import { US_STATES } from "@/lib/states";
 import { LATE_FEE } from "@/tools/late-fee/data";
 import { TOOL_META } from "@/tools/late-fee/content";
@@ -42,6 +42,17 @@ export default function Page() {
         data={[
           softwareAppLd({ name: "Rent Late Fee Calculator", description: "State-aware rent late fee cap calculator.", path: PATH }),
           faqLd(faqs),
+          howToLd({
+            name: "How to check your state's maximum late fee",
+            description:
+              "Find the legal late-fee cap and grace period for your state, then compute a compliant fee.",
+            steps: [
+              "Select your state to load its late-fee cap and grace period.",
+              "Enter the monthly rent and how many days late the payment is.",
+              "Review the maximum lawful fee (or the 'reasonable fee' standard).",
+              "Optionally enter your planned fee to check it against the cap.",
+            ],
+          }),
           breadcrumbLd([{ name: "Tools", path: "/tools" }, { name: "Late Fee Calculator", path: PATH }]),
         ]}
       />

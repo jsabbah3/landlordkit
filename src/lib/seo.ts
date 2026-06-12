@@ -32,6 +32,24 @@ export function faqLd(faqs: { q: string; a: string }[]) {
   };
 }
 
+export function howToLd(params: {
+  name: string;
+  description: string;
+  steps: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: params.name,
+    description: params.description,
+    step: params.steps.map((text, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      text,
+    })),
+  };
+}
+
 export function breadcrumbLd(crumbs: { name: string; path: string }[]) {
   return {
     "@context": "https://schema.org",

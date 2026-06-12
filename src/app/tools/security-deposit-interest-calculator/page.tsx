@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { DepositInterestTool } from "@/components/tools/DepositInterestTool";
 import { FaqList } from "@/components/Faq";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { softwareAppLd, faqLd, breadcrumbLd } from "@/lib/seo";
+import { softwareAppLd, faqLd, breadcrumbLd, howToLd } from "@/lib/seo";
 import { US_STATES } from "@/lib/states";
 import {
   DEPOSIT_INTEREST,
@@ -55,6 +55,17 @@ export default function Page() {
             path: PATH,
           }),
           faqLd(nationalFaqs),
+          howToLd({
+            name: "How to calculate security deposit interest",
+            description:
+              "Calculate the interest owed on a tenant's security deposit using your state's rule.",
+            steps: [
+              "Select your state to load its interest rate, holding period, and statute.",
+              "Enter the deposit amount and the dates it was held.",
+              "Review the interest owed and total to return.",
+              "Download the PDF interest statement to give your tenant.",
+            ],
+          }),
           breadcrumbLd([
             { name: "Tools", path: "/tools" },
             { name: "Security Deposit Interest Calculator", path: PATH },

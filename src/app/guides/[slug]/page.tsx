@@ -6,6 +6,7 @@ import { Prose } from "@/components/ui/Prose";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardBody } from "@/components/ui/Card";
 import { LegalDisclaimer } from "@/components/LegalDisclaimer";
+import { EmailCapture } from "@/components/EmailCapture";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbLd } from "@/lib/seo";
 import { publishedGuides, getGuide } from "@/content/guides";
@@ -100,6 +101,17 @@ export default async function GuidePage({
             </div>
           </div>
         )}
+
+        <div className="mt-10 max-w-2xl rounded-card border border-line bg-paper-2 p-6">
+          <h2 className="font-display text-lg font-semibold">
+            Get the free Landlord Tax Prep Checklist
+          </h2>
+          <p className="mt-1 mb-4 text-sm text-ink/65">
+            One page: the deductions, depreciation items, and January deadlines
+            small landlords miss.
+          </p>
+          <EmailCapture source={`guide:${slug}`} />
+        </div>
 
         <div className="mt-10 max-w-2xl">
           <LegalDisclaimer />
