@@ -2,6 +2,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
+import { MobileNav } from "./MobileNav";
 import { SITE } from "@/lib/site";
 
 /**
@@ -44,9 +45,12 @@ export function SiteHeader() {
             Pro
           </Link>
         </nav>
-        <ButtonLink href="/pricing" size="sm" variant="accent">
-          Go Pro
-        </ButtonLink>
+        <div className="flex items-center gap-1">
+          <ButtonLink href="/pricing" size="sm" variant="accent">
+            Go Pro
+          </ButtonLink>
+          <MobileNav />
+        </div>
       </Container>
     </header>
   );

@@ -162,7 +162,7 @@ export function RentIncreaseNoticeTool({
             <Input id="tenancy" inputMode="numeric" value={tenancyMonths} onChange={(e) => setTenancyMonths(e.target.value)} placeholder="e.g. 18" />
           </Field>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <Field label="Notice date" htmlFor="noticeDate">
               <Input id="noticeDate" type="date" value={noticeDate} onChange={(e) => setNoticeDate(e.target.value)} />
             </Field>
