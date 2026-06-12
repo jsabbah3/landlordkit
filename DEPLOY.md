@@ -119,11 +119,34 @@ and create the products/webhook.
 
 ---
 
-## 7. Email — Resend (10 min, optional)
+## 7. Email — Resend as Supabase's SMTP (required before real Pro launch)
 
-1. Create a Resend account, verify your sending domain (DNS records).
-2. Set `RESEND_API_KEY`. Use it for transactional email only (magic links,
-   receipts). No marketing email from here.
+**Why this matters:** Supabase's built-in email sender is **for testing only** and
+rate-limits to ~2–4 emails/hour. That cap will block real users from receiving
+their sign-in link the moment you launch Pro. You must point Supabase auth at a
+real SMTP provider. Resend's free tier (3,000/mo) is plenty.
+
+1. Sign up at <https://resend.com> → **Add Domain** `getlandlordkit.com`.
+2. Resend shows DNS records (SPF/DKIM). Add them in **Vercel → your domain →
+   DNS** (the domain was bought through Vercel, so DNS lives there). Wait for
+   Resend to show **Verified** (usually minutes).
+3. Resend → **API Keys** → create one.
+4. Supabase → **Project Settings → Authentication → SMTP Settings** → enable
+   custom SMTP and enter:
+   - Host: `smtp.resend.com`  ·  Port: `465`
+   - Username: `resend`  ·  Password: *your Resend API key*
+   - Sender email: `noreply@getlandlordkit.com`  ·  Sender name: `LandlordKit`
+5. Supabase → **Authentication → Rate Limits** → raise the email limit now that
+   real SMTP is in place.
+6. Test: request a sign-in link from `/account` and confirm it arrives.
+
+> Until this is configured, sign-in works but is throttled to a few emails/hour
+> (fine for your own testing, not for real users). The free tools don't send
+> email, so the public site is unaffected.
+
+The `RESEND_API_KEY` env var is reserved for *app-level* transactional email
+(e.g. emailing a generated PDF) if you build that later — it's separate from the
+Supabase SMTP config above.
 
 ---
 
