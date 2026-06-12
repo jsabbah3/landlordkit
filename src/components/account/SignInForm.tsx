@@ -1,11 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { getBrowserSupabase } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/Button";
 import { Input, Label } from "@/components/ui/Field";
 
-/** Passwordless email sign-in (magic link). The link returns to /auth/callback. */
+/**
+ * Passwordless email sign-in. Posts to our own /api/auth/otp (same origin) so
+ * the request can't be blocked by ad blockers or network filters that block
+ * *.supabase.co — the server sends the magic link. The link returns to
+ * /auth/callback.
+ */
 export function SignInForm() {
   const [email, setEmail] = useState("");
   const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -13,26 +17,21 @@ export function SignInForm() {
 
   async function send(e: React.FormEvent) {
     e.preventDefault();
-    const supabase = getBrowserSupabase();
-    if (!supabase) {
-      setErrMsg("Sign-in isn't configured (missing Supabase env vars).");
-      setState("error");
-      return;
-    }
     setState("sending");
     try {
-      const { error } = await supabase.auth.signInWithOtp({
-        email,
-        options: { emailRedirectTo: `${window.location.origin}/auth/callback` },
+      const res = await fetch("/api/auth/otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
       });
-      if (error) {
-        setErrMsg(error.message);
-        setState("error");
-      } else {
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) {
         setState("sent");
+      } else {
+        setErrMsg(data.error || "Something went wrong. Please try again.");
+        setState("error");
       }
     } catch (err) {
-      // Network/URL errors (e.g. a bad NEXT_PUBLIC_SUPABASE_URL) land here.
       setErrMsg(err instanceof Error ? err.message : "Unexpected error");
       setState("error");
     }
