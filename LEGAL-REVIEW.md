@@ -5,7 +5,7 @@
 > **MEDIUM**. Check the box once you've confirmed the value against the cited
 > statute and updated `lastVerified`.
 
-**Totals:** 168 state rules — 87 low · 69 medium · 12 high.
+**Totals:** 168 state rules — 86 low · 62 medium · 20 high.
 
 Each tool's data lives in one file:
 - `src/tools/security-deposit-interest/data.ts`
@@ -13,7 +13,7 @@ Each tool's data lives in one file:
 - `src/tools/late-fee/data.ts`
 - `src/tools/security-deposit-return/data.ts`
 
-### LOW confidence (87)
+### LOW confidence (86)
 
 - [ ] **Late fee — Alabama** · `Ala. Code § 35-9A-161` (verified 2026-06-01)
 - [ ] **Late fee — Alaska** · `Alaska Stat. § 34.03` (verified 2026-06-01)
@@ -86,7 +86,6 @@ Each tool's data lives in one file:
 - [ ] **Rent increase notice — West Virginia** · `W. Va. Code § 37-6-5` (verified 2026-06-01)
 - [ ] **Rent increase notice — Wisconsin** · `Wis. Stat. § 704.19` (verified 2026-06-01)
 - [ ] **Rent increase notice — Wyoming** · `Wyo. Stat. § 1-21-1203` (verified 2026-06-01)
-- [ ] **Security deposit interest — New Hampshire** · `N.H. Rev. Stat. § 540-A:6` (verified 2026-06-01)
 - [ ] **Security deposit return — Alabama** · `Ala. Code § 35-9A-201` (verified 2026-06-01)
 - [ ] **Security deposit return — Arkansas** · `Ark. Code § 18-16-305` (verified 2026-06-01)
 - [ ] **Security deposit return — District of Columbia** · `D.C. Mun. Regs. tit. 14 § 309` (verified 2026-06-01)
@@ -103,7 +102,7 @@ Each tool's data lives in one file:
 - [ ] **Security deposit return — West Virginia** · `W. Va. Code § 37-6A-2` (verified 2026-06-01)
 - [ ] **Security deposit return — Wyoming** · `Wyo. Stat. § 1-21-1208` (verified 2026-06-01)
 
-### MEDIUM confidence (69)
+### MEDIUM confidence (62)
 
 - [ ] **Late fee — California** · `Cal. Civ. Code § 1671` (verified 2026-06-01)
 - [ ] **Late fee — Colorado** · `Colo. Rev. Stat. § 38-12-105` (verified 2026-06-01)
@@ -132,14 +131,7 @@ Each tool's data lives in one file:
 - [ ] **Rent increase notice — Rhode Island** · `R.I. Gen. Laws § 34-18-16.1` (verified 2026-06-01)
 - [ ] **Rent increase notice — Texas** · `No specific Texas statute (governed by the lease/rental period)` (verified 2026-06-01)
 - [ ] **Rent increase notice — Vermont** · `9 V.S.A. § 4455` (verified 2026-06-01)
-- [ ] **Security deposit interest — District of Columbia** · `D.C. Mun. Regs. tit. 14, § 311` (verified 2026-06-10)
-- [ ] **Security deposit interest — Illinois** · `765 ILCS 715 (Security Deposit Interest Act)` (verified 2026-06-01)
-- [ ] **Security deposit interest — Maryland** · `Md. Code, Real Property § 8-203` (verified 2026-06-01)
-- [ ] **Security deposit interest — New Jersey** · `N.J. Stat. § 46:8-19` (verified 2026-06-01)
-- [ ] **Security deposit interest — New Mexico** · `N.M. Stat. § 47-8-18` (verified 2026-06-10)
-- [ ] **Security deposit interest — New York** · `N.Y. Gen. Oblig. Law § 7-103` (verified 2026-06-01)
-- [ ] **Security deposit interest — North Dakota** · `N.D. Cent. Code § 47-16-07.1` (verified 2026-06-01)
-- [ ] **Security deposit interest — Pennsylvania** · `68 Pa. Stat. § 250.511b` (verified 2026-06-01)
+- [ ] **Security deposit interest — New Mexico** · `N.M. Stat. § 47-8-18` (verified 2026-06-12)
 - [ ] **Security deposit return — Alaska** · `Alaska Stat. § 34.03.070` (verified 2026-06-01)
 - [ ] **Security deposit return — Arizona** · `Ariz. Rev. Stat. § 33-1321` (verified 2026-06-01)
 - [ ] **Security deposit return — Colorado** · `Colo. Rev. Stat. § 38-12-103` (verified 2026-06-01)
@@ -175,17 +167,25 @@ Each tool's data lives in one file:
 - [ ] **Security deposit return — Washington** · `Rev. Code Wash. § 59.18.280` (verified 2026-06-01)
 - [ ] **Security deposit return — Wisconsin** · `Wis. Stat. § 134.06` (verified 2026-06-01)
 
-### HIGH confidence (12)
+### HIGH confidence (20)
 
 - [ ] **Late fee — Maine** · `14 M.R.S. § 6028` (verified 2026-06-01)
 - [ ] **Late fee — New York** · `N.Y. Real Prop. Law § 238-a` (verified 2026-06-01)
 - [ ] **Rent increase notice — California** · `Cal. Civ. Code § 827` (verified 2026-06-01)
 - [ ] **Rent increase notice — New York** · `N.Y. Real Prop. Law § 226-c` (verified 2026-06-01)
 - [ ] **Security deposit interest — Connecticut** · `Conn. Gen. Stat. § 47a-21` (verified 2026-06-10)
+- [ ] **Security deposit interest — District of Columbia** · `D.C. Mun. Regs. tit. 14, § 311` (verified 2026-06-12)
 - [ ] **Security deposit interest — Florida** · `Fla. Stat. § 83.49` (verified 2026-06-10)
+- [ ] **Security deposit interest — Illinois** · `765 ILCS 715 (Security Deposit Interest Act)` (verified 2026-06-12)
 - [ ] **Security deposit interest — Iowa** · `Iowa Code § 562A.12` (verified 2026-06-10)
+- [ ] **Security deposit interest — Maryland** · `Md. Code, Real Property § 8-203` (verified 2026-06-12)
 - [ ] **Security deposit interest — Massachusetts** · `Mass. Gen. Laws ch. 186, § 15B` (verified 2026-06-01)
 - [ ] **Security deposit interest — Minnesota** · `Minn. Stat. § 504B.178` (verified 2026-06-10)
+- [ ] **Security deposit interest — New Hampshire** · `N.H. Rev. Stat. § 540-A:6` (verified 2026-06-12)
+- [ ] **Security deposit interest — New Jersey** · `N.J. Stat. § 46:8-19` (verified 2026-06-12)
+- [ ] **Security deposit interest — New York** · `N.Y. Gen. Oblig. Law § 7-103` (verified 2026-06-12)
+- [ ] **Security deposit interest — North Dakota** · `N.D. Cent. Code § 47-16-07.1` (verified 2026-06-12)
 - [ ] **Security deposit interest — Ohio** · `Ohio Rev. Code § 5321.16` (verified 2026-06-10)
+- [ ] **Security deposit interest — Pennsylvania** · `68 Pa. Stat. § 250.511b` (verified 2026-06-12)
 - [ ] **Security deposit return — California** · `Cal. Civ. Code § 1950.5` (verified 2026-06-01)
 - [ ] **Security deposit return — New York** · `N.Y. Gen. Oblig. Law § 7-108` (verified 2026-06-01)

@@ -122,12 +122,12 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     appliesTo: "Buildings with 25 or more units.",
     payTiming: "Annually, within 30 days of the end of each 12-month period.",
     summary:
-      "In buildings of 25+ units, deposits held over six months earn interest at the rate published by the state (tied to a major bank's minimum passbook rate).",
+      "In buildings of 25+ units, deposits held six months or more earn interest at the rate the largest IL commercial bank pays on minimum passbook savings as of Dec 31 (the IDFPR publishes it; the 2026 rate is about 0.01% APY).",
     cite: {
       statute: "765 ILCS 715 (Security Deposit Interest Act)",
-      statuteUrl: "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2200",
-      lastVerified: VERIFIED,
-      confidence: "medium",
+      statuteUrl: "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/",
+      lastVerified: "2026-06-12",
+      confidence: "high",
     },
   },
   MD: {
@@ -135,15 +135,15 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     defaultRatePct: 1.5,
     rateBasis: "published-annually",
     minHoldingMonths: 6,
-    payTiming: "At deposit return; simple interest accrues at 6-month intervals.",
+    payTiming: "At deposit return; simple interest accrues at monthly intervals.",
     summary:
-      "Deposits earn simple interest at the greater of 1.5% per year or the U.S. Treasury 1-year yield (set each January), accruing in 6-month increments.",
+      "Deposits of $50 or more earn simple interest at the greater of 1.5% per year or the 1-year U.S. Treasury (Constant Maturity) yield set each January, accruing monthly, payable only if held at least 6 months. The DHCD publishes the rate and a calculator.",
     cite: {
       statute: "Md. Code, Real Property § 8-203",
       statuteUrl:
         "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
-      lastVerified: VERIFIED,
-      confidence: "medium",
+      lastVerified: "2026-06-12",
+      confidence: "high",
     },
   },
   NJ: {
@@ -153,12 +153,12 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     minHoldingMonths: 0,
     payTiming: "Annually, either paid or credited toward rent.",
     summary:
-      "Deposits must be held in an interest-bearing account; the tenant receives the interest earned (money-market rate for landlords with 10+ units, otherwise the bank's rate).",
+      "Deposits must be held in an interest-bearing account; the tenant receives the interest the account actually earns (an insured money-market/savings rate for landlords with 10+ units). Failing to comply lets the tenant claim 7% per year.",
     cite: {
       statute: "N.J. Stat. § 46:8-19",
       statuteUrl: "https://law.justia.com/codes/new-jersey/title-46/section-46-8-19/",
-      lastVerified: VERIFIED,
-      confidence: "medium",
+      lastVerified: "2026-06-12",
+      confidence: "high",
     },
   },
   NY: {
@@ -169,12 +169,12 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     appliesTo: "Buildings with six or more units.",
     payTiming: "Annually; landlord may retain a 1% administrative fee.",
     summary:
-      "In buildings of 6+ units, deposits must be placed in an interest-bearing account; the tenant gets the interest minus a 1% annual administrative fee the landlord may keep.",
+      "In buildings of 6+ units, deposits must be placed in an interest-bearing NY bank account; the tenant gets the interest minus a 1% annual administrative fee the landlord may keep.",
     cite: {
       statute: "N.Y. Gen. Oblig. Law § 7-103",
-      statuteUrl: "https://www.nysenate.gov/legislation/laws/GOB/7-103",
-      lastVerified: VERIFIED,
-      confidence: "medium",
+      statuteUrl: "https://law.justia.com/codes/new-york/gob/article-7/title-1/7-103/",
+      lastVerified: "2026-06-12",
+      confidence: "high",
     },
   },
   PA: {
@@ -182,15 +182,14 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     defaultRatePct: 0.1,
     rateBasis: "bank-passbook",
     minHoldingMonths: 24,
-    exempt: { fixed: 100, orOneMonthRent: false },
     payTiming: "Annually after the second year; landlord may keep a 1% fee.",
     summary:
-      "For deposits over $100 held more than two years, the tenant earns the bank's interest rate (minus a 1% fee the landlord may retain).",
+      "For deposits over $100, once held more than two years the tenant earns the escrow account's interest rate on the full deposit, minus a 1% fee the landlord may retain.",
     cite: {
       statute: "68 Pa. Stat. § 250.511b",
-      statuteUrl: "https://www.legis.state.pa.us/cfdocs/legis/LI/uconsCheck.cfm?txtType=HTM&yr=1951&sessInd=0&smthLwInd=0&act=20",
-      lastVerified: VERIFIED,
-      confidence: "medium",
+      statuteUrl: "https://codes.findlaw.com/pa/title-68-ps-real-and-personal-property/pa-st-sect-68-250-511b/",
+      lastVerified: "2026-06-12",
+      confidence: "high",
     },
   },
   NM: {
@@ -205,7 +204,7 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     cite: {
       statute: "N.M. Stat. § 47-8-18",
       statuteUrl: "https://law.justia.com/codes/new-mexico/chapter-47/article-8/section-47-8-18/",
-      lastVerified: "2026-06-10",
+      lastVerified: "2026-06-12",
       confidence: "medium",
     },
   },
@@ -214,14 +213,14 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     defaultRatePct: 0.1,
     rateBasis: "bank-passbook",
     minHoldingMonths: 12,
-    payTiming: "On request after one year, and at deposit return.",
+    payTiming: "Paid at deposit return; tenant may request accrued interest every 3 years.",
     summary:
-      "Deposits held for a year or more earn interest at the rate paid by the bank holding the deposit; tenants may request it annually.",
+      "Deposits held for one year or more earn interest at the regular savings rate paid by the NH bank, savings & loan, or credit union holding the deposit.",
     cite: {
       statute: "N.H. Rev. Stat. § 540-A:6",
       statuteUrl: "https://www.gencourt.state.nh.us/rsa/html/lv/540-a/540-a-6.htm",
-      lastVerified: VERIFIED,
-      confidence: "low",
+      lastVerified: "2026-06-12",
+      confidence: "high",
     },
   },
   DC: {
@@ -235,8 +234,8 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     cite: {
       statute: "D.C. Mun. Regs. tit. 14, § 311",
       statuteUrl: "http://dcrules.elaws.us/dcmr/14-311",
-      lastVerified: "2026-06-10",
-      confidence: "medium",
+      lastVerified: "2026-06-12",
+      confidence: "high",
     },
   },
 
@@ -274,17 +273,17 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
 
   ND: {
     required: "yes",
-    defaultRatePct: 0.1,
-    rateBasis: "bank-passbook",
+    defaultRatePct: 0.5,
+    rateBasis: "published-annually",
     minHoldingMonths: 9,
     payTiming: "On deposit return, for tenancies of at least nine months.",
     summary:
-      "The deposit must be held in an interest-bearing savings or checking account, and the interest is payable to the tenant when the tenancy is at least nine months long.",
+      "The deposit must be held in a federally insured interest-bearing account. For tenancies of nine months or more, the landlord pays simple interest at the Federal Reserve discount rate as of January 1 — confirm the current rate.",
     cite: {
       statute: "N.D. Cent. Code § 47-16-07.1",
-      statuteUrl: "https://ndlegis.gov/cencode/t47c16.pdf",
-      lastVerified: VERIFIED,
-      confidence: "medium",
+      statuteUrl: "https://codes.findlaw.com/nd/title-47-property/nd-cent-code-sect-47-16-07-1/",
+      lastVerified: "2026-06-12",
+      confidence: "high",
     },
   },
 };
