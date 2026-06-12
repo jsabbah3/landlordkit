@@ -1,6 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 import { env, isSupabaseConfigured } from "@/lib/env";
+import { normalizeSupabaseUrl } from "./url";
 
 /**
  * Supabase client for Server Components and Route Handlers (reads/writes the
@@ -9,8 +10,10 @@ import { env, isSupabaseConfigured } from "@/lib/env";
  */
 export async function getServerSupabase() {
   if (!isSupabaseConfigured()) return null;
+  const url = normalizeSupabaseUrl(env.supabaseUrl);
+  if (!url) return null;
   const cookieStore = await cookies();
-  return createServerClient(env.supabaseUrl!, env.supabaseAnonKey!, {
+  return createServerClient(url, env.supabaseAnonKey!, {
     cookies: {
       getAll: () => cookieStore.getAll(),
       setAll: (toSet) => {
@@ -29,8 +32,9 @@ export async function getServerSupabase() {
 
 /** Service-role client for webhooks (bypasses RLS). Server-only, never exposed. */
 export function getServiceSupabase() {
-  if (!env.supabaseUrl || !env.supabaseServiceKey) return null;
-  return createServerClient(env.supabaseUrl, env.supabaseServiceKey, {
+  const url = normalizeSupabaseUrl(env.supabaseUrl);
+  if (!url || !env.supabaseServiceKey) return null;
+  return createServerClient(url, env.supabaseServiceKey, {
     cookies: { getAll: () => [], setAll: () => {} },
   });
 }
