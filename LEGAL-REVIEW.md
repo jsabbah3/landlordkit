@@ -5,7 +5,7 @@
 > **MEDIUM**. Check the box once you've confirmed the value against the cited
 > statute and updated `lastVerified`.
 
-**Totals:** 168 state rules — 86 low · 62 medium · 20 high.
+**Totals:** 168 state rules — 84 low · 50 medium · 34 high.
 
 Each tool's data lives in one file:
 - `src/tools/security-deposit-interest/data.ts`
@@ -13,13 +13,12 @@ Each tool's data lives in one file:
 - `src/tools/late-fee/data.ts`
 - `src/tools/security-deposit-return/data.ts`
 
-### LOW confidence (86)
+### LOW confidence (84)
 
 - [ ] **Late fee — Alabama** · `Ala. Code § 35-9A-161` (verified 2026-06-01)
 - [ ] **Late fee — Alaska** · `Alaska Stat. § 34.03` (verified 2026-06-01)
 - [ ] **Late fee — Arizona** · `Ariz. Rev. Stat. § 33-1368` (verified 2026-06-01)
 - [ ] **Late fee — Arkansas** · `Ark. Code § 18-17-701` (verified 2026-06-01)
-- [ ] **Late fee — Connecticut** · `Conn. Gen. Stat. § 47a-15a / § 47a-4(a)` (verified 2026-06-01)
 - [ ] **Late fee — District of Columbia** · `D.C. Code § 42-3505.31` (verified 2026-06-01)
 - [ ] **Late fee — Florida** · `Fla. Stat. § 83.808` (verified 2026-06-01)
 - [ ] **Late fee — Georgia** · `Ga. Code § 44-7` (verified 2026-06-01)
@@ -45,7 +44,6 @@ Each tool's data lives in one file:
 - [ ] **Late fee — South Dakota** · `S.D. Codified Laws § 43-32` (verified 2026-06-01)
 - [ ] **Late fee — Utah** · `Utah Code § 57-22` (verified 2026-06-01)
 - [ ] **Late fee — Vermont** · `9 V.S.A. § 4455` (verified 2026-06-01)
-- [ ] **Late fee — Virginia** · `Va. Code § 55.1-1204` (verified 2026-06-01)
 - [ ] **Late fee — Washington** · `Rev. Code Wash. § 59.18` (verified 2026-06-01)
 - [ ] **Late fee — West Virginia** · `W. Va. Code § 37-6` (verified 2026-06-01)
 - [ ] **Late fee — Wisconsin** · `Wis. Stat. § 704` (verified 2026-06-01)
@@ -102,22 +100,10 @@ Each tool's data lives in one file:
 - [ ] **Security deposit return — West Virginia** · `W. Va. Code § 37-6A-2` (verified 2026-06-01)
 - [ ] **Security deposit return — Wyoming** · `Wyo. Stat. § 1-21-1208` (verified 2026-06-01)
 
-### MEDIUM confidence (62)
+### MEDIUM confidence (50)
 
 - [ ] **Late fee — California** · `Cal. Civ. Code § 1671` (verified 2026-06-01)
-- [ ] **Late fee — Colorado** · `Colo. Rev. Stat. § 38-12-105` (verified 2026-06-01)
-- [ ] **Late fee — Delaware** · `25 Del. C. § 5501(d)` (verified 2026-06-01)
-- [ ] **Late fee — Hawaii** · `Haw. Rev. Stat. § 521-21(f)` (verified 2026-06-01)
 - [ ] **Late fee — Iowa** · `Iowa Code § 562A.9(4)` (verified 2026-06-01)
-- [ ] **Late fee — Maryland** · `Md. Code, Real Prop. § 8-208(d)(3)` (verified 2026-06-01)
-- [ ] **Late fee — Massachusetts** · `Mass. Gen. Laws ch. 186, § 15B(1)(c)` (verified 2026-06-01)
-- [ ] **Late fee — Minnesota** · `Minn. Stat. § 504B.177` (verified 2026-06-01)
-- [ ] **Late fee — Nevada** · `Nev. Rev. Stat. § 118A.210` (verified 2026-06-01)
-- [ ] **Late fee — New Mexico** · `N.M. Stat. § 47-8-15(D)` (verified 2026-06-01)
-- [ ] **Late fee — North Carolina** · `N.C. Gen. Stat. § 42-46` (verified 2026-06-01)
-- [ ] **Late fee — Oregon** · `Or. Rev. Stat. § 90.260` (verified 2026-06-01)
-- [ ] **Late fee — Tennessee** · `Tenn. Code § 66-28-201(d)` (verified 2026-06-01)
-- [ ] **Late fee — Texas** · `Tex. Prop. Code § 92.019` (verified 2026-06-01)
 - [ ] **Rent increase notice — Arizona** · `Ariz. Rev. Stat. § 33-1375` (verified 2026-06-01)
 - [ ] **Rent increase notice — Colorado** · `Colo. Rev. Stat. § 38-12-701` (verified 2026-06-01)
 - [ ] **Rent increase notice — Delaware** · `25 Del. C. § 5107` (verified 2026-06-01)
@@ -167,10 +153,24 @@ Each tool's data lives in one file:
 - [ ] **Security deposit return — Washington** · `Rev. Code Wash. § 59.18.280` (verified 2026-06-01)
 - [ ] **Security deposit return — Wisconsin** · `Wis. Stat. § 134.06` (verified 2026-06-01)
 
-### HIGH confidence (20)
+### HIGH confidence (34)
 
+- [ ] **Late fee — Colorado** · `Colo. Rev. Stat. § 38-12-105` (verified 2026-06-12)
+- [ ] **Late fee — Connecticut** · `Conn. Gen. Stat. § 47a-15a` (verified 2026-06-12)
+- [ ] **Late fee — Delaware** · `25 Del. C. § 5501(d)` (verified 2026-06-12)
+- [ ] **Late fee — Hawaii** · `Haw. Rev. Stat. § 521-21(f)` (verified 2026-06-12)
 - [ ] **Late fee — Maine** · `14 M.R.S. § 6028` (verified 2026-06-01)
+- [ ] **Late fee — Maryland** · `Md. Code, Real Prop. § 8-208(d)(3)` (verified 2026-06-12)
+- [ ] **Late fee — Massachusetts** · `Mass. Gen. Laws ch. 186, § 15B(1)(c)` (verified 2026-06-12)
+- [ ] **Late fee — Minnesota** · `Minn. Stat. § 504B.177` (verified 2026-06-01)
+- [ ] **Late fee — Nevada** · `Nev. Rev. Stat. § 118A.210` (verified 2026-06-12)
+- [ ] **Late fee — New Mexico** · `N.M. Stat. § 47-8-15(D)` (verified 2026-06-12)
 - [ ] **Late fee — New York** · `N.Y. Real Prop. Law § 238-a` (verified 2026-06-01)
+- [ ] **Late fee — North Carolina** · `N.C. Gen. Stat. § 42-46` (verified 2026-06-12)
+- [ ] **Late fee — Oregon** · `Or. Rev. Stat. § 90.260` (verified 2026-06-12)
+- [ ] **Late fee — Tennessee** · `Tenn. Code § 66-28-201(d)` (verified 2026-06-12)
+- [ ] **Late fee — Texas** · `Tex. Prop. Code § 92.019` (verified 2026-06-12)
+- [ ] **Late fee — Virginia** · `Va. Code § 55.1-1204` (verified 2026-06-01)
 - [ ] **Rent increase notice — California** · `Cal. Civ. Code § 827` (verified 2026-06-01)
 - [ ] **Rent increase notice — New York** · `N.Y. Real Prop. Law § 226-c` (verified 2026-06-01)
 - [ ] **Security deposit interest — Connecticut** · `Conn. Gen. Stat. § 47a-21` (verified 2026-06-10)
