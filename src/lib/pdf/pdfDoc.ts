@@ -35,16 +35,54 @@ const CONTENT_W = PAGE.w - MARGIN * 2;
 const INK = rgb(0.08, 0.13, 0.11);
 const MUTED = rgb(0.45, 0.45, 0.45);
 
+// The standard PDF fonts only encode WinAnsi (cp1252). A CJK/Cyrillic/emoji
+// character would make pdf-lib THROW, crashing document generation. We replace
+// any unencodable character with "?" so a tenant/landlord with a non-Latin name
+// still gets a working PDF. (Full Unicode would require embedding a font.)
+const _encodable = new Map<string, boolean>();
+function isEncodable(font: PDFFont, ch: string): boolean {
+  let v = _encodable.get(ch);
+  if (v === undefined) {
+    try {
+      // encodeText (not widthOfTextAtSize) is what throws on unencodable chars.
+      font.encodeText(ch);
+      v = true;
+    } catch {
+      v = false;
+    }
+    _encodable.set(ch, v);
+  }
+  return v;
+}
+
+function sanitizeLine(text: string, font: PDFFont): string {
+  let out = "";
+  for (const ch of text) out += ch === " " || isEncodable(font, ch) ? ch : "?";
+  return out;
+}
+
 function wrapText(text: string, font: PDFFont, size: number, maxW: number) {
   const lines: string[] = [];
   for (const rawLine of text.split("\n")) {
-    const words = rawLine.split(/\s+/).filter(Boolean);
+    const words = sanitizeLine(rawLine, font).split(/\s+/).filter(Boolean);
     if (words.length === 0) {
       lines.push("");
       continue;
     }
     let line = "";
-    for (const word of words) {
+    for (let word of words) {
+      // Hard-break a single token longer than the content width (e.g. a
+      // 1000-char name or a long URL) so it can't run off the page edge.
+      while (font.widthOfTextAtSize(word, size) > maxW && word.length > 1) {
+        let i = 1;
+        while (i < word.length && font.widthOfTextAtSize(word.slice(0, i + 1), size) <= maxW) i++;
+        if (line) {
+          lines.push(line);
+          line = "";
+        }
+        lines.push(word.slice(0, i));
+        word = word.slice(i);
+      }
       const test = line ? `${line} ${word}` : word;
       if (font.widthOfTextAtSize(test, size) > maxW && line) {
         lines.push(line);
@@ -132,7 +170,7 @@ export async function buildDocumentPdf(
           color: INK,
         });
         y -= 14;
-        page.drawText(block.label, { x: MARGIN, y, size: 9, font: body, color: MUTED });
+        page.drawText(sanitizeLine(block.label, body), { x: MARGIN, y, size: 9, font: body, color: MUTED });
         y -= 14;
         break;
     }
@@ -147,8 +185,9 @@ export async function buildDocumentPdf(
         ? ""
         : "Made with LandlordKit — free landlord tools at landlordkit.com";
   if (footer) {
+    const safeFooter = sanitizeLine(footer, body);
     for (const p of pages) {
-      p.drawText(footer, {
+      p.drawText(safeFooter, {
         x: MARGIN,
         y: MARGIN - 28,
         size: 8,

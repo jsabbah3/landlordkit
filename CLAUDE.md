@@ -113,6 +113,17 @@ unverified — never fabricated:** entry notice, termination notice, required
 disclosures, habitability, rent-receipt rules. Fill via 2-source research
 (~N states/session); never mark `high` without checking the statute.
 
+## Hostile QA pass (2026-06-15) — see `gtm/qa-report.md`
+Crawled tools/pages, fuzzed forms, checked links/schema/analytics/mobile.
+**Fixed (critical):** client-side PDF generation crashed on non-Latin
+characters (CJK/Cyrillic/emoji) — `WinAnsi cannot encode` — a silent failure
+across all 5 document tools. `pdfDoc.ts` now sanitizes unencodable chars to `?`
+and hard-breaks over-long tokens; regression test in `pdfDoc.test.ts` (48 tests
+total). Passed: internal links, finance-calc edge cases (no div-by-zero), mobile
+overflow, schema validity, analytics (`pdf_downloaded` confirmed firing).
+Open/minor: live-compute tools (prorated, cash flow) don't emit `tool_used`;
+download handlers lack try/catch user feedback (encoding crash already removed).
+
 ## Current state (last updated: 2026-06-15)
 **Live & verified:**
 - 8 tools live, all client-side: deposit interest, rent increase notice, late
@@ -143,4 +154,8 @@ before real Pro launch). Supabase dashboard shows the API URL with a
 `/rest/v1/` suffix — env wants the bare origin (code normalizes it anyway).
 GSC env accepts token or full meta tag. `scripts/` is excluded from tsconfig
 (runs via Node type-stripping). Old domain landlordkit.vercel.app still serves;
-canonical is getlandlordkit.com.
+canonical is getlandlordkit.com. PDFs use pdf-lib standard fonts (WinAnsi only)
+— non-Latin names render as `?`; full Unicode would need an embedded font
+(multi-MB for CJK) — open product decision. Analytics events fire via `track()`
+but reach no provider until `NEXT_PUBLIC_GA_ID`/`NEXT_PUBLIC_PLAUSIBLE_DOMAIN` is
+set.
