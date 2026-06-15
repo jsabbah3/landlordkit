@@ -1,0 +1,136 @@
+{
+  "state": "TX",
+  "name": "Texas",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": "No statutory limit on the deposit amount.",
+      "statute": "Tex. Prop. Code ch. 92 (no limit specified)",
+      "statuteUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.92.htm",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "Nolo: State Laws on Security Deposit Limits",
+        "DoorLoop: Texas Security Deposit Laws"
+      ]
+    },
+    "returnDeadlineDays": {
+      "value": 30,
+      "statute": "Tex. Prop. Code § 92.103",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Tex. Prop. Code § 92.103",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "interestSummary": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "No specific Texas statute (governed by the lease/rental period)",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": [],
+      "notes": "Texas has no statute mandating advance notice of a rent increase; for month-to-month, give notice at least one rental period (commonly 30 days) ahead, or as the lease requires."
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "Tex. Prop. Code § 92.019",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [],
+      "notes": "Texas allows a late fee after a 2-day grace period; it is presumed reasonable if it does not exceed 12% of rent (units in buildings of 4 or fewer) or 10% (larger buildings)."
+    },
+    "graceDays": {
+      "value": 2,
+      "statute": "Tex. Prop. Code § 92.019",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

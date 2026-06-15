@@ -1,0 +1,135 @@
+{
+  "state": "NM",
+  "name": "New Mexico",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "returnDeadlineDays": {
+      "value": 30,
+      "statute": "N.M. Stat. § 47-8-18",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "N.M. Stat. § 47-8-18",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "N.M. Stat. § 47-8-18",
+      "statuteUrl": "https://law.justia.com/codes/new-mexico/chapter-47/article-8/section-47-8-18/",
+      "lastVerified": "2026-06-12",
+      "confidence": "medium",
+      "sources": [
+        "https://law.justia.com/codes/new-mexico/chapter-47/article-8/section-47-8-18/"
+      ]
+    },
+    "interestSummary": {
+      "value": "On a lease of at least one year, if the deposit exceeds one month's rent, the landlord must pay annual interest at the passbook savings rate on the portion above one month's rent.",
+      "statute": "N.M. Stat. § 47-8-18",
+      "statuteUrl": "https://law.justia.com/codes/new-mexico/chapter-47/article-8/section-47-8-18/",
+      "lastVerified": "2026-06-12",
+      "confidence": "medium",
+      "sources": [
+        "https://law.justia.com/codes/new-mexico/chapter-47/article-8/section-47-8-18/"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "N.M. Stat. § 47-8-15",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "Up to 10% of rent",
+      "statute": "N.M. Stat. § 47-8-15(D)",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [],
+      "notes": "New Mexico caps late fees at 10% of the rent for the period."
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "N.M. Stat. § 47-8-15(D)",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

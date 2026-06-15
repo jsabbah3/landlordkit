@@ -1,0 +1,135 @@
+{
+  "state": "CT",
+  "name": "Connecticut",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "returnDeadlineDays": {
+      "value": 30,
+      "statute": "Conn. Gen. Stat. § 47a-21",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Conn. Gen. Stat. § 47a-21",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "Conn. Gen. Stat. § 47a-21",
+      "statuteUrl": "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates",
+      "lastVerified": "2026-06-10",
+      "confidence": "high",
+      "sources": [
+        "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates"
+      ]
+    },
+    "interestSummary": {
+      "value": "Interest is paid at the deposit-index rate the CT Banking Commissioner sets each year. The 2026 deposit index is 0.49% — confirm the current year's rate before relying on it.",
+      "statute": "Conn. Gen. Stat. § 47a-21",
+      "statuteUrl": "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates",
+      "lastVerified": "2026-06-10",
+      "confidence": "high",
+      "sources": [
+        "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "Conn. Gen. Stat. § 47a-23",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "Lesser of $50 or 5% of rent",
+      "statute": "Conn. Gen. Stat. § 47a-15a",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [],
+      "notes": "Connecticut caps the late fee at the lesser of $50 or 5% of the delinquent rent (the $5/day rule also tops out at $50), after a 9-day grace period (4 days for week-to-week). Only one late charge per payment."
+    },
+    "graceDays": {
+      "value": 9,
+      "statute": "Conn. Gen. Stat. § 47a-15a",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

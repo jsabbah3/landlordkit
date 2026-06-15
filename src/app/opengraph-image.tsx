@@ -48,7 +48,7 @@ export default async function OgImage() {
           Free, accurate, state-aware tools for small landlords.
         </div>
         <div style={{ marginTop: 28, fontSize: 26, color: "#aed7c4" }}>
-          Statute-cited calculators & documents · No signup · {SITE.url.replace("https://", "")}
+          {`Statute-cited calculators & documents · No signup · ${SITE.url.replace("https://", "")}`}
         </div>
       </div>
     ),

@@ -1,0 +1,136 @@
+{
+  "state": "MD",
+  "name": "Maryland",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "returnDeadlineDays": {
+      "value": 45,
+      "statute": "Md. Code, Real Prop. § 8-203",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Md. Code, Real Prop. § 8-203",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "Md. Code, Real Property § 8-203",
+      "statuteUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203"
+      ]
+    },
+    "interestSummary": {
+      "value": "Deposits of $50 or more earn simple interest at the greater of 1.5% per year or the 1-year U.S. Treasury (Constant Maturity) yield set each January, accruing monthly, payable only if held at least 6 months. The DHCD publishes the rate and a calculator.",
+      "statute": "Md. Code, Real Property § 8-203",
+      "statuteUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "Md. Code, Real Prop. § 8-208",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": [],
+      "notes": "Some Maryland counties (e.g. Montgomery, Prince George's) have rent stabilization."
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "Up to 5% of rent",
+      "statute": "Md. Code, Real Prop. § 8-208(d)(3)",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [],
+      "notes": "Maryland caps late fees at 5% of the rent due. A 2025 law (HB 273, eff. Oct 1, 2025) adds grace periods that vary by county (e.g. 10 days in Montgomery, 5 days in Prince George's) — check your county."
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "Md. Code, Real Prop. § 8-208(d)(3)",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

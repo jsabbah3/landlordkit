@@ -49,6 +49,9 @@ polished PDFs generated client-side.
 | `src/lib/tools.ts` | Tool registry — drives homepage, footer, sitemap |
 | `src/content/guides.ts` | Content hub (10 published guides; add sections + `published: true`) |
 | `src/content/taxChecklist.ts` | Lead-magnet PDF content |
+| `/data/legal/<state>.json` + `db.json` + `index.json` | **Unified legal DB** (all 9 categories, per-field provenance) — generated, consumable JSON |
+| `src/lib/legal-db.ts` | Loader + types for the unified DB |
+| `scripts/build-legal-db.ts` | `npm run build:legal` — generates `/data/legal/` from the canonical per-topic TS datasets, emits `LEGAL-REVIEW.md` |
 | `gtm/` | Ready-to-post distribution assets (Reddit, outreach, articles, PH kit, directories); tables regenerate via `node scripts/gtm-tables.mjs` |
 | `scripts/legal-audit.ts` | `npm run legal-audit` → `LEGAL-REVIEW.md` checklist grouped by confidence |
 | `supabase/schema.sql` | profiles + subscribers tables (paste into Supabase SQL editor) |
@@ -90,7 +93,27 @@ promotable: deposit interest, late fee).
 7. Quality gates before pushing: `npm run lint`, `npm test`, `npm run build`
    all green. Lighthouse target 95+ mobile. Pushing to main deploys production.
 
-## Current state (last updated: 2026-06-12)
+## Unified legal database (`/data/legal/`)
+The canonical legal data lives in the per-topic `src/tools/*/data.ts` modules
+(typed, tested, verified). `npm run build:legal` consolidates them into a
+portable **unified DB** at `/data/legal/` covering all 9 categories with
+per-field provenance (`value, statute, statuteUrl, lastVerified, confidence,
+sources[]`), and emits `LEGAL-REVIEW.md` (the spot-check checklist).
+**Architecture choice:** TS-canonical → JSON-generated (one source of truth, no
+divergence). The working tools/pages still read their per-topic module directly
+— deliberately NOT repointed at JSON, to avoid breaking 200 verified pages for a
+storage-format change. `src/lib/legal-db.ts` is the loader for a future
+state-law hub once coverage is high enough (don't publish unverified fields).
+
+**Coverage (honest):** 46/561 fields high-confidence. Verified categories:
+deposit interest (14 high), late-fee cap (16 high), deposit max limit (10 high,
+cross-checked vs Nolo/FindLaw/etc.). Deposit return + rent-increase notice are
+mostly low/medium (migrated, not deeply verified). **5 categories entirely
+unverified — never fabricated:** entry notice, termination notice, required
+disclosures, habitability, rent-receipt rules. Fill via 2-source research
+(~N states/session); never mark `high` without checking the statute.
+
+## Current state (last updated: 2026-06-15)
 **Live & verified:**
 - 8 tools live, all client-side: deposit interest, rent increase notice, late
   fee, deposit return tracker, lease renewal, rent receipt, prorated rent,

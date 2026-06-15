@@ -1,0 +1,133 @@
+{
+  "state": "VT",
+  "name": "Vermont",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "returnDeadlineDays": {
+      "value": 14,
+      "statute": "9 V.S.A. § 4461",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "9 V.S.A. § 4461",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "interestSummary": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 60,
+      "statute": "9 V.S.A. § 4455",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": [],
+      "notes": "Burlington has local provisions."
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "9 V.S.A. § 4455",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "9 V.S.A. § 4455",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-01"
+}

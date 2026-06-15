@@ -1,0 +1,136 @@
+{
+  "state": "OR",
+  "name": "Oregon",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "returnDeadlineDays": {
+      "value": 31,
+      "statute": "Or. Rev. Stat. § 90.300",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Or. Rev. Stat. § 90.300",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "interestSummary": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 90,
+      "statute": "Or. Rev. Stat. §§ 90.323 / 90.600",
+      "statuteUrl": "https://oregon.public.law/statutes/ors_90.600",
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": [
+        "https://oregon.public.law/statutes/ors_90.600"
+      ],
+      "notes": "Oregon caps annual increases (SB 608) at 7% + CPI, capped at 10%. No increase is allowed during the first year of a tenancy; buildings under 15 years old are exempt."
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "Or. Rev. Stat. § 90.260",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [],
+      "notes": "Oregon allows a late fee only after a 4-day grace period; it must be a reasonable flat fee or a reasonable daily/percentage charge."
+    },
+    "graceDays": {
+      "value": 4,
+      "statute": "Or. Rev. Stat. § 90.260",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

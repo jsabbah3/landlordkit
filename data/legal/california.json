@@ -1,0 +1,139 @@
+{
+  "state": "CA",
+  "name": "California",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": "One month's rent (AB 12, effective July 1, 2024). A small landlord who owns no more than 2 residential properties with 4 or fewer total units may collect up to two months' rent.",
+      "statute": "Cal. Civ. Code § 1950.5",
+      "statuteUrl": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1950.5.",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "Nolo: State Laws on Security Deposit Limits",
+        "FindLaw: Security Deposit Limits",
+        "CA AB 12 (2023)"
+      ]
+    },
+    "returnDeadlineDays": {
+      "value": 21,
+      "statute": "Cal. Civ. Code § 1950.5",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Cal. Civ. Code § 1950.5",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "interestSummary": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "Cal. Civ. Code § 827",
+      "statuteUrl": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827.",
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": [
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=827."
+      ],
+      "notes": "AB 1482 caps annual increases at 5% + local CPI (max 10%) for most units more than 15 years old. Many cities (LA, SF, Oakland) have stricter local control."
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "Cal. Civ. Code § 1671",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": [],
+      "notes": "California has no statutory percentage cap, but a late fee must be a reasonable pre-estimate of the landlord's actual damages. Courts often treat fees above ~5–6% of rent as suspect."
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "Cal. Civ. Code § 1671",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

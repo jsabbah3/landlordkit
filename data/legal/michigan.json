@@ -1,0 +1,134 @@
+{
+  "state": "MI",
+  "name": "Michigan",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": "1.5 months' rent.",
+      "statute": "Mich. Comp. Laws § 554.602",
+      "statuteUrl": "https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-554-602",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "Nolo: State Laws on Security Deposit Limits",
+        "LawDistrict: Security Deposit Laws by State"
+      ]
+    },
+    "returnDeadlineDays": {
+      "value": 30,
+      "statute": "Mich. Comp. Laws § 554.609",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Mich. Comp. Laws § 554.609",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "interestSummary": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "Mich. Comp. Laws § 554.134",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "Mich. Comp. Laws § 554",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "Mich. Comp. Laws § 554",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

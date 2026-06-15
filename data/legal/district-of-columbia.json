@@ -1,0 +1,136 @@
+{
+  "state": "DC",
+  "name": "District of Columbia",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "returnDeadlineDays": {
+      "value": 45,
+      "statute": "D.C. Mun. Regs. tit. 14 § 309",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "D.C. Mun. Regs. tit. 14 § 309",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "D.C. Mun. Regs. tit. 14, § 311",
+      "statuteUrl": "http://dcrules.elaws.us/dcmr/14-311",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "http://dcrules.elaws.us/dcmr/14-311"
+      ]
+    },
+    "interestSummary": {
+      "value": "Deposits earn interest at no less than the statement-savings rate prevailing on January 1 and July 1 for each 6-month period of the tenancy, paid when the tenancy ends. The prefilled 1.5% is an estimate — confirm the actual prevailing rate.",
+      "statute": "D.C. Mun. Regs. tit. 14, § 311",
+      "statuteUrl": "http://dcrules.elaws.us/dcmr/14-311",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "http://dcrules.elaws.us/dcmr/14-311"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "D.C. Code § 42-3509.04",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": [],
+      "notes": "Much of DC's housing is rent-controlled; controlled units have separate annual adjustment limits and longer notice."
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "Up to 5% of rent",
+      "statute": "D.C. Code § 42-3505.31",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": [],
+      "notes": "DC caps late fees at 5% of monthly rent with a 5-day grace period."
+    },
+    "graceDays": {
+      "value": 5,
+      "statute": "D.C. Code § 42-3505.31",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

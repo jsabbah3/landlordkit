@@ -1,0 +1,137 @@
+{
+  "state": "MA",
+  "name": "Massachusetts",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": "One month's rent.",
+      "statute": "Mass. Gen. Laws ch. 186, § 15B",
+      "statuteUrl": "https://malegislature.gov/Laws/GeneralLaws/PartII/TitleI/Chapter186/Section15b",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "Nolo: State Laws on Security Deposit Limits",
+        "FindLaw: Security Deposit Limits"
+      ]
+    },
+    "returnDeadlineDays": {
+      "value": 30,
+      "statute": "Mass. Gen. Laws ch. 186 § 15B",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Mass. Gen. Laws ch. 186 § 15B",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "Mass. Gen. Laws ch. 186, § 15B",
+      "statuteUrl": "https://malegislature.gov/Laws/GeneralLaws/PartII/TitleI/Chapter186/Section15b",
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartII/TitleI/Chapter186/Section15b"
+      ]
+    },
+    "interestSummary": {
+      "value": "Landlords must pay 5% per year (or the actual rate received from the bank, if lower) on deposits held for at least one year.",
+      "statute": "Mass. Gen. Laws ch. 186, § 15B",
+      "statuteUrl": "https://malegislature.gov/Laws/GeneralLaws/PartII/TitleI/Chapter186/Section15b",
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartII/TitleI/Chapter186/Section15b"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "Mass. Gen. Laws ch. 186, § 12",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "Mass. Gen. Laws ch. 186, § 15B(1)(c)",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [],
+      "notes": "Massachusetts prohibits charging a late fee until the rent is 30 days late."
+    },
+    "graceDays": {
+      "value": 30,
+      "statute": "Mass. Gen. Laws ch. 186, § 15B(1)(c)",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

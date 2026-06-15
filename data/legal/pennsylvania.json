@@ -1,0 +1,136 @@
+{
+  "state": "PA",
+  "name": "Pennsylvania",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": "Up to 2 months' rent in the first year; no more than 1 month's rent thereafter.",
+      "statute": "68 Pa. Stat. § 250.511a",
+      "statuteUrl": "https://codes.findlaw.com/pa/title-68-ps-real-and-personal-property/pa-st-sect-68-250-511a/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "Nolo: State Laws on Security Deposit Limits",
+        "FindLaw: Security Deposit Limits"
+      ]
+    },
+    "returnDeadlineDays": {
+      "value": 30,
+      "statute": "68 Pa. Stat. § 250.512",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "68 Pa. Stat. § 250.512",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "68 Pa. Stat. § 250.511b",
+      "statuteUrl": "https://codes.findlaw.com/pa/title-68-ps-real-and-personal-property/pa-st-sect-68-250-511b/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://codes.findlaw.com/pa/title-68-ps-real-and-personal-property/pa-st-sect-68-250-511b/"
+      ]
+    },
+    "interestSummary": {
+      "value": "For deposits over $100, once held more than two years the tenant earns the escrow account's interest rate on the full deposit, minus a 1% fee the landlord may retain.",
+      "statute": "68 Pa. Stat. § 250.511b",
+      "statuteUrl": "https://codes.findlaw.com/pa/title-68-ps-real-and-personal-property/pa-st-sect-68-250-511b/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://codes.findlaw.com/pa/title-68-ps-real-and-personal-property/pa-st-sect-68-250-511b/"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "68 Pa. Stat. § 250.501",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "68 Pa. Stat.",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "68 Pa. Stat.",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

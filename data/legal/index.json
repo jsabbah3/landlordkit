@@ -1,0 +1,94 @@
+{
+  "generated": "2026-06-15",
+  "states": 51,
+  "categories": [
+    {
+      "path": "securityDeposit.maxLimit",
+      "label": "Deposit max limit",
+      "high": 10,
+      "medium": 1,
+      "low": 0,
+      "unverified": 40
+    },
+    {
+      "path": "securityDeposit.returnDeadlineDays",
+      "label": "Deposit return deadline",
+      "high": 2,
+      "medium": 34,
+      "low": 15,
+      "unverified": 0
+    },
+    {
+      "path": "securityDeposit.itemizationRequired",
+      "label": "Deposit itemization",
+      "high": 2,
+      "medium": 34,
+      "low": 15,
+      "unverified": 0
+    },
+    {
+      "path": "securityDeposit.interestRequired",
+      "label": "Deposit interest",
+      "high": 14,
+      "medium": 1,
+      "low": 0,
+      "unverified": 36
+    },
+    {
+      "path": "notice.entryHours",
+      "label": "Entry notice",
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "unverified": 51
+    },
+    {
+      "path": "notice.rentIncreaseDays",
+      "label": "Rent increase notice",
+      "high": 2,
+      "medium": 13,
+      "low": 36,
+      "unverified": 0
+    },
+    {
+      "path": "notice.terminationDays",
+      "label": "Termination notice",
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "unverified": 51
+    },
+    {
+      "path": "lateFee.capSummary",
+      "label": "Late fee cap",
+      "high": 16,
+      "medium": 2,
+      "low": 33,
+      "unverified": 0
+    },
+    {
+      "path": "disclosures",
+      "label": "Required disclosures",
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "unverified": 51
+    },
+    {
+      "path": "habitability",
+      "label": "Habitability",
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "unverified": 51
+    },
+    {
+      "path": "rentReceipt",
+      "label": "Rent receipt rules",
+      "high": 0,
+      "medium": 0,
+      "low": 0,
+      "unverified": 51
+    }
+  ]
+}

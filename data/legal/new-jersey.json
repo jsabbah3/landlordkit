@@ -1,0 +1,138 @@
+{
+  "state": "NJ",
+  "name": "New Jersey",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": "1.5 months' rent.",
+      "statute": "N.J. Stat. § 46:8-21.2",
+      "statuteUrl": "https://law.justia.com/codes/new-jersey/title-46/section-46-8-21-2/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "Nolo: State Laws on Security Deposit Limits",
+        "LawDistrict: Security Deposit Laws by State"
+      ]
+    },
+    "returnDeadlineDays": {
+      "value": 30,
+      "statute": "N.J. Stat. § 46:8-21.1",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "N.J. Stat. § 46:8-21.1",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "N.J. Stat. § 46:8-19",
+      "statuteUrl": "https://law.justia.com/codes/new-jersey/title-46/section-46-8-19/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://law.justia.com/codes/new-jersey/title-46/section-46-8-19/"
+      ]
+    },
+    "interestSummary": {
+      "value": "Deposits must be held in an interest-bearing account; the tenant receives the interest the account actually earns (an insured money-market/savings rate for landlords with 10+ units). Failing to comply lets the tenant claim 7% per year.",
+      "statute": "N.J. Stat. § 46:8-19",
+      "statuteUrl": "https://law.justia.com/codes/new-jersey/title-46/section-46-8-19/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://law.justia.com/codes/new-jersey/title-46/section-46-8-19/"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "N.J. Stat. § 2A:18-61.1",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": [],
+      "notes": "Over 100 NJ municipalities have local rent control with their own caps and notice rules."
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "N.J. Stat. § 2A:42-6.1",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": [],
+      "notes": "New Jersey requires a 5-business-day grace period for senior and lower-income tenants; no fixed percentage cap."
+    },
+    "graceDays": {
+      "value": 5,
+      "statute": "N.J. Stat. § 2A:42-6.1",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

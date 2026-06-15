@@ -1,0 +1,135 @@
+{
+  "state": "MN",
+  "name": "Minnesota",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "returnDeadlineDays": {
+      "value": 21,
+      "statute": "Minn. Stat. § 504B.178",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Minn. Stat. § 504B.178",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "Minn. Stat. § 504B.178",
+      "statuteUrl": "https://www.revisor.mn.gov/statutes/cite/504B.178",
+      "lastVerified": "2026-06-10",
+      "confidence": "high",
+      "sources": [
+        "https://www.revisor.mn.gov/statutes/cite/504B.178"
+      ]
+    },
+    "interestSummary": {
+      "value": "Landlords must pay simple, non-compounded interest at 1% per year (since Aug 1, 2003) on the full deposit.",
+      "statute": "Minn. Stat. § 504B.178",
+      "statuteUrl": "https://www.revisor.mn.gov/statutes/cite/504B.178",
+      "lastVerified": "2026-06-10",
+      "confidence": "high",
+      "sources": [
+        "https://www.revisor.mn.gov/statutes/cite/504B.178"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "Minn. Stat. § 504B.135",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "Up to 8% of rent",
+      "statute": "Minn. Stat. § 504B.177",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": [],
+      "notes": "Minnesota caps late fees at 8% of the overdue rent."
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "Minn. Stat. § 504B.177",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-10"
+}

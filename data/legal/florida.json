@@ -1,0 +1,137 @@
+{
+  "state": "FL",
+  "name": "Florida",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": "No statutory limit on the deposit amount.",
+      "statute": "Fla. Stat. § 83.49 (no limit specified)",
+      "statuteUrl": "https://www.flsenate.gov/laws/statutes/2023/83.49",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "Nolo: State Laws on Security Deposit Limits",
+        "FindLaw: Security Deposit Limits"
+      ]
+    },
+    "returnDeadlineDays": {
+      "value": 15,
+      "statute": "Fla. Stat. § 83.49",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": 30,
+      "statute": "Fla. Stat. § 83.49",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Fla. Stat. § 83.49",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "Fla. Stat. § 83.49",
+      "statuteUrl": "https://www.flsenate.gov/laws/statutes/2023/83.49",
+      "lastVerified": "2026-06-10",
+      "confidence": "high",
+      "sources": [
+        "https://www.flsenate.gov/laws/statutes/2023/83.49"
+      ]
+    },
+    "interestSummary": {
+      "value": "Interest is only owed if the landlord holds the deposit in an interest-bearing account. If so, the tenant receives at least 75% of the account's annualized average rate OR 5% simple interest — the landlord's choice. No interest is owed if the deposit is in a non-interest account or covered by a surety bond.",
+      "statute": "Fla. Stat. § 83.49",
+      "statuteUrl": "https://www.flsenate.gov/laws/statutes/2023/83.49",
+      "lastVerified": "2026-06-10",
+      "confidence": "high",
+      "sources": [
+        "https://www.flsenate.gov/laws/statutes/2023/83.49"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "Fla. Stat. § 83.57",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": [],
+      "notes": "Florida has no statute setting a specific rent-increase notice period for month-to-month tenancies beyond the 15-day termination rule; 30 days is common practice. Some counties have added notice rules."
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "Fla. Stat. § 83.808",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": [],
+      "notes": "Florida has no statutory cap; the late fee must be in the lease and reasonable."
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "Fla. Stat. § 83.808",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

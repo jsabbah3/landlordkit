@@ -1,0 +1,134 @@
+{
+  "state": "ND",
+  "name": "North Dakota",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "returnDeadlineDays": {
+      "value": 30,
+      "statute": "N.D. Cent. Code § 47-16-07.1",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "N.D. Cent. Code § 47-16-07.1",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "N.D. Cent. Code § 47-16-07.1",
+      "statuteUrl": "https://codes.findlaw.com/nd/title-47-property/nd-cent-code-sect-47-16-07-1/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://codes.findlaw.com/nd/title-47-property/nd-cent-code-sect-47-16-07-1/"
+      ]
+    },
+    "interestSummary": {
+      "value": "The deposit must be held in a federally insured interest-bearing account. For tenancies of nine months or more, the landlord pays simple interest at the Federal Reserve discount rate as of January 1 — confirm the current rate.",
+      "statute": "N.D. Cent. Code § 47-16-07.1",
+      "statuteUrl": "https://codes.findlaw.com/nd/title-47-property/nd-cent-code-sect-47-16-07-1/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://codes.findlaw.com/nd/title-47-property/nd-cent-code-sect-47-16-07-1/"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "N.D. Cent. Code § 47-16-15",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "N.D. Cent. Code § 47-16",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "N.D. Cent. Code § 47-16",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

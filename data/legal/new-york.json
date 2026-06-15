@@ -1,0 +1,140 @@
+{
+  "state": "NY",
+  "name": "New York",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": "One month's rent (since the 2019 Housing Stability and Tenant Protection Act).",
+      "statute": "N.Y. Gen. Oblig. Law § 7-108",
+      "statuteUrl": "https://www.nysenate.gov/legislation/laws/GOB/7-108",
+      "lastVerified": "2026-06-12",
+      "confidence": "medium",
+      "sources": [
+        "Nolo: State Laws on Security Deposit Limits",
+        "NY HSTPA 2019"
+      ]
+    },
+    "returnDeadlineDays": {
+      "value": 14,
+      "statute": "N.Y. Gen. Oblig. Law § 7-108",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "N.Y. Gen. Oblig. Law § 7-108",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "N.Y. Gen. Oblig. Law § 7-103",
+      "statuteUrl": "https://law.justia.com/codes/new-york/gob/article-7/title-1/7-103/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://law.justia.com/codes/new-york/gob/article-7/title-1/7-103/"
+      ]
+    },
+    "interestSummary": {
+      "value": "In buildings of 6+ units, deposits must be placed in an interest-bearing NY bank account; the tenant gets the interest minus a 1% annual administrative fee the landlord may keep.",
+      "statute": "N.Y. Gen. Oblig. Law § 7-103",
+      "statuteUrl": "https://law.justia.com/codes/new-york/gob/article-7/title-1/7-103/",
+      "lastVerified": "2026-06-12",
+      "confidence": "high",
+      "sources": [
+        "https://law.justia.com/codes/new-york/gob/article-7/title-1/7-103/"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "N.Y. Real Prop. Law § 226-c",
+      "statuteUrl": "https://www.nysenate.gov/legislation/laws/RPP/226-C",
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": [
+        "https://www.nysenate.gov/legislation/laws/RPP/226-C"
+      ],
+      "notes": "NYC and many localities have rent stabilization with separate increase limits set by Rent Guidelines Boards."
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "Lesser of $50 or 5% of rent",
+      "statute": "N.Y. Real Prop. Law § 238-a",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": [],
+      "notes": "New York caps late fees at the lesser of $50 or 5% of the monthly rent, after a 5-day grace period."
+    },
+    "graceDays": {
+      "value": 5,
+      "statute": "N.Y. Real Prop. Law § 238-a",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "high",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-12"
+}

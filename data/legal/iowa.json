@@ -1,0 +1,135 @@
+{
+  "state": "IA",
+  "name": "Iowa",
+  "securityDeposit": {
+    "maxLimit": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "returnDeadlineDays": {
+      "value": 30,
+      "statute": "Iowa Code § 562A.12",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "returnDeadlineIfDeductingDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "itemizationRequired": {
+      "value": true,
+      "statute": "Iowa Code § 562A.12",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    },
+    "interestRequired": {
+      "value": true,
+      "statute": "Iowa Code § 562A.12",
+      "statuteUrl": "https://www.legis.iowa.gov/docs/code/562A.12.pdf",
+      "lastVerified": "2026-06-10",
+      "confidence": "high",
+      "sources": [
+        "https://www.legis.iowa.gov/docs/code/562A.12.pdf"
+      ]
+    },
+    "interestSummary": {
+      "value": "Any interest earned on the deposit during the first five years of the tenancy belongs to the landlord. After five years, accrued interest is paid to the tenant.",
+      "statute": "Iowa Code § 562A.12",
+      "statuteUrl": "https://www.legis.iowa.gov/docs/code/562A.12.pdf",
+      "lastVerified": "2026-06-10",
+      "confidence": "high",
+      "sources": [
+        "https://www.legis.iowa.gov/docs/code/562A.12.pdf"
+      ]
+    }
+  },
+  "notice": {
+    "entryHours": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    },
+    "rentIncreaseDays": {
+      "value": 30,
+      "statute": "Iowa Code § 562A.13",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "low",
+      "sources": []
+    },
+    "terminationDays": {
+      "value": null,
+      "statute": null,
+      "statuteUrl": null,
+      "lastVerified": null,
+      "confidence": "unverified",
+      "sources": [],
+      "notes": "Not yet researched — needs 2-source verification."
+    }
+  },
+  "lateFee": {
+    "capSummary": {
+      "value": "No statutory cap (must be reasonable)",
+      "statute": "Iowa Code § 562A.9(4)",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": [],
+      "notes": "Iowa sets per-day caps tied to rent: if rent is $700 or less, up to $12/day (max $40/month); if over $700, up to $20/day (max $100/month). Use those limits — this calculator shows no fixed percentage."
+    },
+    "graceDays": {
+      "value": 0,
+      "statute": "Iowa Code § 562A.9(4)",
+      "statuteUrl": null,
+      "lastVerified": "2026-06-01",
+      "confidence": "medium",
+      "sources": []
+    }
+  },
+  "disclosures": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "habitability": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "rentReceipt": {
+    "value": null,
+    "statute": null,
+    "statuteUrl": null,
+    "lastVerified": null,
+    "confidence": "unverified",
+    "sources": [],
+    "notes": "Not yet researched — needs 2-source verification."
+  },
+  "lastVerified": "2026-06-10"
+}
