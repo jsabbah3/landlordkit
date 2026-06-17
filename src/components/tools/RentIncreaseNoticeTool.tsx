@@ -5,6 +5,8 @@ import { US_STATES, getStateByCode } from "@/lib/states";
 import { usd, percent, longDate, todayISO } from "@/lib/format";
 import { track } from "@/lib/analytics";
 import { getRentIncreaseRule, RENT_INCREASE } from "@/tools/rent-increase-notice/data";
+import { loadProfile } from "@/lib/profile";
+import { SaveDetailsButton } from "@/components/SaveDetailsButton";
 import {
   computeRequiredNotice,
   earliestEffectiveDate,
@@ -68,7 +70,13 @@ export function RentIncreaseNoticeTool({
   useEffect(() => {
     if (typeof window === "undefined") return;
     const q = new URLSearchParams(window.location.search);
-    /* eslint-disable react-hooks/set-state-in-effect -- one-time hydration from URL */
+    const p = loadProfile();
+    /* eslint-disable react-hooks/set-state-in-effect -- one-time hydration (profile, then URL overrides) */
+    if (p.landlordName) setLandlord(p.landlordName);
+    if (p.tenantName) setTenant(p.tenantName);
+    if (p.propertyAddress) setProperty(p.propertyAddress);
+    if (p.monthlyRent) setCurrentRent(p.monthlyRent);
+    if (!lockedStateCode && p.state && getStateByCode(p.state)) setStateCode(p.state);
     if (q.get("current")) setCurrentRent(q.get("current")!);
     if (q.get("new")) setNewRent(q.get("new")!);
     if (q.get("tenancy")) setTenancyMonths(q.get("tenancy")!);
@@ -185,6 +193,7 @@ export function RentIncreaseNoticeTool({
               <Field label="Property address" htmlFor="property">
                 <Input id="property" value={property} onChange={(e) => setProperty(e.target.value)} placeholder="123 Main St, Unit 2" />
               </Field>
+              <SaveDetailsButton getDetails={() => ({ landlordName: landlord, tenantName: tenant, propertyAddress: property, monthlyRent: currentRent, state: stateCode })} />
             </div>
           </div>
 

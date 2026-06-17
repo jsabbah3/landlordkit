@@ -49,6 +49,7 @@ polished PDFs generated client-side.
 | `src/lib/tools.ts` | Tool registry — drives homepage, footer, sitemap |
 | `src/content/guides.ts` | Content hub (10 published guides; add sections + `published: true`) |
 | `src/content/taxChecklist.ts` | Lead-magnet PDF content |
+| `src/lib/profile.ts` + `src/components/SaveDetailsButton.tsx` | Layer-1 saved landlord/property record (localStorage); tools prefill from it + "Save my details" writes to it |
 | `/data/legal/<state>.json` + `db.json` + `index.json` | **Unified legal DB** (all 9 categories, per-field provenance) — generated, consumable JSON |
 | `src/lib/legal-db.ts` | Loader + types for the unified DB |
 | `scripts/build-legal-db.ts` | `npm run build:legal` — generates `/data/legal/` from the canonical per-topic TS datasets, emits `LEGAL-REVIEW.md` |
@@ -143,6 +144,17 @@ Stripe isn't live, I shipped it **open with localStorage** + a Pro upsell for
 cloud-save/reminders (works/testable today; cloud-save via `/api/compliance-profile`
 + `compliance_profiles` table when signed in). Revert to a hard gate on request.
 Free SEO guide: `/guides/landlord-compliance-deadlines` (federal).
+
+## Saved profile / "master record" — Layer 1 (shipped 2026-06-15)
+`src/lib/profile.ts` is the saved landlord/property record (one record, browser
+localStorage; `mergeProfile` never wipes a stored field with a blank). The Rent
+Receipt, Lease Renewal, and Rent Increase Notice tools prefill from it on mount
+and show a "Save my details for next time" button (`SaveDetailsButton`). Verified
+end-to-end (save in one tool → others auto-fill). **Next:** cloud-sync this
+(signed-in, reusing the `/api/compliance-profile` pattern) as part of the
+Stripe + saved-profile + email-flow push; wire the deposit tools too; later,
+multi-property. **Lease-upload/auto-extract was deliberately deferred** (PII
+custody + AI cost + accuracy risk; see chat rationale).
 
 ## Current state (last updated: 2026-06-15)
 **Live & verified:**

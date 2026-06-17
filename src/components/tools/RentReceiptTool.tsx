@@ -1,13 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usd, longDate, todayISO } from "@/lib/format";
 import { track } from "@/lib/analytics";
+import { loadProfile } from "@/lib/profile";
 import { Card, CardBody } from "@/components/ui/Card";
 import { Field, Input, Select } from "@/components/ui/Field";
 import { Button } from "@/components/ui/Button";
 import { LegalDisclaimer } from "@/components/LegalDisclaimer";
 import { UpgradeNudge } from "@/components/UpgradeNudge";
+import { SaveDetailsButton } from "@/components/SaveDetailsButton";
 
 const METHODS = ["Cash", "Check", "Bank transfer", "Money order", "Online / app", "Credit card"];
 
@@ -21,6 +23,17 @@ export function RentReceiptTool() {
   const [method, setMethod] = useState(METHODS[0]);
   const [receiptNo, setReceiptNo] = useState("");
   const [generated, setGenerated] = useState(false);
+
+  // Prefill from the saved profile once on mount (no-op if none saved).
+  useEffect(() => {
+    const p = loadProfile();
+    /* eslint-disable react-hooks/set-state-in-effect -- one-time profile prefill */
+    if (p.landlordName) setLandlord(p.landlordName);
+    if (p.tenantName) setTenant(p.tenantName);
+    if (p.propertyAddress) setProperty(p.propertyAddress);
+    if (p.monthlyRent) setAmount(p.monthlyRent);
+    /* eslint-enable react-hooks/set-state-in-effect */
+  }, []);
 
   async function handleDownloadPdf() {
     const { buildDocumentPdf, downloadPdf } = await import("@/lib/pdf/pdfDoc");
@@ -67,6 +80,7 @@ export function RentReceiptTool() {
             <Field label="Landlord name" htmlFor="ll"><Input id="ll" value={landlord} onChange={(e) => setLandlord(e.target.value)} /></Field>
             <Field label="Tenant name" htmlFor="tn"><Input id="tn" value={tenant} onChange={(e) => setTenant(e.target.value)} /></Field>
             <Field label="Property address" htmlFor="prop"><Input id="prop" value={property} onChange={(e) => setProperty(e.target.value)} /></Field>
+            <SaveDetailsButton getDetails={() => ({ landlordName: landlord, tenantName: tenant, propertyAddress: property, monthlyRent: amount })} />
           </div>
           <Button className="w-full" size="lg" onClick={handleDownloadPdf}>Download receipt</Button>
         </CardBody>
