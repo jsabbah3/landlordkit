@@ -52,6 +52,8 @@ polished PDFs generated client-side.
 | `/data/legal/<state>.json` + `db.json` + `index.json` | **Unified legal DB** (all 9 categories, per-field provenance) — generated, consumable JSON |
 | `src/lib/legal-db.ts` | Loader + types for the unified DB |
 | `scripts/build-legal-db.ts` | `npm run build:legal` — generates `/data/legal/` from the canonical per-topic TS datasets, emits `LEGAL-REVIEW.md` |
+| `src/tools/compliance-calendar/{obligations,engine,ical}.ts` | Compliance Calendar: obligation dataset + due-date engine + .ics export (tested) |
+| `docs/compliance-calendar-spec.md` | The signed-off spec for the Compliance Calendar |
 | `gtm/` | Ready-to-post distribution assets (Reddit, outreach, articles, PH kit, directories); tables regenerate via `node scripts/gtm-tables.mjs` |
 | `scripts/legal-audit.ts` | `npm run legal-audit` → `LEGAL-REVIEW.md` checklist grouped by confidence |
 | `supabase/schema.sql` | profiles + subscribers tables (paste into Supabase SQL editor) |
@@ -123,6 +125,20 @@ total). Passed: internal links, finance-calc edge cases (no div-by-zero), mobile
 overflow, schema validity, analytics (`pdf_downloaded` confirmed firing).
 Open/minor: live-compute tools (prorated, cash flow) don't emit `tool_used`;
 download handlers lack try/catch user feedback (encoding crash already removed).
+
+## Compliance Calendar (new tool, shipped 2026-06-15) — `docs/compliance-calendar-spec.md`
+Personalized recurring-deadline tracker. Profile (state/city/entity/contractors/
+pre-1978/units) → applicable obligations with computed next-due dates → iCal +
+PDF export + custom user deadlines. Engine + .ics are pure & unit-tested (12
+tests). **Data so far:** federal (1099-NEC, Schedule E, estimated taxes, W-9 —
+high) + NY LLC + NYC HPD registration (cited, verified). **Pending research:**
+the other 49 states' LLC filings + 11 cities (structure ready; absent ≠ guessed,
+and the UI tells users to add custom deadlines for uncovered areas).
+**Persistence note (deviation to flag):** spec said "gate behind sign-in." Since
+Stripe isn't live, I shipped it **open with localStorage** + a Pro upsell for
+cloud-save/reminders (works/testable today; cloud-save via `/api/compliance-profile`
++ `compliance_profiles` table when signed in). Revert to a hard gate on request.
+Free SEO guide: `/guides/landlord-compliance-deadlines` (federal).
 
 ## Current state (last updated: 2026-06-15)
 **Live & verified:**

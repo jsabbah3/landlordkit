@@ -21,6 +21,35 @@ export interface Guide {
 
 export const GUIDES: Guide[] = [
   {
+    slug: "landlord-compliance-deadlines",
+    title: "Landlord Filing Deadlines: The Federal Calendar Every Landlord Should Know",
+    description:
+      "The recurring federal tax filings small landlords must hit — 1099-NEC, Schedule E, and quarterly estimated taxes — with dates and who to file with.",
+    published: true,
+    relatedTools: ["compliance-calendar"],
+    sections: [
+      {
+        h2: "The federal deadlines that apply to almost every landlord",
+        paragraphs: [
+          "Owning a rental creates a handful of recurring federal obligations. These are uniform across all 50 states (your state and city may add more — see the Compliance Calendar tool for a personalized list). General information, not tax advice.",
+          "The big three: report your rental income on Schedule E with your Form 1040 (due April 15); pay quarterly estimated taxes if you expect to owe $1,000+ (roughly April 15, June 15, September 15, and January 15); and, if you paid any unincorporated contractor $600 or more for work on the property, file a 1099-NEC and send the contractor a copy by January 31.",
+        ],
+      },
+      {
+        h2: "Don't get caught by the January 31 contractor deadline",
+        paragraphs: [
+          "The 1099-NEC trips up the most landlords. If you paid a handyman, plumber, or landscaper $600+ over the year (and they're not a corporation), you owe them and the IRS a 1099-NEC by January 31 — a tight window right after year-end. The fix: collect a W-9 from every contractor before you pay them, so you have the information ready in January.",
+        ],
+      },
+      {
+        h2: "Your state and city add more",
+        paragraphs: [
+          "If you hold the property in an LLC, your state almost certainly requires an annual or biennial report (and sometimes a separate tax filing). Many cities require annual rental registration on top of that. Those vary too much to list here — build your personalized list, with sources and dates, in the free Compliance Calendar and export it to your phone's calendar.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "security-deposit-laws-by-state",
     title: "Security Deposit Laws by State: The Landlord's Guide",
     description:

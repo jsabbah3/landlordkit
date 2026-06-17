@@ -18,6 +18,17 @@ export interface ToolDef {
 
 export const TOOLS: ToolDef[] = [
   {
+    slug: "compliance-calendar",
+    name: "Landlord Compliance Calendar",
+    short: "Compliance calendar",
+    blurb:
+      "Build a personalized calendar of your tax & filing deadlines (federal, LLC, local) and export it to your calendar.",
+    category: "Legal & compliance",
+    stateAware: false,
+    status: "live",
+    priority: 0,
+  },
+  {
     slug: "security-deposit-interest-calculator",
     name: "Security Deposit Interest Calculator",
     short: "Deposit interest",

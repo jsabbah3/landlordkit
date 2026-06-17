@@ -57,3 +57,24 @@ create table if not exists public.subscribers (
 );
 
 alter table public.subscribers enable row level security;
+
+-- Compliance Calendar: one saved profile (JSONB) per user. RLS = owner-only.
+create table if not exists public.compliance_profiles (
+  user_id uuid primary key references auth.users (id) on delete cascade,
+  profile jsonb not null default '{}'::jsonb,
+  updated_at timestamptz default now()
+);
+
+alter table public.compliance_profiles enable row level security;
+
+drop policy if exists "cp_select_own" on public.compliance_profiles;
+create policy "cp_select_own" on public.compliance_profiles
+  for select using (auth.uid() = user_id);
+
+drop policy if exists "cp_insert_own" on public.compliance_profiles;
+create policy "cp_insert_own" on public.compliance_profiles
+  for insert with check (auth.uid() = user_id);
+
+drop policy if exists "cp_update_own" on public.compliance_profiles;
+create policy "cp_update_own" on public.compliance_profiles
+  for update using (auth.uid() = user_id);
