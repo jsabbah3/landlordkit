@@ -46,6 +46,36 @@ describe("compliance engine — date computation", () => {
     expect(list.at(-1)?.nextDue).toBeNull();
   });
 
+  it("CA LLC sees the franchise tax, 568, and Statement of Information", () => {
+    const ids = getObligations({ ...base, state: "CA", entityType: "llc", llcFormationDate: "2021-07-10" }, JUN1)
+      .map((d) => d.obligation.id);
+    expect(ids).toContain("ca-franchise-tax");
+    expect(ids).toContain("ca-form-568");
+    expect(ids).toContain("ca-statement-of-information");
+  });
+
+  it("LA Rent Registry applies only to pre-1978 buildings", () => {
+    const newer = getObligations({ ...base, state: "CA", city: "los-angeles", builtPre1978: false }, JUN1)
+      .map((d) => d.obligation.id);
+    expect(newer).not.toContain("la-rent-registry");
+    const older = getObligations({ ...base, state: "CA", city: "los-angeles", builtPre1978: true }, JUN1)
+      .map((d) => d.obligation.id);
+    expect(older).toContain("la-rent-registry");
+  });
+
+  it("MD lead registration applies to pre-1978 rentals, due Dec 31", () => {
+    const md = getObligations({ ...base, state: "MD", builtPre1978: true }, JUN1)
+      .find((d) => d.obligation.id === "md-lead-registration");
+    expect(md?.nextDue).toBe("2026-12-31");
+  });
+
+  it("Chicago has the RLTO summary item (varies, no date), not a registration deadline", () => {
+    const chi = getObligations({ ...base, state: "IL", city: "chicago" }, JUN1);
+    const rlto = chi.find((d) => d.obligation.id === "chicago-rlto-summary");
+    expect(rlto).toBeTruthy();
+    expect(rlto?.nextDue).toBeNull();
+  });
+
   it("anniversary item needs a formation date, else null", () => {
     const annual: Obligation = {
       id: "test-anniv", jurisdiction: "state", scope: "ZZ", title: "t", what: "w",

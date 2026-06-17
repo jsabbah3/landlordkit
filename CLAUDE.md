@@ -130,10 +130,14 @@ download handlers lack try/catch user feedback (encoding crash already removed).
 Personalized recurring-deadline tracker. Profile (state/city/entity/contractors/
 pre-1978/units) → applicable obligations with computed next-due dates → iCal +
 PDF export + custom user deadlines. Engine + .ics are pure & unit-tested (12
-tests). **Data so far:** federal (1099-NEC, Schedule E, estimated taxes, W-9 —
-high) + NY LLC + NYC HPD registration (cited, verified). **Pending research:**
-the other 49 states' LLC filings + 11 cities (structure ready; absent ≠ guessed,
-and the UI tells users to add custom deadlines for uncovered areas).
+tests). **Data (cited, 2-source-verified):** federal (1099-NEC, Schedule E,
+estimated taxes, W-9) + state LLC for NY & CA + MD lead registration (pre-1978)
++ all 12 cities — NYC, LA, Chicago (RLTO lease summary; no citywide registration
+exists — verified, not an omission), SF, Seattle, DC, Boston, Philadelphia,
+Minneapolis, Baltimore, Portland, San Diego. **Pending research:** the other 48
+states' LLC filings (structure ready; absent ≠ guessed; UI prompts custom
+deadlines for uncovered areas). Seattle/DC/Philadelphia renewals are per-license
+anniversaries (modeled as undated "varies" reminders).
 **Persistence note (deviation to flag):** spec said "gate behind sign-in." Since
 Stripe isn't live, I shipped it **open with localStorage** + a Pro upsell for
 cloud-save/reminders (works/testable today; cloud-save via `/api/compliance-profile`
