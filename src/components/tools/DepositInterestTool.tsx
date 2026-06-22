@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { useProStatus } from "@/lib/useProStatus";
 import { US_STATES, getStateByCode } from "@/lib/states";
 import { usd, percent, todayISO, parseISODate } from "@/lib/format";
 import { track } from "@/lib/analytics";
@@ -47,6 +48,7 @@ export function DepositInterestTool({
     return r.defaultRatePct != null ? String(r.defaultRatePct) : "0";
   };
 
+  const { isPro } = useProStatus();
   const [stateCode, setStateCode] = useState(lockedStateCode ?? "MA");
   const [deposit, setDeposit] = useState("2000");
   const [moveIn, setMoveIn] = useState("2024-06-01");
@@ -141,7 +143,7 @@ export function DepositInterestTool({
         { type: "paragraph", text: "This statement is informational only and is not legal advice." },
         { type: "signature", label: "Landlord signature / date" },
       ],
-      pro: false,
+      pro: isPro,
     });
     downloadPdf(bytes, `deposit-interest-${state?.slug ?? "statement"}.pdf`);
     track("pdf_downloaded", { tool: "security-deposit-interest", state: stateCode });

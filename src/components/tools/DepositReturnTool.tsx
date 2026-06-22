@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useProStatus } from "@/lib/useProStatus";
 import { US_STATES, getStateByCode } from "@/lib/states";
 import { usd, longDate, todayISO } from "@/lib/format";
 import { track } from "@/lib/analytics";
@@ -14,6 +15,7 @@ import { LegalDisclaimer } from "@/components/LegalDisclaimer";
 import { UpgradeNudge } from "@/components/UpgradeNudge";
 
 export function DepositReturnTool({ lockedStateCode }: { lockedStateCode?: string }) {
+  const { isPro } = useProStatus();
   const [stateCode, setStateCode] = useState(lockedStateCode ?? "CA");
   const [deposit, setDeposit] = useState("2000");
   const [moveOut, setMoveOut] = useState(todayISO());
@@ -82,7 +84,7 @@ export function DepositReturnTool({ lockedStateCode }: { lockedStateCode?: strin
         { type: "paragraph", text: "Informational statement — not legal advice." },
         { type: "signature", label: `${landlord || "[landlord name]"} — Landlord` },
       ],
-      pro: false,
+      pro: isPro,
     });
     downloadPdf(bytes, `deposit-itemized-statement-${state?.slug ?? "statement"}.pdf`);
     setGenerated(true);

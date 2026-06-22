@@ -156,8 +156,26 @@ Stripe + saved-profile + email-flow push; wire the deposit tools too; later,
 multi-property. **Lease-upload/auto-extract was deliberately deferred** (PII
 custody + AI cost + accuracy risk; see chat rationale).
 
-## Current state (last updated: 2026-06-15)
+## Current state (last updated: 2026-06-22)
 **Live & verified:**
+- **Stripe is LIVE in production** (live mode, not test): product "LandlordKit
+  Pro" `prod_Ukh1SzSJ8TRMJd` with monthly `price_1TlBdFFTYxFHSq637L6J9zGT`
+  ($12) + annual `price_1TlBdGFTYxFHSq63yuosEjX4` ($99). Webhook
+  `we_1TlBu5FTYxFHSq637g5QmMDD` → `/api/stripe/webhook` (note: handler is at
+  `/api/stripe/webhook`, NOT `/api/webhooks/stripe`). Full checkout→webhook→
+  Supabase `profiles` (status:active) flow verified end-to-end with a real sub.
+  Env vars in Vercel: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`,
+  `STRIPE_PRICE_MONTHLY`, `STRIPE_PRICE_ANNUAL`,
+  `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`.
+- **Batch rent receipts (Pro feature) shipped 2026-06-22:**
+  `/tools/rent-receipt-generator/batch` (noindex, Pro-gated). One
+  watermark-free PDF, one receipt per unit, via a new `pageBreak` block in
+  `pdfDoc.ts`. Non-Pro sees a non-blocking upsell; single tool links to it.
+- **Pricing page made honest 2026-06-22:** dropped the unbuilt "portfolio
+  dashboard" promise; added "compliance calendar cloud-sync." NOTE: BUSINESS.md
+  / the business-model blurb above still list a portfolio dashboard as a *future*
+  Pro feature — that's roadmap, deferred (build on demand signal, needs a
+  multi-property financial data model that doesn't exist yet).
 - 8 tools live, all client-side: deposit interest, rent increase notice, late
   fee, deposit return tracker, lease renewal, rent receipt, prorated rent,
   cash flow. ~237 routes / ~204 programmatic state pages.
@@ -176,10 +194,12 @@ custody + AI cost + accuracy risk; see chat rationale).
 **Pending (blocked on Jake):**
 - Run updated `supabase/schema.sql` (adds `subscribers`); set `NEXT_PUBLIC_GA_ID`.
 - Confirm magic-link click-through once (Supabase email rate limit reset).
-- Stripe test-mode (products + 4 env vars + webhook) and Resend SMTP
-  (`DEPLOY.md` §5–7) — required before any Pro subscriber can exist.
-- Open decisions: lease-template tool? rent-receipt state pages (~12 states
-  with real statutes)? Product Hunt timing (recommended: after Stripe works).
+- Resend SMTP (`DEPLOY.md` §5–7) for real transactional email at Pro launch.
+- Supabase Pro ($25/mo) to fix the ugly `supabase.co` Google sign-in auth
+  domain — before any marketing/Product Hunt push.
+- Open decisions: lease-upload feature (in active scoping — PII custody + AI
+  cost + accuracy are the open risks); lease-template tool? rent-receipt state
+  pages (~12 states with real statutes)? Product Hunt timing.
 
 **Known gotchas:** Supabase free email ≈ 2–4/hr (testing only — Resend SMTP
 before real Pro launch). Supabase dashboard shows the API URL with a

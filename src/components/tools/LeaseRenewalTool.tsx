@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { usd, longDate, todayISO } from "@/lib/format";
 import { track } from "@/lib/analytics";
-import { loadProfile } from "@/lib/profile";
+import { loadProfile, mergeProfile, fetchCloudProfile } from "@/lib/profile";
+import { useProStatus } from "@/lib/useProStatus";
 import { Card, CardBody } from "@/components/ui/Card";
 import { Field, Input } from "@/components/ui/Field";
 import { Button } from "@/components/ui/Button";
@@ -12,6 +13,7 @@ import { UpgradeNudge } from "@/components/UpgradeNudge";
 import { SaveDetailsButton } from "@/components/SaveDetailsButton";
 
 export function LeaseRenewalTool() {
+  const { isPro } = useProStatus();
   const [landlord, setLandlord] = useState("");
   const [tenant, setTenant] = useState("");
   const [property, setProperty] = useState("");
@@ -29,6 +31,15 @@ export function LeaseRenewalTool() {
     if (p.tenantName) setTenant(p.tenantName);
     if (p.propertyAddress) setProperty(p.propertyAddress);
     if (p.monthlyRent) setCurrentRent(p.monthlyRent);
+
+    fetchCloudProfile().then((cloud) => {
+      if (!cloud) return;
+      const m = mergeProfile(p, cloud);
+      if (m.landlordName) setLandlord(m.landlordName);
+      if (m.tenantName) setTenant(m.tenantName);
+      if (m.propertyAddress) setProperty(m.propertyAddress);
+      if (m.monthlyRent) setCurrentRent(m.monthlyRent);
+    });
     /* eslint-enable react-hooks/set-state-in-effect */
   }, []);
 
@@ -72,7 +83,7 @@ export function LeaseRenewalTool() {
         { type: "spacer", size: 10 },
         { type: "paragraph", text: "Informational template — not legal advice." },
       ],
-      pro: false,
+      pro: isPro,
     });
     downloadPdf(bytes, "lease-renewal-letter.pdf");
     setGenerated(true);

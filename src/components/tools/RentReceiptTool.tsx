@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { usd, longDate, todayISO } from "@/lib/format";
 import { track } from "@/lib/analytics";
-import { loadProfile } from "@/lib/profile";
+import { loadProfile, mergeProfile, fetchCloudProfile } from "@/lib/profile";
+import { useProStatus } from "@/lib/useProStatus";
 import { Card, CardBody } from "@/components/ui/Card";
 import { Field, Input, Select } from "@/components/ui/Field";
 import { Button } from "@/components/ui/Button";
@@ -14,6 +15,7 @@ import { SaveDetailsButton } from "@/components/SaveDetailsButton";
 const METHODS = ["Cash", "Check", "Bank transfer", "Money order", "Online / app", "Credit card"];
 
 export function RentReceiptTool() {
+  const { isPro } = useProStatus();
   const [landlord, setLandlord] = useState("");
   const [tenant, setTenant] = useState("");
   const [property, setProperty] = useState("");
@@ -25,6 +27,7 @@ export function RentReceiptTool() {
   const [generated, setGenerated] = useState(false);
 
   // Prefill from the saved profile once on mount (no-op if none saved).
+  // Cloud profile loads async and wins over local when signed in.
   useEffect(() => {
     const p = loadProfile();
     /* eslint-disable react-hooks/set-state-in-effect -- one-time profile prefill */
@@ -32,6 +35,15 @@ export function RentReceiptTool() {
     if (p.tenantName) setTenant(p.tenantName);
     if (p.propertyAddress) setProperty(p.propertyAddress);
     if (p.monthlyRent) setAmount(p.monthlyRent);
+
+    fetchCloudProfile().then((cloud) => {
+      if (!cloud) return;
+      const m = mergeProfile(p, cloud);
+      if (m.landlordName) setLandlord(m.landlordName);
+      if (m.tenantName) setTenant(m.tenantName);
+      if (m.propertyAddress) setProperty(m.propertyAddress);
+      if (m.monthlyRent) setAmount(m.monthlyRent);
+    });
     /* eslint-enable react-hooks/set-state-in-effect */
   }, []);
 
@@ -52,7 +64,7 @@ export function RentReceiptTool() {
         { type: "paragraph", text: "This receipt confirms the rent payment described above was received in full for the period stated." },
         { type: "signature", label: `${landlord || "[landlord name]"} — Received by` },
       ],
-      pro: false,
+      pro: isPro,
     });
     downloadPdf(bytes, `rent-receipt-${period || paidOn}.pdf`.replace(/\s+/g, "-"));
     setGenerated(true);
@@ -83,6 +95,9 @@ export function RentReceiptTool() {
             <SaveDetailsButton getDetails={() => ({ landlordName: landlord, tenantName: tenant, propertyAddress: property, monthlyRent: amount })} />
           </div>
           <Button className="w-full" size="lg" onClick={handleDownloadPdf}>Download receipt</Button>
+          <a href="/tools/rent-receipt-generator/batch" className="block text-center text-sm text-brand-700 underline underline-offset-2">
+            Have multiple units? Batch-generate every receipt at once →
+          </a>
         </CardBody>
       </Card>
 

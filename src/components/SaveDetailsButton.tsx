@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { saveProfile, type SavedProfile } from "@/lib/profile";
+import { saveProfile, syncProfileToCloud, type SavedProfile } from "@/lib/profile";
 import { track } from "@/lib/analytics";
 import { Button } from "@/components/ui/Button";
 
@@ -17,7 +17,8 @@ export function SaveDetailsButton({ getDetails }: { getDetails: () => SavedProfi
       variant="ghost"
       size="sm"
       onClick={() => {
-        saveProfile(getDetails());
+        const merged = saveProfile(getDetails());
+        syncProfileToCloud(merged);
         track("profile_saved");
         setDone(true);
         setTimeout(() => setDone(false), 2500);

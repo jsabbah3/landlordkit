@@ -78,3 +78,25 @@ create policy "cp_insert_own" on public.compliance_profiles
 drop policy if exists "cp_update_own" on public.compliance_profiles;
 create policy "cp_update_own" on public.compliance_profiles
   for update using (auth.uid() = user_id);
+
+-- Landlord profile: cloud-sync of the Layer-1 saved record (lk_profile_v1).
+-- Same pattern as compliance_profiles — one JSONB row per user, RLS owner-only.
+create table if not exists public.landlord_profiles (
+  user_id uuid primary key references auth.users (id) on delete cascade,
+  profile jsonb not null default '{}'::jsonb,
+  updated_at timestamptz default now()
+);
+
+alter table public.landlord_profiles enable row level security;
+
+drop policy if exists "lp_select_own" on public.landlord_profiles;
+create policy "lp_select_own" on public.landlord_profiles
+  for select using (auth.uid() = user_id);
+
+drop policy if exists "lp_insert_own" on public.landlord_profiles;
+create policy "lp_insert_own" on public.landlord_profiles
+  for insert with check (auth.uid() = user_id);
+
+drop policy if exists "lp_update_own" on public.landlord_profiles;
+create policy "lp_update_own" on public.landlord_profiles
+  for update using (auth.uid() = user_id);

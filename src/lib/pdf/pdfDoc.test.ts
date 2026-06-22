@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { PDFDocument } from "pdf-lib";
 import { buildDocumentPdf } from "./pdfDoc";
 
 /**
@@ -29,4 +30,33 @@ describe("buildDocumentPdf — hostile input never crashes", () => {
       expect(bytes.length).toBeGreaterThan(0);
     });
   }
+});
+
+describe("buildDocumentPdf — pageBreak (batch generation)", () => {
+  it("puts each section on its own page", async () => {
+    const bytes = await buildDocumentPdf({
+      blocks: [
+        { type: "title", text: "Receipt 1" },
+        { type: "pageBreak" },
+        { type: "title", text: "Receipt 2" },
+        { type: "pageBreak" },
+        { type: "title", text: "Receipt 3" },
+      ],
+      pro: true,
+    });
+    const doc = await PDFDocument.load(bytes);
+    expect(doc.getPageCount()).toBe(3);
+  });
+
+  it("never emits a leading blank page from a leading break", async () => {
+    const bytes = await buildDocumentPdf({
+      blocks: [
+        { type: "pageBreak" },
+        { type: "title", text: "Only receipt" },
+      ],
+      pro: true,
+    });
+    const doc = await PDFDocument.load(bytes);
+    expect(doc.getPageCount()).toBe(1);
+  });
 });

@@ -63,3 +63,26 @@ export function clearProfile(): void {
     /* ignore */
   }
 }
+
+/** Fetch the cloud-saved profile for the signed-in user. Returns null if not
+ *  signed in, Supabase isn't configured, or no cloud profile exists yet. */
+export async function fetchCloudProfile(): Promise<SavedProfile | null> {
+  try {
+    const res = await fetch("/api/profile");
+    if (!res.ok) return null;
+    const json = (await res.json()) as { profile: SavedProfile | null };
+    return json.profile ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/** Fire-and-forget POST to cloud. Silently swallows errors — localStorage is
+ *  already the source of truth; this is best-effort cross-device sync. */
+export function syncProfileToCloud(profile: SavedProfile): void {
+  fetch("/api/profile", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ profile }),
+  }).catch(() => {/* ignore */});
+}

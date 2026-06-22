@@ -10,7 +10,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "LandlordKit Pro — Pricing",
   description:
-    "LandlordKit Pro: saved property details, batch document generation, watermark-free branded PDFs, and a portfolio dashboard. $12/mo or $99/yr.",
+    "LandlordKit Pro: saved property details, batch document generation, watermark-free branded PDFs, and compliance calendar cloud-sync. $12/mo or $99/yr.",
   alternates: { canonical: "/pricing" },
 };
 
@@ -23,9 +23,9 @@ const freeFeatures = [
 
 const proFeatures = [
   "Saved landlord & property details (no re-typing)",
-  "Batch generation — e.g. receipts for every unit at once",
+  "Batch generation — receipts for every unit in one PDF",
   "Watermark-free PDFs with your own branding",
-  "Multi-property portfolio dashboard (income/expense)",
+  "Compliance calendar cloud-sync across your devices",
   "All future tools + state-law update notifications",
 ];
 

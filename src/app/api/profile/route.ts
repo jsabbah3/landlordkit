@@ -5,9 +5,9 @@ import { getProStatus } from "@/lib/pro";
 export const dynamic = "force-dynamic";
 
 /**
- * Cloud save/load for a user's Compliance Calendar profile (Pro). RLS ensures a
- * user only ever reads/writes their own row. Anonymous users persist locally in
- * the browser instead (see ComplianceCalendarTool) — this is the cross-device tier.
+ * Cloud save/load for the Layer-1 landlord/property profile (Pro only). RLS
+ * ensures a user only reads/writes their own row. Anonymous or free users get
+ * localStorage instead — this is the cross-device sync tier gated behind Pro.
  */
 export async function GET() {
   const supabase = await getServerSupabase();
@@ -17,7 +17,7 @@ export async function GET() {
   if (!isPro) return NextResponse.json({ error: "Pro required" }, { status: 403 });
 
   const { data } = await supabase
-    .from("compliance_profiles")
+    .from("landlord_profiles")
     .select("profile")
     .eq("user_id", userId)
     .maybeSingle();
@@ -42,8 +42,11 @@ export async function POST(request: Request) {
   }
 
   const { error } = await supabase
-    .from("compliance_profiles")
-    .upsert({ user_id: userId, profile, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
+    .from("landlord_profiles")
+    .upsert(
+      { user_id: userId, profile, updated_at: new Date().toISOString() },
+      { onConflict: "user_id" },
+    );
   if (error) return NextResponse.json({ error: "Save failed" }, { status: 500 });
   return NextResponse.json({ ok: true });
 }

@@ -5,7 +5,8 @@ import { US_STATES, getStateByCode } from "@/lib/states";
 import { usd, percent, longDate, todayISO } from "@/lib/format";
 import { track } from "@/lib/analytics";
 import { getRentIncreaseRule, RENT_INCREASE } from "@/tools/rent-increase-notice/data";
-import { loadProfile } from "@/lib/profile";
+import { loadProfile, mergeProfile, fetchCloudProfile } from "@/lib/profile";
+import { useProStatus } from "@/lib/useProStatus";
 import { SaveDetailsButton } from "@/components/SaveDetailsButton";
 import {
   computeRequiredNotice,
@@ -28,6 +29,7 @@ export function RentIncreaseNoticeTool({
 }: {
   lockedStateCode?: string;
 }) {
+  const { isPro } = useProStatus();
   const [stateCode, setStateCode] = useState(lockedStateCode ?? "CA");
   const [landlord, setLandlord] = useState("");
   const [tenant, setTenant] = useState("");
@@ -84,6 +86,16 @@ export function RentIncreaseNoticeTool({
       const s = q.get("state")!.toUpperCase();
       if (getStateByCode(s)) setStateCode(s);
     }
+
+    fetchCloudProfile().then((cloud) => {
+      if (!cloud) return;
+      const m = mergeProfile(p, cloud);
+      if (m.landlordName) setLandlord(m.landlordName);
+      if (m.tenantName) setTenant(m.tenantName);
+      if (m.propertyAddress) setProperty(m.propertyAddress);
+      if (m.monthlyRent) setCurrentRent(m.monthlyRent);
+      if (!lockedStateCode && m.state && getStateByCode(m.state)) setStateCode(m.state);
+    });
     /* eslint-enable react-hooks/set-state-in-effect */
   }, [lockedStateCode]);
 
@@ -120,7 +132,7 @@ export function RentIncreaseNoticeTool({
         { type: "spacer", size: 12 },
         { type: "paragraph", text: "Informational template — not legal advice. Verify your state and local requirements." },
       ],
-      pro: false,
+      pro: isPro,
     });
     downloadPdf(bytes, `rent-increase-notice-${state?.slug ?? "letter"}.pdf`);
     setGenerated(true);

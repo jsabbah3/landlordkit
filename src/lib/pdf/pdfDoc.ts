@@ -20,6 +20,7 @@ export type Block =
   | { type: "right"; text: string } // right-aligned line (e.g. date)
   | { type: "spacer"; size?: number }
   | { type: "rule" }
+  | { type: "pageBreak" } // force the next block onto a fresh page
   | { type: "signature"; label: string }; // signature line + label
 
 export interface BuildDocOptions {
@@ -105,12 +106,15 @@ export async function buildDocumentPdf(
 
   let page: PDFPage = doc.addPage([PAGE.w, PAGE.h]);
   let y = PAGE.h - MARGIN;
+  let pageHasContent = false;
 
   const ensureSpace = (needed: number) => {
     if (y - needed < MARGIN + 40) {
       page = doc.addPage([PAGE.w, PAGE.h]);
       y = PAGE.h - MARGIN;
+      pageHasContent = false;
     }
+    pageHasContent = true;
   };
 
   const drawLines = (
@@ -149,6 +153,14 @@ export async function buildDocumentPdf(
         break;
       case "spacer":
         y -= block.size ?? 16;
+        break;
+      case "pageBreak":
+        // Start a fresh page, but never emit a leading blank one.
+        if (pageHasContent) {
+          page = doc.addPage([PAGE.w, PAGE.h]);
+          y = PAGE.h - MARGIN;
+          pageHasContent = false;
+        }
         break;
       case "rule":
         ensureSpace(12);
