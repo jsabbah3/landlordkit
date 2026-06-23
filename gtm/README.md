@@ -10,6 +10,7 @@ Everything here is **prepared, not posted** — you control what goes out.
 | `_table-*.md` | Data tables for the articles, **generated from the verified data files** | regenerate after data changes: `node scripts/gtm-tables.mjs` |
 | `product-hunt.md` | Full PH launch kit | after Pro works + ~3 weeks of traffic |
 | `directories.md` | Backlink directory list + submission copy | 2–3 submissions/week |
+| `metrics.md` | The weekly dashboard: funnel events, numbers to track, decision rules | check weekly; **set up analytics first** |
 
 **Cardinal rules:** lead with the answer, disclose you built it, never repeat
 the same text across communities, keep every cited stat matching the live site

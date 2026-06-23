@@ -20,7 +20,7 @@ export function GoProButton({
 
   async function go() {
     setLoading(true);
-    track("upgrade_clicked", { plan });
+    track("checkout_started", { plan });
     try {
       const res = await fetch("/api/checkout", {
         method: "POST",

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Container } from "@/components/ui/Container";
+import { CheckoutSuccessTracker } from "@/components/pro/CheckoutSuccessTracker";
 import { Card, CardBody } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Callout";
 import { Button } from "@/components/ui/Button";
@@ -24,6 +26,9 @@ export default async function AccountPage() {
 
   return (
     <Container className="py-12">
+      <Suspense fallback={null}>
+        <CheckoutSuccessTracker />
+      </Suspense>
       <h1 className="font-display text-3xl font-semibold tracking-tight">
         Your account
       </h1>
