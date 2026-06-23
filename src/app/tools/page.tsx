@@ -34,7 +34,17 @@ const PRO_TOOLS = [
       "Upload a lease PDF and pull the landlord, tenant, property, rent, and deposit into your saved details.",
     href: "/tools/lease-autofill",
   },
+  {
+    name: "Landlord Compliance Calendar",
+    blurb:
+      "Build a personalized calendar of your tax & filing deadlines — cloud-synced across your devices with Pro.",
+    href: "/tools/compliance-calendar",
+  },
 ];
+
+// Slugs shown in the Pro section above, so they're hidden from their normal
+// category grid below to avoid listing them twice.
+const PRO_SLUGS = new Set(["compliance-calendar"]);
 
 export default function ToolsPage() {
   return (
@@ -73,7 +83,9 @@ export default function ToolsPage() {
       </section>
 
       {CATEGORIES.map((cat) => {
-        const items = TOOLS.filter((t) => t.category === cat);
+        const items = TOOLS.filter(
+          (t) => t.category === cat && !PRO_SLUGS.has(t.slug),
+        );
         if (!items.length) return null;
         return (
           <section key={cat} className="mb-10">
