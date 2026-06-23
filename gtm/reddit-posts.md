@@ -6,8 +6,20 @@ tool for this"). Max 1 link-containing post per sub per week; comment helpfully
 3–5x for every link you drop. Use your real account history (you lurked — good).
 
 **Where to find target threads:** search each sub for: `late fee`, `security
-deposit interest`, `raise rent notice`, `deposit return`, `rent receipt`. Sort
-by New, answer fresh threads (under ~12 hrs old gets the most visibility).
+deposit interest`, `raise rent notice`, `deposit return`, `rent receipt`,
+`tax deadline`, `1099 contractor`. Sort by New, answer fresh threads (under ~12
+hrs old gets the most visibility).
+
+**Links to paste (UTM-tagged so GA4 attributes the signup to Reddit — change
+`utm_campaign` to match the thread topic):**
+
+- Deposit interest: `getlandlordkit.com/tools/security-deposit-interest-calculator?utm_source=reddit&utm_medium=community&utm_campaign=deposit-interest`
+- Late fee: `getlandlordkit.com/tools/late-fee-calculator?utm_source=reddit&utm_medium=community&utm_campaign=late-fee`
+- Deposit return: `getlandlordkit.com/tools/security-deposit-return-tracker?utm_source=reddit&utm_medium=community&utm_campaign=deposit-return`
+- Rent increase notice: `getlandlordkit.com/tools/rent-increase-notice-generator?utm_source=reddit&utm_medium=community&utm_campaign=rent-increase`
+- Rent receipt: `getlandlordkit.com/tools/rent-receipt-generator?utm_source=reddit&utm_medium=community&utm_campaign=rent-receipt`
+- Compliance calendar: `getlandlordkit.com/tools/compliance-calendar?utm_source=reddit&utm_medium=community&utm_campaign=compliance-calendar`
+- Home: `getlandlordkit.com?utm_source=reddit&utm_medium=community&utm_campaign=general`
 
 ---
 
@@ -52,6 +64,20 @@ by New, answer fresh threads (under ~12 hrs old gets the most visibility).
 > I compiled every state's deadline + itemization rule into a free tracker that
 > also generates the itemized statement: [deposit return tracker].
 
+### 5. r/Landlord — compliance deadlines (newest tool)
+**Title:** I kept missing filing deadlines (1099-NEC, estimated taxes, LLC renewals), so I built a calendar that just tells me mine
+> The annual landlord deadlines that actually bite: 1099-NEC to contractors by
+> Jan 31, quarterly estimated taxes (Apr/Jun/Sep/Jan), Schedule E with your
+> return, state LLC/annual-report filings (different month in every state), and
+> local rental-registration renewals. Miss the 1099 and it's $60–$310 per form;
+> miss an LLC filing and some states administratively dissolve you.
+>
+> I built a free tool: pick your state, city, and entity type and it builds your
+> personal deadline list with the dates, then exports to your calendar (.ics).
+> No signup: [compliance calendar]. Pro adds a subscribe-once feed that pings you
+> 7 days and 1 day before each one — but the calendar itself is free. Not tax
+> advice; verify with your CPA.
+
 ---
 
 ## B. COMMENT templates (use daily, 2–3 min each)
@@ -93,5 +119,15 @@ by New, answer fresh threads (under ~12 hrs old gets the most visibility).
 
 ---
 
-**Tracking:** add `?ref=reddit` to links so signups show their source in
-analytics. Log each post in a simple list so you never double-post a sub.
+### 11. "When are landlord taxes / 1099s due?"
+> The big ones: 1099-NEC to any contractor you paid $600+ by Jan 31; quarterly
+> estimated taxes (~Apr 15, Jun 15, Sep 15, Jan 15); Schedule E with your return.
+> If you're an LLC, your state has its own annual/biennial filing on top. I made
+> a free tool that builds your exact list by state + entity and exports to your
+> calendar: [compliance calendar link]. Not tax advice.
+
+---
+
+**Tracking:** use the UTM-tagged links above (not `?ref=`) so GA4 attributes
+signups to Reddit — see `gtm/metrics.md`. Log each post in a simple list so you
+never double-post a sub.

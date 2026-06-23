@@ -53,14 +53,18 @@ Derived ratios worth watching:
 
 ## Channels — attribute new traffic
 
-Tag every link you post (Reddit, outreach, directories) with UTM params so GA4
-shows which channel actually drove activation, not just clicks:
+**UTM-tag referral links** (Reddit comments, newsletter sends, social, paid) so
+GA4 shows which channel drove *activation*, not just clicks:
 
 ```
 ?utm_source=reddit&utm_medium=community&utm_campaign=deposit-interest
 ?utm_source=newsletter&utm_medium=email&utm_campaign=<name>
 ```
 
-The `gtm-skills:utm-builder` skill can generate these consistently. Rule of
+**Do NOT UTM-tag permanent backlinks** (directory listings, blogger/newsletter
+*article* links you're earning for SEO) — use the clean canonical URL so the
+link passes equity; GA4's Referrals report attributes that traffic by domain.
+
+The `gtm-skills:utm-builder` skill can generate tags consistently. Rule of
 thumb: if a channel drives clicks but no `tool_used`, it's the wrong audience —
 stop spending time there.

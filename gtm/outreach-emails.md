@@ -56,9 +56,10 @@ getlandlordkit.com. Can also provide quotes as the maintainer. — Jake
 Hi [Name] — if you ever do a compliance-mistakes episode, I can bring
 state-by-state specifics most guests can't: deposit-interest obligations (15
 states), late-fee caps (16 states with hard caps), notice tiers (NY's 30/60/90),
-deposit deadlines and their 2–3x penalties — all statute-cited. I run
-LandlordKit, free compliance tools for small landlords. No pitch needed on air;
-the data carries it. — Jake
+deposit deadlines and their 2–3x penalties, and the federal/LLC/local filing
+deadlines landlords miss (1099-NEC, estimated taxes, state annual reports) — all
+statute-cited. I run LandlordKit, free compliance tools for small landlords. No
+pitch needed on air; the data carries it. — Jake
 
 ## 5. The "broken-tool replacement" (sites linking to dead/ugly calculators)
 **Subject:** The [tool] you link in [article] — a maintained alternative
@@ -73,3 +74,7 @@ better explanations of [topic] out there. — Jake
 
 **Cadence:** 3–5 sends/week. Track in a simple sheet: site, contact, date,
 template used, response. Follow up once after 5–7 days, then drop it.
+
+**Links:** these earn *backlinks*, so paste the **clean canonical URL** (no UTM)
+— you want the SEO equity, and GA4's Referrals report attributes the traffic by
+domain anyway.

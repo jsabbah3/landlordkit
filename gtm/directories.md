@@ -10,9 +10,16 @@ deposit deadlines, receipts. No signup.
 **Longer blurb:** LandlordKit gives independent landlords free state-aware
 tools: security deposit interest calculators, late-fee cap checkers, rent
 increase notice generators, deposit-return trackers, rent receipts, and more.
+It also includes a personalized compliance calendar for tax/filing deadlines.
 Every state rule cites the statute with a last-verified date. Tools run in the
 browser and export clean PDFs — no account required. Pro ($12/mo) adds saved
-properties, batch documents, and custom branding.
+properties, batch documents, watermark-free branding, lease-PDF autofill, and
+calendar deadline reminders.
+
+**Use the clean canonical URL here** (no UTM) — directory links are backlinks
+you want passing SEO equity, and GA4's Referrals report already attributes the
+traffic by source domain. Save UTM tags for nofollow/referral channels (Reddit
+comments, newsletter sends, social). See gtm/metrics.md.
 
 ## Tool aggregators (submit to all)
 - **AlternativeTo** — list as alternative to: Avail, TurboTenant, RentRedi (free-tools angle)
