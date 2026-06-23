@@ -100,3 +100,18 @@ create policy "lp_insert_own" on public.landlord_profiles
 drop policy if exists "lp_update_own" on public.landlord_profiles;
 create policy "lp_update_own" on public.landlord_profiles
   for update using (auth.uid() = user_id);
+
+-- Lease-upload usage log. One row per AI extraction, written by the server with
+-- the service-role key. Used to enforce a per-user monthly cap so the
+-- pay-per-use Anthropic cost stays bounded. RLS on, no policies → browser
+-- clients can't read or write it.
+create table if not exists public.lease_extractions (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users (id) on delete cascade,
+  created_at timestamptz default now()
+);
+
+create index if not exists lease_extractions_user_month
+  on public.lease_extractions (user_id, created_at);
+
+alter table public.lease_extractions enable row level security;

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { getProStatus } from "@/lib/pro";
+import { isLeaseExtractConfigured } from "@/lib/env";
 
 export const dynamic = "force-dynamic";
 
@@ -7,5 +8,10 @@ export const dynamic = "force-dynamic";
  *  they need — no Stripe IDs or period dates exposed to the browser. */
 export async function GET() {
   const { signedIn, isPro } = await getProStatus();
-  return NextResponse.json({ signedIn, isPro });
+  return NextResponse.json({
+    signedIn,
+    isPro,
+    // Whether the lease-upload autofill backend has an API key configured.
+    leaseExtract: isLeaseExtractConfigured(),
+  });
 }
