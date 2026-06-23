@@ -5,9 +5,13 @@
  * launch-checklist.md). Marking a stub `published: true` once written is the
  * only step needed to surface it in the sitemap.
  */
+import type { GuideTableId } from "./guideTables";
+
 export interface GuideSection {
   h2: string;
   paragraphs: string[];
+  /** Optional verified state-data table rendered after the paragraphs. */
+  table?: GuideTableId;
 }
 
 export interface Guide {
@@ -74,8 +78,9 @@ export const GUIDES: Guide[] = [
         h2: "Do you owe interest on the deposit?",
         paragraphs: [
           "About a dozen states — plus cities like Chicago and Berkeley — require you to pay the tenant interest on their deposit. The rate ranges from a fixed statutory figure (Massachusetts uses 5%) to a rate the state publishes each year, and some states only require interest after the deposit has been held for a minimum period.",
-          "Use our security deposit interest calculator to compute the exact figure for your state, with the statute cited, and download a statement to give your tenant.",
+          "Here are the states that require deposit interest, with the rate, any minimum holding period, and the governing statute. Tap a state for the calculator and a tenant-ready statement. Last verified per the dates on each state page; not legal advice.",
         ],
+        table: "deposit-interest",
       },
       {
         h2: "Returning the deposit on time",
@@ -94,11 +99,13 @@ export const GUIDES: Guide[] = [
     relatedTools: ["rent-increase-notice-generator"],
     sections: [
       {
-        h2: "The 30/60/90-day rule",
+        h2: "Minimum rent-increase notice by state",
         paragraphs: [
           "For a month-to-month tenancy, most states require at least 30 days' written notice before a rent increase takes effect. But several states require more — and the required notice can grow with the size of the increase or the length of the tenancy.",
           "California, for example, requires 90 days' notice when the increase is more than 10% in a 12-month period. New York scales the notice with how long the tenant has lived there: 30, 60, or 90 days. Oregon and Washington require longer notice and also cap how much you can raise.",
+          "Here is the minimum notice for every state, whether a statewide cap applies, and the governing statute. Tap a state to generate a compliant notice. Cities may require more — always check local rules. Not legal advice.",
         ],
+        table: "rent-increase",
       },
       {
         h2: "You usually can't raise rent mid-lease",
@@ -165,6 +172,13 @@ export const GUIDES: Guide[] = [
           "States fall into three camps. Some set a hard cap as a percentage of rent (Maine is the strictest at 4%; Nevada and several others use 5%). Some set a flat or hybrid cap (New York limits the fee to the lesser of $50 or 5% of the rent). And many set no fixed cap at all, requiring only that the fee be 'reasonable' — a genuine estimate of the cost a late payment causes you.",
           "Grace periods vary just as much: Massachusetts forbids any late fee until rent is 30 days late, while other states allow one after a few days. Always check both the cap and the grace period for your state.",
         ],
+      },
+      {
+        h2: "Late-fee caps by state",
+        paragraphs: [
+          "These are the states with a specific numeric cap on late fees, with the maximum, any grace period, and the governing statute. States not listed use a 'reasonable fee' standard or set no statutory cap — check your state page. Tap a state for the calculator. Not legal advice.",
+        ],
+        table: "late-fee",
       },
       {
         h2: "A fee above the cap is usually void",
@@ -246,10 +260,12 @@ export const GUIDES: Guide[] = [
     relatedTools: ["security-deposit-return-tracker", "security-deposit-interest-calculator"],
     sections: [
       {
-        h2: "Know your deadline",
+        h2: "Deposit return deadlines by state",
         paragraphs: [
           "Every state sets a deadline to return the deposit after move-out — commonly 14 to 60 days. Miss it and you can forfeit the right to keep any of it, and in many states owe the tenant two or three times the amount plus their attorney's fees. The clock usually starts at the end of the tenancy or when the tenant gives a forwarding address, so calendar it immediately.",
+          "Here is every state's return deadline (and the deadline when you're itemizing deductions, where it differs), with the governing statute. Tap a state to build an itemized statement. Not legal advice.",
         ],
+        table: "deposit-return",
       },
       {
         h2: "Deduct only what you can document",

@@ -1,8 +1,10 @@
 # Rent Late-Fee Caps by State (2026): The Complete Table
 
-> **Publishing note:** linkable-asset #2. Paste the table from
-> `gtm/_table-late-fees.md` where marked. Pitch to personal-finance writers —
-> "what's the max late fee" is an evergreen renter+landlord query.
+> **Publishing note:** linkable-asset #2. ✅ **LIVE** as a data-study guide with
+> the verified table baked in: `getlandlordkit.com/guides/late-rent-fees-by-state`.
+> Pitch THAT URL (clean, no UTM — it's a backlink) to personal-finance writers;
+> "what's the max late fee" is an evergreen renter+landlord query. This .md is
+> the long-form pitch copy / reference.
 
 Charge a late fee above your state's legal cap and, in most states, the entire
 fee becomes unenforceable — even though the tenant signed the lease. Some

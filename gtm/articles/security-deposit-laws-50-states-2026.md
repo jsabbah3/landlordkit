@@ -1,10 +1,13 @@
 # Security Deposit Rules in All 50 States: The 2026 Table
 
-> **Publishing note:** this is linkable-asset #1 (highest backlink potential —
-> "by state" tables earn citations). Publish as a guide on the site, then pitch
-> it with outreach email #3. Paste the tables from `gtm/_table-deposit-return.md`
-> and `gtm/_table-deposit-interest.md` where marked — they're generated from the
-> site's verified data files, so the numbers always match the live tools.
+> **Publishing note:** linkable-asset #1 (highest backlink potential — "by
+> state" tables earn citations). ✅ **LIVE** as two data-study guides with the
+> verified tables baked in: the interest table at
+> `getlandlordkit.com/guides/security-deposit-laws-by-state` and the return-
+> deadline table at `getlandlordkit.com/guides/returning-a-security-deposit`.
+> Pitch those URLs (clean, no UTM) with outreach email #3. Tables render from
+> the site's verified data files, so the numbers always match the live tools.
+> This .md is the long-form pitch copy / reference.
 
 Security deposits are the most regulated — and most litigated — part of a small
 landlord's job. Three rules vary dramatically by state: **how fast you must

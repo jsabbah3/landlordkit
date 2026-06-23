@@ -1,8 +1,10 @@
 # How Much Notice to Raise Rent: All 50 States (2026)
 
-> **Publishing note:** linkable-asset #3. Paste the table from
-> `gtm/_table-rent-increase.md` where marked. This one targets the highest
-> search volume of the three; pitch it after the first two land links.
+> **Publishing note:** linkable-asset #3. ✅ **LIVE** as a data-study guide with
+> the verified 50-state table baked in:
+> `getlandlordkit.com/guides/how-much-notice-to-raise-rent`. Pitch THAT URL
+> (clean, no UTM). Highest search volume of the three; pitch it after the first
+> two land links. This .md is the long-form pitch copy / reference.
 
 Raising rent legally is mostly about **notice** — and the required notice
 varies more than most landlords expect: from 30 days in the majority of states

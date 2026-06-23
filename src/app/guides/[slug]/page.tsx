@@ -10,6 +10,7 @@ import { EmailCapture } from "@/components/EmailCapture";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { breadcrumbLd } from "@/lib/seo";
 import { publishedGuides, getGuide } from "@/content/guides";
+import { getGuideTable } from "@/content/guideTables";
 import { getTool } from "@/lib/tools";
 
 const BASE = "/guides";
@@ -78,6 +79,7 @@ export default async function GuidePage({
               {s.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
+              {s.table ? <GuideDataTable id={s.table} /> : null}
             </div>
           ))}
         </Prose>
@@ -118,5 +120,45 @@ export default async function GuidePage({
         </div>
       </article>
     </Container>
+  );
+}
+
+/** Renders a verified state-data table (the "data study" asset). The State
+ *  column links to that state's tool page for internal-link depth. */
+function GuideDataTable({ id }: { id: Parameters<typeof getGuideTable>[0] }) {
+  const t = getGuideTable(id);
+  return (
+    <div className="not-prose my-6 overflow-x-auto rounded-card border border-line">
+      <table className="w-full border-collapse text-sm">
+        <thead>
+          <tr className="bg-paper-2 text-left">
+            {t.headers.map((h) => (
+              <th key={h} className="px-3 py-2 font-semibold text-ink/80">
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {t.rows.map((row) => (
+            <tr key={row.stateSlug} className="border-t border-line">
+              <td className="px-3 py-2">
+                <Link
+                  href={`/tools/${t.toolSlug}/${row.stateSlug}`}
+                  className="font-medium text-brand-700 hover:underline"
+                >
+                  {row.stateName}
+                </Link>
+              </td>
+              {row.cells.map((c, i) => (
+                <td key={i} className="px-3 py-2 text-ink/75">
+                  {c}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
