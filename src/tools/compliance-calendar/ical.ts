@@ -20,7 +20,25 @@ function nextOf(mmdd: string, from: Date): string {
 const esc = (s: string) =>
   s.replace(/\\/g, "\\\\").replace(/[,;]/g, (c) => `\\${c}`).replace(/\n/g, "\\n");
 
-function vevent(uid: string, date: string, summary: string, desc: string, rrule?: string) {
+/** DISPLAY alarm firing `days` before the event start. */
+function valarm(days: number, summary: string) {
+  return [
+    "BEGIN:VALARM",
+    "ACTION:DISPLAY",
+    `TRIGGER:-P${days}D`,
+    `DESCRIPTION:${esc(summary)}`,
+    "END:VALARM",
+  ].join("\r\n");
+}
+
+function vevent(
+  uid: string,
+  date: string,
+  summary: string,
+  desc: string,
+  rrule?: string,
+  alarmDays: number[] = [],
+) {
   return [
     "BEGIN:VEVENT",
     `UID:${uid}@getlandlordkit.com`,
@@ -29,6 +47,7 @@ function vevent(uid: string, date: string, summary: string, desc: string, rrule?
     `SUMMARY:${esc(summary)}`,
     desc ? `DESCRIPTION:${esc(desc)}` : "",
     rrule ? `RRULE:${rrule}` : "",
+    ...alarmDays.map((d) => valarm(d, summary)),
     "END:VEVENT",
   ].filter(Boolean).join("\r\n");
 }
@@ -42,6 +61,8 @@ export function buildIcs(
   due: DueObligation[],
   custom: CustomDeadline[],
   today: Date = new Date(),
+  /** Days-before to attach as DISPLAY reminders (e.g. [7, 1]). Empty = none. */
+  alarmDays: number[] = [],
 ): string {
   const events: string[] = [];
 
@@ -49,11 +70,11 @@ export function buildIcs(
     const desc = `${o.what} (File with: ${o.fileWith}. Source: ${o.cite.statute}.) Not legal/tax advice.`;
     if (o.dueType === "fixed") {
       for (const mmdd of o.dueDates ?? []) {
-        events.push(vevent(`${o.id}-${mmdd}`, nextOf(mmdd, today), o.title, desc, "FREQ=YEARLY"));
+        events.push(vevent(`${o.id}-${mmdd}`, nextOf(mmdd, today), o.title, desc, "FREQ=YEARLY", alarmDays));
       }
     } else if (o.dueType === "anniversary" && nextDue) {
       const interval = o.everyYears && o.everyYears > 1 ? `;INTERVAL=${o.everyYears}` : "";
-      events.push(vevent(o.id, nextDue.replace(/-/g, ""), o.title, desc, `FREQ=YEARLY${interval}`));
+      events.push(vevent(o.id, nextDue.replace(/-/g, ""), o.title, desc, `FREQ=YEARLY${interval}`, alarmDays));
     }
     // varies => no date, skipped
   }
@@ -66,6 +87,7 @@ export function buildIcs(
         c.title,
         "Custom deadline added in LandlordKit.",
         c.recurrence === "annual" ? "FREQ=YEARLY" : undefined,
+        alarmDays,
       ),
     );
   }

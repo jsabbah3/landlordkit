@@ -41,4 +41,23 @@ describe("buildIcs", () => {
   it("omits undated `varies` items (W-9)", () => {
     expect(ics).not.toContain("Collect W-9s");
   });
+
+  it("adds no alarms by default (download export stays clean)", () => {
+    expect(ics).not.toContain("BEGIN:VALARM");
+  });
+});
+
+describe("buildIcs with reminder alarms (feed)", () => {
+  const ics = buildIcs(getObligations(profile, today), [], today, [7, 1]);
+
+  it("attaches a VALARM per requested lead time on each event", () => {
+    expect(ics).toContain("BEGIN:VALARM");
+    expect(ics).toContain("TRIGGER:-P7D");
+    expect(ics).toContain("TRIGGER:-P1D");
+    expect(ics).toContain("ACTION:DISPLAY");
+    // Two alarms per event → even count, and at least one event's worth.
+    const alarms = (ics.match(/BEGIN:VALARM/g) || []).length;
+    expect(alarms).toBeGreaterThanOrEqual(2);
+    expect(alarms % 2).toBe(0);
+  });
 });

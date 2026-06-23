@@ -28,7 +28,7 @@ const proFeatures = [
   "Saved landlord & property details (no re-typing)",
   "Batch generation — receipts for every unit in one PDF",
   "Watermark-free PDFs with your own branding",
-  "Compliance calendar cloud-sync across your devices",
+  "Compliance calendar with deadline reminders + cloud-sync",
   "All future tools + state-law update notifications",
 ];
 

@@ -65,6 +65,12 @@ create table if not exists public.compliance_profiles (
   updated_at timestamptz default now()
 );
 
+-- Private, unguessable token for the per-user calendar reminder feed (Pro).
+-- The feed endpoint is unauthenticated (calendar apps can't sign in), so this
+-- token IS the credential — it's looked up server-side with the service role.
+alter table public.compliance_profiles
+  add column if not exists feed_token uuid unique;
+
 alter table public.compliance_profiles enable row level security;
 
 drop policy if exists "cp_select_own" on public.compliance_profiles;

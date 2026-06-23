@@ -11,6 +11,7 @@ import {
 } from "@/tools/compliance-calendar/obligations";
 import { getObligations } from "@/tools/compliance-calendar/engine";
 import { buildIcs, type CustomDeadline } from "@/tools/compliance-calendar/ical";
+import { useProStatus } from "@/lib/useProStatus";
 import { Card, CardBody } from "@/components/ui/Card";
 import { Field, Input, Select } from "@/components/ui/Field";
 import { Button } from "@/components/ui/Button";
@@ -36,8 +37,12 @@ const DEFAULT: Stored = {
 };
 
 export function ComplianceCalendarTool({ signedIn }: { signedIn: boolean }) {
+  const { isPro } = useProStatus();
   const [data, setData] = useState<Stored>(DEFAULT);
   const [saved, setSaved] = useState<"idle" | "saving" | "saved">("idle");
+  const [feed, setFeed] = useState<{ webcal: string; url: string } | null>(null);
+  const [feedState, setFeedState] = useState<"idle" | "loading" | "error">("idle");
+  const [copied, setCopied] = useState(false);
   const year = new Date().getFullYear();
 
   // Hydrate: localStorage first, then cloud (if signed in) wins.
@@ -81,6 +86,32 @@ export function ComplianceCalendarTool({ signedIn }: { signedIn: boolean }) {
       });
       setSaved("saved");
     } catch { setSaved("idle"); }
+  }
+
+  async function enableReminders() {
+    setFeedState("loading");
+    try {
+      await saveCloud(); // persist current profile so the feed has content
+      const res = await fetch("/api/compliance-feed", { method: "POST" });
+      if (!res.ok) throw new Error();
+      const body = (await res.json()) as { webcal: string; url: string };
+      setFeed(body);
+      setFeedState("idle");
+      track("reminders_enabled", { tool: "compliance-calendar" });
+    } catch {
+      setFeedState("error");
+    }
+  }
+
+  async function copyFeed() {
+    if (!feed) return;
+    try {
+      await navigator.clipboard.writeText(feed.url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      /* clipboard blocked — the link is still selectable on screen */
+    }
   }
 
   function downloadIcs() {
@@ -149,10 +180,60 @@ export function ComplianceCalendarTool({ signedIn }: { signedIn: boolean }) {
               </Button>
             ) : null}
           </div>
+          {isPro && (
+            <div className="border-t border-line pt-4">
+              {!feed ? (
+                <>
+                  <p className="text-sm font-medium text-ink">Deadline reminders</p>
+                  <p className="mt-1 text-sm text-ink/65">
+                    Subscribe once and your calendar app will remind you 7 days
+                    and 1 day before every deadline — on your phone too. It stays
+                    in sync as your profile changes.
+                  </p>
+                  <Button
+                    size="sm"
+                    className="mt-3"
+                    onClick={enableReminders}
+                    disabled={feedState === "loading"}
+                  >
+                    {feedState === "loading" ? "Setting up…" : "Get deadline reminders"}
+                  </Button>
+                  {feedState === "error" && (
+                    <p className="mt-2 text-sm text-red-700">
+                      Couldn&apos;t set that up — please try again.
+                    </p>
+                  )}
+                </>
+              ) : (
+                <>
+                  <p className="text-sm font-medium text-ink">
+                    Reminders are ready 🎉
+                  </p>
+                  <p className="mt-1 text-sm text-ink/65">
+                    Add this to your calendar app, then it&apos;ll alert you
+                    before each deadline automatically.
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <a
+                      href={feed.webcal}
+                      className="inline-flex h-9 items-center rounded-full bg-brand-600 px-4 text-sm font-medium text-white hover:bg-brand-700"
+                    >
+                      Subscribe in calendar
+                    </a>
+                    <Button variant="secondary" size="sm" onClick={copyFeed}>
+                      {copied ? "Copied ✓" : "Copy link"}
+                    </Button>
+                  </div>
+                  <p className="mt-2 break-all text-xs text-ink/45">{feed.url}</p>
+                </>
+              )}
+            </div>
+          )}
           {!signedIn && (
             <Callout tone="info">
               Your calendar is saved on this device. <strong>Pro</strong> saves it
-              to your account (any device) and adds email reminders.
+              to your account (any device) and adds automatic deadline reminders
+              to your calendar.
             </Callout>
           )}
         </CardBody>
