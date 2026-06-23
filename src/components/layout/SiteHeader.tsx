@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Script from "next/script";
 import { Container } from "@/components/ui/Container";
-import { ButtonLink } from "@/components/ui/Button";
+import { ProNavButton } from "@/components/pro/ProNavButton";
 import { MobileNav } from "./MobileNav";
 import { SITE } from "@/lib/site";
 
@@ -62,9 +62,7 @@ gtag('config', '${gaId}', { anonymize_ip: true });`}
           </Link>
         </nav>
         <div className="flex items-center gap-1">
-          <ButtonLink href="/pricing" size="sm" variant="accent">
-            Go Pro
-          </ButtonLink>
+          <ProNavButton />
           <MobileNav />
         </div>
       </Container>

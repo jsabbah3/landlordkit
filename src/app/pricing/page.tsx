@@ -5,7 +5,10 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { GoProButton } from "@/components/pro/GoProButton";
 import { isStripeConfigured } from "@/lib/env";
+import { getProStatus } from "@/lib/pro";
 import { SITE } from "@/lib/site";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "LandlordKit Pro — Pricing",
@@ -29,7 +32,8 @@ const proFeatures = [
   "All future tools + state-law update notifications",
 ];
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  const { isPro } = await getProStatus();
   return (
     <Container className="py-8">
       <Breadcrumbs crumbs={[{ name: "Pro", path: "/pricing" }]} />
@@ -78,7 +82,16 @@ export default function PricingPage() {
                 </li>
               ))}
             </ul>
-            {isStripeConfigured() ? (
+            {isPro ? (
+              <>
+                <div className="mt-6 flex h-11 w-full items-center justify-center gap-2 rounded-full bg-brand-100 px-5 text-sm font-medium text-brand-800">
+                  ✓ You&apos;re on Pro
+                </div>
+                <ButtonLink href="/account" variant="ghost" className="mt-2 w-full">
+                  Manage your plan
+                </ButtonLink>
+              </>
+            ) : isStripeConfigured() ? (
               <GoProButton plan="monthly" className="mt-6 w-full">
                 Go Pro — ${SITE.proMonthly}/mo
               </GoProButton>
