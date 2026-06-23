@@ -131,3 +131,46 @@ hrs old gets the most visibility).
 **Tracking:** use the UTM-tagged links above (not `?ref=`) so GA4 attributes
 signups to Reddit — see `gtm/metrics.md`. Log each post in a simple list so you
 never double-post a sub.
+
+---
+
+## C. Verified state values — drop the exact number into a comment
+
+Snapshot from the verified data files (high-confidence tools only). Regenerate
+if the data changes. If a state isn't listed under late fee, it uses a
+"reasonable fee" standard or has no statutory cap — say that. If a state isn't
+listed under deposit interest, it doesn't require interest — say that.
+
+**Late-fee caps (the 14 numeric-cap states):**
+- Colorado: greater of $50 or 5%, 7-day grace
+- Connecticut: lesser of $50 or 5%, 9-day grace
+- Delaware: 5% of rent, 5-day grace
+- District of Columbia: 5% of rent, 5-day grace
+- Hawaii: 8% of rent, no grace set
+- Maine: 4% of rent, 15-day grace (strictest)
+- Maryland: 5% of rent, no grace set
+- Minnesota: 8% of rent, no grace set
+- Nevada: 5% of rent, 3-day grace
+- New Mexico: 10% of rent, no grace set
+- New York: lesser of $50 or 5%, 5-day grace
+- North Carolina: greater of $15 or 5%, 5-day grace
+- Tennessee: 10% of rent, 5-day grace
+- Virginia: 10% of rent, no grace set
+
+**Deposit interest (the states that require it):**
+- Massachusetts: 5% after 12 months
+- Ohio: 5% after 6 months
+- Florida: 5%
+- Minnesota: 1%
+- Maryland: ~1.5% published yearly, after 6 months
+- District of Columbia: ~1.5% published yearly
+- Connecticut: ~0.49% published yearly
+- North Dakota: ~0.5% published yearly, after 9 months
+- Illinois: ~0.01% published yearly, after 6 months (Chicago has its own, higher)
+- New Jersey / New York: the bank account rate
+- Pennsylvania: bank rate, after 24 months
+- New Mexico / New Hampshire: bank rate, after 12 months
+- Iowa: bank rate, after 60 months
+
+> Always tell the reader to verify their exact figure on the linked tool page
+> (it shows the statute + last-verified date). Not legal advice.
