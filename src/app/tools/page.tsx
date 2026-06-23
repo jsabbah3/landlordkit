@@ -19,6 +19,23 @@ const CATEGORIES = [
   "Investing & finance",
 ] as const;
 
+// Pro-only tools. Shown to everyone here (with a Pro badge) as both discovery
+// for members and an upsell for free users; each page gates access itself.
+const PRO_TOOLS = [
+  {
+    name: "Batch rent receipts",
+    blurb:
+      "Generate a receipt for every unit in one watermark-free PDF — perfect for the 1st of the month.",
+    href: "/tools/rent-receipt-generator/batch",
+  },
+  {
+    name: "Lease autofill",
+    blurb:
+      "Upload a lease PDF and pull the landlord, tenant, property, rent, and deposit into your saved details.",
+    href: "/tools/lease-autofill",
+  },
+];
+
 export default function ToolsPage() {
   return (
     <Container className="py-8">
@@ -32,6 +49,28 @@ export default function ToolsPage() {
           each state&apos;s real rules with statute citations.
         </p>
       </header>
+
+      <section className="mb-10">
+        <h2 className="mb-4 flex items-center gap-2 font-display text-xl font-semibold text-ink/80">
+          Pro tools
+          <Badge className="bg-accent-400/20 text-accent-600">Pro</Badge>
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {PRO_TOOLS.map((t) => (
+            <Link key={t.href} href={t.href} className="group">
+              <Card className="h-full border-accent-400/50 transition-shadow hover:shadow-md">
+                <CardBody>
+                  <Badge className="bg-accent-400/20 text-accent-600">Pro</Badge>
+                  <h3 className="mt-3 font-display text-lg font-semibold text-ink">
+                    {t.name}
+                  </h3>
+                  <p className="mt-2 text-sm text-ink/65">{t.blurb}</p>
+                </CardBody>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {CATEGORIES.map((cat) => {
         const items = TOOLS.filter((t) => t.category === cat);
