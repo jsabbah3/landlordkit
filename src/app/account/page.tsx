@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Card, CardBody } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Callout";
@@ -107,51 +106,6 @@ export default async function AccountPage() {
           </Card>
         )}
       </div>
-
-      {status.isPro ? (
-        <section className="mt-12">
-          <h2 className="font-display text-xl font-semibold tracking-tight">
-            Your Pro tools
-          </h2>
-          <p className="mt-1 text-sm text-ink/60">
-            Time-savers included with your subscription. Every free tool also
-            generates watermark-free PDFs while you&apos;re signed in.
-          </p>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
-            {PRO_TOOLS.map((t) => (
-              <Link
-                key={t.href}
-                href={t.href}
-                className="rounded-xl border border-line bg-white p-5 transition-colors hover:border-brand-300 hover:bg-paper-2"
-              >
-                <h3 className="font-display font-semibold text-ink">{t.name}</h3>
-                <p className="mt-1 text-sm text-ink/65">{t.blurb}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
-      ) : null}
     </Container>
   );
 }
-
-const PRO_TOOLS = [
-  {
-    name: "Batch rent receipts",
-    blurb:
-      "Generate a receipt for every unit in one watermark-free PDF — perfect for the 1st of the month.",
-    href: "/tools/rent-receipt-generator/batch",
-  },
-  {
-    name: "Lease autofill",
-    blurb:
-      "Upload a lease PDF and pull the landlord, tenant, property, rent, and deposit into your saved details.",
-    href: "/tools/lease-autofill",
-  },
-  {
-    name: "Compliance calendar",
-    blurb:
-      "Build your filing-deadline calendar — cloud-synced across your devices and exportable to your calendar app.",
-    href: "/tools/compliance-calendar",
-  },
-];
