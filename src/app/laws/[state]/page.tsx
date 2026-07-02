@@ -6,7 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Card, CardBody } from "@/components/ui/Card";
 import { Badge, Callout } from "@/components/ui/Callout";
 import { LegalDisclaimer } from "@/components/LegalDisclaimer";
-import { EmailCapture } from "@/components/EmailCapture";
+import { StateCheatSheetCapture } from "@/components/StateCheatSheetCapture";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { faqLd, breadcrumbLd } from "@/lib/seo";
 import { longDate } from "@/lib/format";
@@ -127,12 +127,13 @@ export default async function Page({ params }: { params: Promise<{ state: string
 
         <div className="rounded-card border border-line bg-paper-2 p-6">
           <h2 className="font-display text-lg font-semibold">
-            Get notified when {state.name} rules change
+            The {state.name} Landlord Law Cheat Sheet
           </h2>
           <p className="mt-1 mb-4 text-sm text-ink/65">
-            Plus the free Landlord Tax Prep Checklist.
+            Everything on this page as a one-page PDF — plus an email when a{" "}
+            {state.name} rule changes.
           </p>
-          <EmailCapture source={`laws:${state.slug}`} />
+          <StateCheatSheetCapture code={state.code} stateName={state.name} />
         </div>
 
         <section>

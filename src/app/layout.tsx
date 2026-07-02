@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE } from "@/lib/site";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { ExitIntentCapture } from "@/components/ExitIntentCapture";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 // Display serif used only for headings/wordmark. Keep the weight list tight —
@@ -60,6 +61,7 @@ export default function RootLayout({
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />
+        <ExitIntentCapture />
       </body>
     </html>
   );
