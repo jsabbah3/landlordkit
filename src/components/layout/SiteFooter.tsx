@@ -33,6 +33,7 @@ export function SiteFooter() {
           <p className="text-sm font-semibold text-ink">Learn</p>
           <ul className="mt-3 space-y-2 text-sm text-ink/65">
             <li><Link href="/guides" className="hover:text-brand-700">Guides</Link></li>
+            <li><Link href="/laws" className="hover:text-brand-700">State laws</Link></li>
             <li><Link href="/tools" className="hover:text-brand-700">All tools</Link></li>
             <li><Link href="/pricing" className="hover:text-brand-700">LandlordKit Pro</Link></li>
           </ul>

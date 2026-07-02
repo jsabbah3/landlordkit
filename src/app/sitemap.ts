@@ -6,6 +6,7 @@ import { rentIncreaseStateCodes } from "@/tools/rent-increase-notice/data";
 import { lateFeeStateCodes } from "@/tools/late-fee/data";
 import { depositReturnStateCodes } from "@/tools/security-deposit-return/data";
 import { publishedGuides } from "@/content/guides";
+import { hubStates } from "@/lib/lawHub";
 
 /**
  * XML sitemap. Includes static pages, every live tool, each tool's programmatic
@@ -52,6 +53,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const g of publishedGuides()) {
     urls.push(entry(`/guides/${g.slug}`, 0.6));
+  }
+
+  // State law hubs (only states with enough verified fields publish).
+  urls.push(entry("/laws", 0.8, "weekly"));
+  for (const s of hubStates()) {
+    urls.push(entry(`/laws/${s.slug}`, 0.8));
   }
 
   return urls;
