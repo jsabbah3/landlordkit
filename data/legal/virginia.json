@@ -76,13 +76,16 @@
       "sources": []
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "Va. Code § 55.1-1253(A)",
+      "statuteUrl": "https://law.lis.virginia.gov/vacode/title55.1/chapter12/section55.1-1253/",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "Va. Code § 55.1-1253 (law.lis.virginia.gov)",
+        "Nolo state chart"
+      ],
+      "notes": "30 days' written notice before the next rent due date"
     }
   },
   "lateFee": {
@@ -131,5 +134,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }

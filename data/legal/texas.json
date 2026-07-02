@@ -77,13 +77,16 @@
       "notes": "Texas has no statute mandating advance notice of a rent increase; for month-to-month, give notice at least one rental period (commonly 30 days) ahead, or as the lease requires."
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "Tex. Prop. Code § 91.001",
+      "statuteUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.91.htm",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "Tex. Prop. Code § 91.001 (statutes.capitol.texas.gov)",
+        "texas.public.law"
+      ],
+      "notes": "1 month's notice (tenancy ends the later of the notice date or one month after notice)"
     }
   },
   "lateFee": {
@@ -132,5 +135,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }

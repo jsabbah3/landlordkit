@@ -73,13 +73,16 @@
       "sources": []
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "Alaska Stat. § 34.03.290(b)",
+      "statuteUrl": "https://www.akleg.gov/basis/statutes.asp#34.03.290",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "Alaska Statutes AS 34.03.290",
+        "Alaska Court System PUB-30"
+      ],
+      "notes": "30 days' written notice"
     }
   },
   "lateFee": {
@@ -127,5 +130,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-01"
+  "lastVerified": "2026-07-02"
 }

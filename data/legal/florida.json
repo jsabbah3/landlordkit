@@ -78,13 +78,16 @@
       "notes": "Florida has no statute setting a specific rent-increase notice period for month-to-month tenancies beyond the 15-day termination rule; 30 days is common practice. Some counties have added notice rules."
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "Fla. Stat. § 83.57(3)",
+      "statuteUrl": "https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0000-0099/0083/Sections/0083.57.html",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "Fla. Stat. § 83.57 (current)",
+        "FL Senate CS/HB 1417 (2023) bill summary"
+      ],
+      "notes": "Notice must be given before the end of the monthly period."
     }
   },
   "lateFee": {
@@ -133,5 +136,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }

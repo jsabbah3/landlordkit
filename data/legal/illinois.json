@@ -78,13 +78,16 @@
       "notes": "Statewide rent control is preempted; Chicago has notice ordinances."
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "735 ILCS 5/9-207",
+      "statuteUrl": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K9-207",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "735 ILCS 5/9-207 (ilga.gov)",
+        "Nolo state chart"
+      ],
+      "notes": "Chicago RLTO adds its own requirements for covered units."
     }
   },
   "lateFee": {
@@ -133,5 +136,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }

@@ -15,6 +15,7 @@ import { LATE_FEE } from "../src/tools/late-fee/data.ts";
 import { RENT_INCREASE } from "../src/tools/rent-increase-notice/data.ts";
 import { DEPOSIT_INTEREST } from "../src/tools/security-deposit-interest/data.ts";
 import { DEPOSIT_LIMIT } from "../src/tools/security-deposit-limit/data.ts";
+import { TERMINATION_NOTICE } from "../src/tools/termination-notice/data.ts";
 
 type Conf = "high" | "medium" | "low" | "unverified";
 interface Cite { statute: string; statuteUrl?: string; lastVerified: string; confidence: Conf }
@@ -78,7 +79,10 @@ function buildState(code: string) {
     notice: {
       entryHours: UNVERIFIED, // category not yet researched
       rentIncreaseDays: ri ? fld(ri.baseNoticeDays, ri.cite, [], ri.controlNote ?? ri.notes) : UNVERIFIED,
-      terminationDays: UNVERIFIED, // category not yet researched
+      terminationDays: (() => {
+        const tn = TERMINATION_NOTICE[code];
+        return tn ? fld(tn.noticeDays, tn.cite, tn.sources, tn.notes ?? tn.summary) : UNVERIFIED;
+      })(),
     },
     lateFee: {
       capSummary: lf ? fld(lateFeeSummary(lf), lf.cite, [], lf.notes) : UNVERIFIED,

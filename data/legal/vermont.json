@@ -75,13 +75,16 @@
       "notes": "Burlington has local provisions."
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 60,
+      "statute": "9 V.S.A. § 4467(c)",
+      "statuteUrl": "https://legislature.vermont.gov/statutes/section/09/137/04467",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "9 V.S.A. § 4467 (legislature.vermont.gov)",
+        "Justia"
+      ],
+      "notes": "9 V.S.A. § 4467 tiers the notice by length of occupancy; some municipalities add just-cause rules."
     }
   },
   "lateFee": {
@@ -129,5 +132,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-01"
+  "lastVerified": "2026-07-02"
 }

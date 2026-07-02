@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-15",
+  "generated": "2026-07-02",
   "states": 51,
   "categories": [
     {
@@ -53,10 +53,10 @@
     {
       "path": "notice.terminationDays",
       "label": "Termination notice",
-      "high": 0,
+      "high": 13,
       "medium": 0,
       "low": 0,
-      "unverified": 51
+      "unverified": 38
     },
     {
       "path": "lateFee.capSummary",

@@ -74,13 +74,16 @@
       "sources": []
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "Mo. Rev. Stat. § 441.060",
+      "statuteUrl": "https://revisor.mo.gov/main/OneSection.aspx?section=441.060",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "RSMo § 441.060 (revisor.mo.gov)",
+        "Nolo state chart"
+      ],
+      "notes": "1 month's written notice"
     }
   },
   "lateFee": {
@@ -128,5 +131,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-01"
+  "lastVerified": "2026-07-02"
 }

@@ -76,13 +76,16 @@
       "sources": []
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "Mich. Comp. Laws § 554.134(1)",
+      "statuteUrl": "https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-554-134",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "MCL 554.134 (legislature.mi.gov)",
+        "MI courts benchbook"
+      ],
+      "notes": "1 month's notice (equal to the rental interval)"
     }
   },
   "lateFee": {
@@ -130,5 +133,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }

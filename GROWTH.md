@@ -17,7 +17,7 @@ Sprint start: 2026-07-02 (Fable 5 front-load sprint). Weekly ops manual: `OPERAT
 ## Sprint log
 
 - **D1 ✅ 2026-07-02** — audit clean, no critical fixes needed. GROWTH.md initialized.
-- D2 — in progress. Strategy: (1) 51 state law HUB pages assembled from already-verified data (no new legal claims); (2) NEW eviction/termination-notice dataset, web-verified in priority order (most-populous states first, 2-source rule); publish only verified states; (3) rent-receipt state pages for the ~dozen states with real statutes. Target: maximize substantive pages; est. 350–420 total. 500+ only if verification keeps pace — quality gate wins per hard constraint.
+- **D2 ✅ 2026-07-02** — (a) /laws hub system: 30 state hubs + index live (threshold ≥4 verified fields; more publish automatically as research raises coverage — no code change needed, just data). (b) NEW termination-notice dataset: 13 states verified at statute level (src/tools/termination-notice/data.ts), incl. catching Florida's 2023 HB 1417 change (15→30 days) that aggregator tables still get wrong. High-confidence fields 46→59. (c) DEFERRED with rationale: rent-receipt state pages + state-comparison pages — research recipes for both are in OPERATIONS.md; comparison pages held until per-state coverage is deeper (thinness risk). Sitemap now ~262 URLs.
 - D3–D7 — pending (see tasks).
 
 ## Decisions

@@ -75,13 +75,16 @@
       "notes": "Rhode Island requires 30 days, or 60 days if the tenant is 62 or older."
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "R.I. Gen. Laws § 34-18-37",
+      "statuteUrl": "http://webserver.rilin.state.ri.us/statutes/title34/34-18/34-18-37.HTM",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "R.I. Gen. Laws § 34-18-37 (rilin.state.ri.us)",
+        "Justia"
+      ],
+      "notes": "30 days' written notice"
     }
   },
   "lateFee": {
@@ -129,5 +132,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-01"
+  "lastVerified": "2026-07-02"
 }

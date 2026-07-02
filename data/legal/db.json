@@ -206,13 +206,16 @@
         "sources": []
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "Alaska Stat. § 34.03.290(b)",
+        "statuteUrl": "https://www.akleg.gov/basis/statutes.asp#34.03.290",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "Alaska Statutes AS 34.03.290",
+          "Alaska Court System PUB-30"
+        ],
+        "notes": "30 days' written notice"
       }
     },
     "lateFee": {
@@ -260,7 +263,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-01"
+    "lastVerified": "2026-07-02"
   },
   "AZ": {
     "state": "AZ",
@@ -1285,13 +1288,16 @@
         "notes": "Florida has no statute setting a specific rent-increase notice period for month-to-month tenancies beyond the 15-day termination rule; 30 days is common practice. Some counties have added notice rules."
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "Fla. Stat. § 83.57(3)",
+        "statuteUrl": "https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0000-0099/0083/Sections/0083.57.html",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "Fla. Stat. § 83.57 (current)",
+          "FL Senate CS/HB 1417 (2023) bill summary"
+        ],
+        "notes": "Notice must be given before the end of the monthly period."
       }
     },
     "lateFee": {
@@ -1340,7 +1346,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "GA": {
     "state": "GA",
@@ -1818,13 +1824,16 @@
         "notes": "Statewide rent control is preempted; Chicago has notice ordinances."
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "735 ILCS 5/9-207",
+        "statuteUrl": "https://www.ilga.gov/legislation/ilcs/fulltext.asp?DocName=073500050K9-207",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "735 ILCS 5/9-207 (ilga.gov)",
+          "Nolo state chart"
+        ],
+        "notes": "Chicago RLTO adds its own requirements for covered units."
       }
     },
     "lateFee": {
@@ -1873,7 +1882,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "IN": {
     "state": "IN",
@@ -3023,13 +3032,16 @@
         "sources": []
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "Mich. Comp. Laws § 554.134(1)",
+        "statuteUrl": "https://www.legislature.mi.gov/Laws/MCL?objectName=mcl-554-134",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "MCL 554.134 (legislature.mi.gov)",
+          "MI courts benchbook"
+        ],
+        "notes": "1 month's notice (equal to the rental interval)"
       }
     },
     "lateFee": {
@@ -3077,7 +3089,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "MN": {
     "state": "MN",
@@ -3422,13 +3434,16 @@
         "sources": []
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "Mo. Rev. Stat. § 441.060",
+        "statuteUrl": "https://revisor.mo.gov/main/OneSection.aspx?section=441.060",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "RSMo § 441.060 (revisor.mo.gov)",
+          "Nolo state chart"
+        ],
+        "notes": "1 month's written notice"
       }
     },
     "lateFee": {
@@ -3476,7 +3491,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-01"
+    "lastVerified": "2026-07-02"
   },
   "MT": {
     "state": "MT",
@@ -3553,13 +3568,16 @@
         "sources": []
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "Mont. Code Ann. § 70-24-441(2)",
+        "statuteUrl": "https://archive.legmt.gov/bills/mca/title_0700/chapter_0240/part_0040/section_0410/0700-0240-0040-0410.html",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "MCA § 70-24-441 (legmt.gov)",
+          "Stessa state chart"
+        ],
+        "notes": "30 days' written notice"
       }
     },
     "lateFee": {
@@ -3607,7 +3625,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-01"
+    "lastVerified": "2026-07-02"
   },
   "NE": {
     "state": "NE",
@@ -4767,13 +4785,16 @@
         "sources": []
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "Ohio Rev. Code § 5321.17(B)",
+        "statuteUrl": "https://codes.ohio.gov/ohio-revised-code/section-5321.17",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "ORC § 5321.17 (codes.ohio.gov)",
+          "Stessa state chart"
+        ],
+        "notes": "30 days' notice before the periodic rental date"
       }
     },
     "lateFee": {
@@ -4821,7 +4842,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-10"
+    "lastVerified": "2026-07-02"
   },
   "OK": {
     "state": "OK",
@@ -5034,13 +5055,16 @@
         "notes": "Oregon caps annual increases (SB 608) at 7% + CPI, capped at 10%. No increase is allowed during the first year of a tenancy; buildings under 15 years old are exempt."
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "ORS 91.070; ORS 90.427",
+        "statuteUrl": "https://www.oregonlegislature.gov/bills_laws/ors/ors091.html",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "ORS 91.070 (oregonlegislature.gov)",
+          "ORS 90.427"
+        ],
+        "notes": "After the first year, Oregon generally requires cause (ORS 90.427); do not rely on a bare 30-day no-cause notice past year one."
       }
     },
     "lateFee": {
@@ -5089,7 +5113,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "PA": {
     "state": "PA",
@@ -5304,13 +5328,16 @@
         "notes": "Rhode Island requires 30 days, or 60 days if the tenant is 62 or older."
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "R.I. Gen. Laws § 34-18-37",
+        "statuteUrl": "http://webserver.rilin.state.ri.us/statutes/title34/34-18/34-18-37.HTM",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "R.I. Gen. Laws § 34-18-37 (rilin.state.ri.us)",
+          "Justia"
+        ],
+        "notes": "30 days' written notice"
       }
     },
     "lateFee": {
@@ -5358,7 +5385,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-01"
+    "lastVerified": "2026-07-02"
   },
   "SC": {
     "state": "SC",
@@ -5567,13 +5594,16 @@
         "sources": []
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "S.D. Codified Laws § 43-32-13",
+        "statuteUrl": "https://sdlegislature.gov/Statutes/43-32-13",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "SDCL § 43-32-13 (sdlegislature.gov)",
+          "SD Consumer Protection"
+        ],
+        "notes": "1 month's notice from the landlord (tenant owes only 15 days)"
       }
     },
     "lateFee": {
@@ -5621,7 +5651,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-01"
+    "lastVerified": "2026-07-02"
   },
   "TN": {
     "state": "TN",
@@ -5835,13 +5865,16 @@
         "notes": "Texas has no statute mandating advance notice of a rent increase; for month-to-month, give notice at least one rental period (commonly 30 days) ahead, or as the lease requires."
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "Tex. Prop. Code § 91.001",
+        "statuteUrl": "https://statutes.capitol.texas.gov/Docs/PR/htm/PR.91.htm",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "Tex. Prop. Code § 91.001 (statutes.capitol.texas.gov)",
+          "texas.public.law"
+        ],
+        "notes": "1 month's notice (tenancy ends the later of the notice date or one month after notice)"
       }
     },
     "lateFee": {
@@ -5890,7 +5923,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "UT": {
     "state": "UT",
@@ -6101,13 +6134,16 @@
         "notes": "Burlington has local provisions."
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 60,
+        "statute": "9 V.S.A. § 4467(c)",
+        "statuteUrl": "https://legislature.vermont.gov/statutes/section/09/137/04467",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "9 V.S.A. § 4467 (legislature.vermont.gov)",
+          "Justia"
+        ],
+        "notes": "9 V.S.A. § 4467 tiers the notice by length of occupancy; some municipalities add just-cause rules."
       }
     },
     "lateFee": {
@@ -6155,7 +6191,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-01"
+    "lastVerified": "2026-07-02"
   },
   "VA": {
     "state": "VA",
@@ -6235,13 +6271,16 @@
         "sources": []
       },
       "terminationDays": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 30,
+        "statute": "Va. Code § 55.1-1253(A)",
+        "statuteUrl": "https://law.lis.virginia.gov/vacode/title55.1/chapter12/section55.1-1253/",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "Va. Code § 55.1-1253 (law.lis.virginia.gov)",
+          "Nolo state chart"
+        ],
+        "notes": "30 days' written notice before the next rent due date"
       }
     },
     "lateFee": {
@@ -6290,7 +6329,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "WA": {
     "state": "WA",

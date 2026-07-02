@@ -73,13 +73,16 @@
       "sources": []
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "S.D. Codified Laws § 43-32-13",
+      "statuteUrl": "https://sdlegislature.gov/Statutes/43-32-13",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "SDCL § 43-32-13 (sdlegislature.gov)",
+        "SD Consumer Protection"
+      ],
+      "notes": "1 month's notice from the landlord (tenant owes only 15 days)"
     }
   },
   "lateFee": {
@@ -127,5 +130,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-01"
+  "lastVerified": "2026-07-02"
 }

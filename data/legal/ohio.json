@@ -76,13 +76,16 @@
       "sources": []
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "Ohio Rev. Code § 5321.17(B)",
+      "statuteUrl": "https://codes.ohio.gov/ohio-revised-code/section-5321.17",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "ORC § 5321.17 (codes.ohio.gov)",
+        "Stessa state chart"
+      ],
+      "notes": "30 days' notice before the periodic rental date"
     }
   },
   "lateFee": {
@@ -130,5 +133,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-10"
+  "lastVerified": "2026-07-02"
 }

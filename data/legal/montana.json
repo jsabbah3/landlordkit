@@ -73,13 +73,16 @@
       "sources": []
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "Mont. Code Ann. § 70-24-441(2)",
+      "statuteUrl": "https://archive.legmt.gov/bills/mca/title_0700/chapter_0240/part_0040/section_0410/0700-0240-0040-0410.html",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "MCA § 70-24-441 (legmt.gov)",
+        "Stessa state chart"
+      ],
+      "notes": "30 days' written notice"
     }
   },
   "lateFee": {
@@ -127,5 +130,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-01"
+  "lastVerified": "2026-07-02"
 }

@@ -77,13 +77,16 @@
       "notes": "Oregon caps annual increases (SB 608) at 7% + CPI, capped at 10%. No increase is allowed during the first year of a tenancy; buildings under 15 years old are exempt."
     },
     "terminationDays": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 30,
+      "statute": "ORS 91.070; ORS 90.427",
+      "statuteUrl": "https://www.oregonlegislature.gov/bills_laws/ors/ors091.html",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "ORS 91.070 (oregonlegislature.gov)",
+        "ORS 90.427"
+      ],
+      "notes": "After the first year, Oregon generally requires cause (ORS 90.427); do not rely on a bare 30-day no-cause notice past year one."
     }
   },
   "lateFee": {
@@ -132,5 +135,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }
