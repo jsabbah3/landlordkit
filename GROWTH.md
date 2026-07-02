@@ -21,7 +21,8 @@ Sprint start: 2026-07-02 (Fable 5 front-load sprint). Weekly ops manual: `OPERAT
 - **D3 ✅ 2026-07-02** — Linkable assets live: (a) /reports/security-deposit-interest-2026 (SVG chart + full cited table + raw CSV at /csv); (b) /reports/landlord-regulation-index-2026 (transparent scoring from verified fields only; unscoreable states excluded honestly); (c) /embed program — 3 chrome-free iframe calculators with attribution backlinks + /embed instructions page; (d) /press citable-data page. All in sitemap.
 - **D4 ✅ 2026-07-02** — Email system: (a) per-state "Landlord Law Cheat Sheet" lead magnets on every /laws hub (PDF generated client-side from verified fields — zero server cost, source `cheatsheet:<state>`); (b) exit-intent capture site-wide on content pages (desktop, 30-day suppression, permanent after signup, `exit_intent_shown` event); (c) growth/email-sequences.md — 5-email welcome sequence + 6 monthly newsletter templates, ESP-ready (blocked on Resend setup, a Jake task); capture instrumented per-source in GA4.
 - **D5 ✅ 2026-07-02** — Distribution armory: outreach CRM (27 verified-active targets, tiered, no invented contacts), 30-question forum answer bank w/ per-community rules, 36 social drafts (12 wks, verified facts only), HARO playbook + 5 templates, PH hour-by-hour + timing rec (~3–4 wks out), directories ranked. Inventory: growth/assets-inventory.md.
-- D6–D7 — pending (see tasks).
+- **D6 ✅ 2026-07-02** — Ops layer: scripts/growth/{weekly-report,check-site,staleness}.mjs (all tested; check-site ran green against prod), /admin/growth founder-gated dashboard, growth/experiments.md (12 specced), and OPERATIONS.md — the complete weekly manual incl. decision rules, month-4 checkpoint, §6 research recipe, and §7 paste-prompts for weaker models.
+- D7 — pending.
 
 ## Decisions
 
