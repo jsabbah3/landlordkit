@@ -18,7 +18,8 @@ Sprint start: 2026-07-02 (Fable 5 front-load sprint). Weekly ops manual: `OPERAT
 
 - **D1 ✅ 2026-07-02** — audit clean, no critical fixes needed. GROWTH.md initialized.
 - **D2 ✅ 2026-07-02** — (a) /laws hub system: 30 state hubs + index live (threshold ≥4 verified fields; more publish automatically as research raises coverage — no code change needed, just data). (b) NEW termination-notice dataset: 13 states verified at statute level (src/tools/termination-notice/data.ts), incl. catching Florida's 2023 HB 1417 change (15→30 days) that aggregator tables still get wrong. High-confidence fields 46→59. (c) DEFERRED with rationale: rent-receipt state pages + state-comparison pages — research recipes for both are in OPERATIONS.md; comparison pages held until per-state coverage is deeper (thinness risk). Sitemap now ~262 URLs.
-- D3–D7 — pending (see tasks).
+- **D3 ✅ 2026-07-02** — Linkable assets live: (a) /reports/security-deposit-interest-2026 (SVG chart + full cited table + raw CSV at /csv); (b) /reports/landlord-regulation-index-2026 (transparent scoring from verified fields only; unscoreable states excluded honestly); (c) /embed program — 3 chrome-free iframe calculators with attribution backlinks + /embed instructions page; (d) /press citable-data page. All in sitemap.
+- D4–D7 — pending (see tasks).
 
 ## Decisions
 

@@ -61,5 +61,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     urls.push(entry(`/laws/${s.slug}`, 0.8));
   }
 
+  // Linkable assets (reports, press, embed program).
+  urls.push(entry("/reports", 0.7, "weekly"));
+  urls.push(entry("/reports/security-deposit-interest-2026", 0.8));
+  urls.push(entry("/reports/landlord-regulation-index-2026", 0.8));
+  urls.push(entry("/press", 0.5));
+  urls.push(entry("/embed", 0.5));
+
   return urls;
 }
