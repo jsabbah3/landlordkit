@@ -46,3 +46,16 @@ comments, newsletter sends, social). See gtm/metrics.md.
 | Where | Date | URL used | Status |
 |---|---|---|---|
 | (fill as you go) | | | |
+
+## Priority & verification pass (2026-07-02)
+Submit in this order (highest link value / least effort first):
+1. **AlternativeTo** (free, high DR, evergreen) — list vs Avail/TurboTenant/RentRedi.
+2. **SaaSHub** (free, fast approval).
+3. **Indie Hackers product page** + build-log post (the "204→260 programmatic pages, $20/mo stack" story).
+4. **Uneed / MicroLaunch** (free tiers).
+5. **BiggerPockets** resource mention (after 2 weeks of genuine forum activity — see growth/forum-answer-bank.md rules).
+6. **r/Landlord wiki request** (after your account has history in the sub; message mods, don't post).
+7. State landlord associations (see growth/outreach-crm.md Tier 1 — these double as directory listings).
+NOTE: skip AI-tool directories (wrong audience) and anything charging for a
+listing (against budget + usually worthless links). Verify each form's current
+requirements when submitting; log in the tracking table above.

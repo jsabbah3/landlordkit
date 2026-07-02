@@ -53,3 +53,19 @@ Plus: 240×240 logo PNG (the green "L" mark on paper background).
 
 ## Topics
 Legal · Real Estate · Productivity · SaaS · Fintech
+
+## Launch-day hour-by-hour (Tue–Thu, all times PT)
+- **12:01 AM** — listing goes live (schedule it). Verify tagline/gallery render; post the founder first-comment immediately.
+- **12:05 AM** — share the PH link to your own channels (X/LinkedIn/FB groups where allowed) with a human note, not "please upvote" (PH penalizes vote solicitation — say "we launched, feedback welcome").
+- **6–8 AM** — reply to every overnight comment. Email your subscriber list (template: "we're on PH today — come tell me which state rule your last tool got wrong").
+- **9 AM–12 PM** — respond within ~15 min all morning; post 1–2 substantive comment-answers with worked state examples (that's the demo).
+- **12 PM** — status check: if top-10 of the day, keep engaging; if not, don't burn the day — it's a backlink either way.
+- **3–5 PM** — second push to any community where you have genuine standing (r/SideProject, Indie Hackers — allowed there).
+- **Evening** — thank-you comment pass; note every commenter who's a landlord → they're testimonial/outreach candidates tomorrow.
+- **Next day** — add the "featured on Product Hunt" badge to /press, log results in GROWTH.md, email commenters who asked questions.
+
+## Timing recommendation
+Launch AFTER: (1) GA4 has ≥2 weeks of baseline, (2) ≥1 real testimonial from
+Reddit/forum engagement, (3) the newsletter list ≥50 so launch-day has a seed
+crowd. Given the current state, that points to ~3–4 weeks out. Don't launch
+cold — PH is one-shot per product.
