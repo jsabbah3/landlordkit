@@ -99,3 +99,35 @@ title. This trades raw page count for the accuracy moat.
 
 Deliverable: **LAUNCH-DAY-RUNBOOK.md** — pre-flight checklist, break/fix table
 in likelihood order, launch-day don'ts, and the standing Jake-actions.
+
+## A6 — Operations handoff stress-test
+
+| # | Sev | Finding | Evidence | Status |
+|---|---|---|---|---|
+| A6-1 | MEDIUM | **Runbook §1 would make the operator commit their own artifacts** — growth/gsc/ (GSC exports w/ query data) and growth/reports/ weren't gitignored | ran §1 literally; git status showed them tracked | **Fixed** — both added to .gitignore |
+| A6-2 | INFO (pass) | weekly-report.mjs works correctly on realistic two-week GSC input — LOW-CTR, STRIKING-DISTANCE, and DROP flags all fired as designed | ran with fixtures | Pass |
+| A6-3 | INFO (pass) | check-site.mjs (green vs prod) and staleness.mjs (coverage + near-hub targets) run clean; empty-input paths handled gracefully | earlier runs | Pass |
+| A6-4 | **HIGH** (for the handoff) | **The §7 paste-prompts were exploitable by a weaker model**: "state research" didn't forbid aggregators as the *source* (a weak model would cite Nolo and mark 'high' — directly poisoning the moat); "outreach" didn't forbid using a send tool or inventing contacts; "experiment" didn't forbid scope creep or committing on failing tests | prompt critique | **Fixed** — hardened all four prompts + guardrails: primary-source-only with .gov requirement and STOP-on-failure, plain-text-drafts-only with no-send/no-invent, implement-only-#n with no-weakening-checks, and an explicit "you have NO authority to post/send/publish" guardrail |
+| A6-5 | INFO | §9 monitoring section added to OPERATIONS.md merging the audit's ongoing checks into the weekly loop | — | Done |
+
+---
+
+## Audit summary
+
+**Findings:** 2 High legal errors (WA, CO — fixed), 1 High content-quality
+issue (83 duplicate pages deindexed), 1 High trust gap (no About/contact —
+fixed), 1 High handoff-prompt weakness (fixed), 1 High prod bug (email capture —
+Jake-action). Plus mediums (OG cards, RLS-unconfirmed, privacy accuracy — 2
+fixed, 1 Jake-action) and documented low/accepted risks.
+
+**The audit did its job:** it found real, shipped errors — including two wrong
+legal values that had been public for weeks. Nothing here was cosmetic.
+
+**Deliverables:** AUDIT.md (this file), per-state confidence table (A1),
+LAUNCH-DAY-RUNBOOK.md, RISK-REGISTER.md, hardened OPERATIONS.md §7+§9.
+
+**Jake-action shortlist (do before launch):**
+1. Run supabase/schema.sql (unblocks email capture — currently broken in prod).
+2. Confirm RLS ON for all user tables afterward.
+3. Redirect landlordkit.vercel.app → getlandlordkit.com.
+4. Personally spot-check WA, CO, MD, CA, NY (A1 shortlist).

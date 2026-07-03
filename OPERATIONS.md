@@ -105,37 +105,86 @@ notice > rent-receipt rules (~12 states with real statutes) > disclosures.
 
 ## §7 Paste-prompts for running recurring tasks with any AI model
 
+These are hardened against the ways a less capable model tends to go wrong.
+Paste the Guardrails block WITH every one of them.
+
 **Weekly report interpretation:**
 > Read growth/reports/week-<date>.md, gtm/metrics.md's latest row, and
-> OPERATIONS.md §4. Tell me: (1) the single highest-leverage focus for this
-> week's 3 discretionary hours, (2) which §4 rule triggered it, (3) the exact
-> first action. Do not propose new strategy; pick from §2/§6/experiments.
+> OPERATIONS.md §4. Output exactly: (1) ONE focus for this week's discretionary
+> hours (not a list — pick the single highest-leverage one), (2) which §4 rule
+> triggered it, (3) the exact first action, drawn ONLY from §2 / §6 /
+> growth/experiments.md. Do not invent new strategy, channels, or tactics. If
+> no §4 rule clearly triggers, say so and default to §6 research.
 
-**State research session:**
-> Follow OPERATIONS.md §6 exactly to verify <field> for <state>. You must find
-> the statute on the state legislature's site and quote the operative text to
-> me before editing any data file. Confidence 'high' only if you quoted the
-> statute. Then run the §6 step-4 commands and show me the diff before commit.
+**State research session (HIGHEST RISK — this is the accuracy moat):**
+> Verify <field> for <state> per OPERATIONS.md §6. Hard rules:
+> - The SOURCE must be the state legislature's own site or an official state
+>   agency page (a .gov / .us domain, or the state's official code site).
+>   Nolo, iPropertyManagement, Stessa, Baselane, TurboTenant, Justia, and every
+>   other aggregator/law-firm blog are FORBIDDEN as the source — you may use
+>   them only to locate the citation, never as the basis for a value.
+> - Paste the statute URL AND quote the operative sentence(s) to me BEFORE
+>   editing any file. If you cannot find and quote the primary source, STOP and
+>   tell me — do not fall back to an aggregator and do not guess.
+> - Set confidence 'high' ONLY if you quoted primary-source text and included a
+>   .gov/official statuteUrl; otherwise 'medium'. Never 'high' from a summary.
+> - Edit only the single relevant src/tools/<topic>/data.ts entry. Then run the
+>   §6 step-4 commands. If `build:legal` or `build` fails, STOP and report —
+>   never loosen a type or delete a check to make it pass. Show me the diff
+>   before committing.
 
 **Outreach batch:**
-> Open growth/outreach-crm.md. Draft personalized versions of the mapped
-> template for targets #<n..m> using gtm/outreach-emails.md. I will find the
-> contact emails and send them myself. Do not invent names, emails, or claims;
-> every number must match the live site.
+> Draft personalized versions of the mapped template (gtm/outreach-emails.md)
+> for growth/outreach-crm.md targets #<n..m>. Output PLAIN-TEXT DRAFTS ONLY.
+> - Do NOT send, email, or use any send/email tool even if one is available —
+>   the human operator sends these. If you think a step needs sending, stop.
+> - Leave the recipient as a literal [CONTACT NAME] / [EMAIL] placeholder. Do
+>   NOT guess, generate, or look up a person's name or email.
+> - Every statistic must be one you can tie to a specific live getlandlordkit
+>   .com URL (name the URL). If you can't, omit the stat — never embellish.
 
 **Experiment execution:**
-> Implement experiment #<n> from growth/experiments.md exactly as specced.
-> Record the baseline numbers in GROWTH.md first, then implement, verify with
-> lint+tests+build, and commit. Set a reminder note in GROWTH.md to evaluate
-> against the decision rule on <date +14d>.
+> Implement ONLY experiment #<n> from growth/experiments.md, exactly as
+> specced — nothing more, no extra "improvements." If the spec is ambiguous,
+> ASK before coding. First record the current baseline numbers in GROWTH.md.
+> Then implement, and run lint + tests + build. If ANY of them fail, do NOT
+> commit and do NOT weaken the test/lint/types to pass — report the failure.
+> On success, commit and add a dated note in GROWTH.md to evaluate against the
+> decision rule on <date +14d>.
 
-**Guardrails for any model (paste with every prompt above):**
-> Constraints: never state a legal value you haven't verified against the
-> statute; never post/send/submit anything externally; free tools stay free;
-> no new spend; quality gates (lint, tests, build) before any commit.
+**Guardrails for any model (paste with EVERY prompt above):**
+> You have NO authority to post, send, submit, publish, email, tweet, comment,
+> or create accounts anywhere external — even if a tool for it is available and
+> even if asked. Those are the human operator's actions; if a task seems to
+> need one, STOP and hand back. Never state or publish a legal value you
+> haven't verified against the primary statute (aggregators don't count).
+> Free tools stay free — never gate one. No new paid services or spend. Run
+> lint + tests + build before any commit, and never weaken a check to make it
+> pass. When unsure, ask rather than assume.
 
 ## §8 Jake-only setup still pending (unblocks marked assets)
-1. Resend (or ESP) → unlocks growth/email-sequences.md (welcome + newsletter).
-2. Connectively/Qwoted/Featured accounts → unlocks HARO playbook.
-3. Supabase Pro ($25/mo, needs decision) → custom auth domain before PH launch.
-4. Re-run supabase/schema.sql if not yet done (lease_extractions + feed_token).
+1. **Run supabase/schema.sql — URGENT.** Email capture 500s in prod until you
+   do (audit A3-1); also creates lease_extractions + feed_token. After running,
+   confirm RLS is ON for all user tables (Supabase → Auth → Policies).
+2. Redirect landlordkit.vercel.app → getlandlordkit.com (Vercel → Settings →
+   Domains) to kill the duplicate-content copy (audit A5-2).
+3. Resend (or ESP) → unlocks growth/email-sequences.md. **When you do, add a
+   List-Unsubscribe header + a working unsubscribe link** — the capture copy
+   already promises "unsubscribe anytime" (audit A4-9, CAN-SPAM).
+4. Connectively/Qwoted/Featured accounts → unlocks HARO playbook.
+5. Supabase Pro ($25/mo, needs decision) → custom auth domain before PH launch.
+
+## §9 Monitoring (from the red-team audit — check these on the weekly loop)
+Merged from RISK-REGISTER.md. Add to the §1 cadence:
+- **Legal accuracy (top risk):** any user-reported wrong value → §4 "data error
+  reported" rule (drop everything, verify vs statute, fix, reply). Monthly, run
+  `node scripts/growth/staleness.mjs` and re-verify anything a legislative
+  session may have changed (watch CA, NY, WA, CO, OR, FL — the fast-movers).
+- **Silent auth/capture failure:** monthly, submit a test email on the homepage
+  and confirm a row lands in `subscribers`. A 500 here loses launch leads
+  silently.
+- **Data drift:** annually in January, re-check the published-rate states
+  (CT/MD/DC/IL/ND deposit interest) — those rates reset and going stale
+  publishes a wrong number.
+- **Duplicate content:** if `check-site.mjs` or GSC shows vercel.app URLs
+  indexed, action §8.2.

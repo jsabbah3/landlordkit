@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Growth ops: operator-local artifacts (GSC exports + generated reports)
+growth/gsc/
+growth/reports/
