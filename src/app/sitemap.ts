@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/tools", 0.9, "weekly"),
     entry("/guides", 0.7),
     entry("/pricing", 0.6),
+    entry("/about", 0.5, "yearly"),
     entry("/disclaimer", 0.2, "yearly"),
     entry("/privacy", 0.2, "yearly"),
     entry("/terms", 0.2, "yearly"),

@@ -25,12 +25,15 @@ export function EmailCapture({ source }: { source: string }) {
         body: JSON.stringify({ email, source }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
+      if (res.status >= 400 && res.status < 500) {
+        // Bad input (invalid email) — ask the user to correct it.
         setErrMsg(data.error || "Something went wrong — try again.");
         setState("error");
         return;
       }
-      track("email_signup", { source });
+      // Server-side save failure: still deliver the promised PDF — never hold
+      // the lead magnet hostage to our storage. (Signup isn't tracked then.)
+      if (res.ok) track("email_signup", { source });
       // Deliver the incentive immediately, client-side.
       const [{ buildDocumentPdf, downloadPdf }, { TAX_CHECKLIST_BLOCKS }] =
         await Promise.all([

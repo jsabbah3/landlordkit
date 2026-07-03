@@ -60,3 +60,14 @@ than eyeballing 40 individual pages.
 removed were unverified 99%-duplicate shells — liability, not asset. They come
 back one by one as §6 research verifies them, each with a statute-checked
 title. This trades raw page count for the accuracy moat.
+
+## A3 — Funnel & trust teardown
+
+| # | Sev | Finding | Evidence | Status |
+|---|---|---|---|---|
+| A3-1 | **HIGH** | **Email capture broken in production**: /api/subscribe returns 500 for valid emails. Service key works (Stripe webhook writes `profiles`), so the `subscribers` table/constraint is missing in prod — schema.sql §subscribers was never run | live POST test | **Jake-action (URGENT): run supabase/schema.sql in the SQL editor** (also creates lease_extractions + feed_token, both pending). Code-side fixed: capture failure no longer blocks the promised PDF — the lead magnet downloads anyway with an honest note, invalid emails still validated |
+| A3-2 | **HIGH** | 8-second trust test failed: no /about, no contact link anywhere (contact only buried on /press), no named human | curl live site | **Fixed** — /about page (who runs it, the verification rule, how it stays free, contact), "About & contact" footer link, sitemap entry |
+| A3-3 | MEDIUM | Tenant persona lands on landlord-framed copy; the math serves them fine but nothing acknowledges them | copy review | Recommendation logged (one-line "Tenant? This same math shows what you're owed" on deposit tools) — deferred |
+| A3-4 | LOW | Stripe portal cancel/renew untested end-to-end (live mode only; founder purchase verified checkout+webhook) | — | Jake-action: open /account → Manage billing once; cancel+resume in the portal |
+| A3-5 | INFO | PDFs build clean: tax checklist + state cheat sheet generate multi-KB PDFs, no leaked placeholders, disclaimer + verification language present (now unit-tested, 77 tests) | new stateCheatSheet.test.ts | Pass |
+| A3-6 | INFO | 404s correct (non-hub /laws/*, unknown routes); absurd-input handling covered by the earlier hostile-QA pass (WinAnsi crash fixed, div-by-zero guarded) | live curls + qa-report | Pass |

@@ -25,12 +25,13 @@ export function StateCheatSheetCapture({ code, stateName }: { code: string; stat
         body: JSON.stringify({ email, source: `cheatsheet:${code.toLowerCase()}` }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
+      if (res.status >= 400 && res.status < 500) {
         setErrMsg(data.error || "Something went wrong — try again.");
         setState("error");
         return;
       }
-      track("email_signup", { source: `cheatsheet:${code.toLowerCase()}` });
+      // Server-side save failure: still deliver the promised PDF.
+      if (res.ok) track("email_signup", { source: `cheatsheet:${code.toLowerCase()}` });
       const [{ buildDocumentPdf, downloadPdf }, { buildStateCheatSheet }] = await Promise.all([
         import("@/lib/pdf/pdfDoc"),
         import("@/content/stateCheatSheet"),

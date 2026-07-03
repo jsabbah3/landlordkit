@@ -41,6 +41,7 @@ export function SiteFooter() {
         <div>
           <p className="text-sm font-semibold text-ink">Legal</p>
           <ul className="mt-3 space-y-2 text-sm text-ink/65">
+            <li><Link href="/about" className="hover:text-brand-700">About & contact</Link></li>
             <li><Link href="/disclaimer" className="hover:text-brand-700">Disclaimer</Link></li>
             <li><Link href="/privacy" className="hover:text-brand-700">Privacy</Link></li>
             <li><Link href="/terms" className="hover:text-brand-700">Terms</Link></li>
