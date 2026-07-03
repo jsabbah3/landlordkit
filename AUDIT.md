@@ -71,3 +71,17 @@ title. This trades raw page count for the accuracy moat.
 | A3-4 | LOW | Stripe portal cancel/renew untested end-to-end (live mode only; founder purchase verified checkout+webhook) | — | Jake-action: open /account → Manage billing once; cancel+resume in the portal |
 | A3-5 | INFO | PDFs build clean: tax checklist + state cheat sheet generate multi-KB PDFs, no leaked placeholders, disclaimer + verification language present (now unit-tested, 77 tests) | new stateCheatSheet.test.ts | Pass |
 | A3-6 | INFO | 404s correct (non-hub /laws/*, unknown routes); absurd-input handling covered by the earlier hostile-QA pass (WinAnsi crash fixed, div-by-zero guarded) | live curls + qa-report | Pass |
+
+## A4 — Security & abuse review
+
+| # | Sev | Finding | Evidence | Status |
+|---|---|---|---|---|
+| A4-1 | INFO (pass) | **Service-role key never ships to the client** — 0 matches in the full JS bundle; env.ts keeps it server-only | grep /tmp/alljs | Pass (the critical one) |
+| A4-2 | INFO (pass) | Every paid/data endpoint enforces Pro + ownership **server-side** via getProStatus: lease-extract, profile, compliance-profile, compliance-feed all 403 non-Pro; admin dashboard 404s non-admin (server component, session email match) | source review | Pass |
+| A4-3 | INFO (pass) | Stripe webhook verifies the signature against the raw body before trusting any event (constructEvent + secret) | webhook route | Pass |
+| A4-4 | LOW | **Watermark-free PDFs + batch generation are client-side entitlements** — a technical user can flip `isPro` in the browser and remove the footer / batch-generate. Inherent to zero-server-cost client generation | BatchRentReceiptTool passes `pro:true`; pdf footer is `pro:isPro` | **Accepted-risk** — the watermark is a soft upsell, not a hard gate; the real paid value (cloud save, lease AI, reminders) is all server-enforced (A4-2). Documented, not "fixed" by pretending |
+| A4-5 | MEDIUM | **RLS correct by design but unconfirmed in prod** — schema.sql grants owner-only policies on profiles/landlord/compliance and RLS-with-no-policy (deny-all) on subscribers/lease_extractions. But A3-1 shows schema.sql wasn't fully run, so the prod RLS state of the newer tables is UNKNOWN | schema.sql review + A3-1 | **Jake-action:** after running schema.sql, in Supabase → Auth → Policies confirm RLS is ON for profiles, landlord_profiles, compliance_profiles, subscribers, lease_extractions |
+| A4-6 | LOW | /api/subscribe has no rate limit — spammable | route review | Accepted-risk — email upsert dedupes; worst case junk rows; add a limit if abused (Vercel WAF/Upstash noted in RISK-REGISTER) |
+| A4-7 | MEDIUM | Privacy policy said "cookieless analytics… no personal information" but the site runs GA4 (cookies, anonymized IP) — inaccurate disclosure | privacy page vs SiteHeader GA4 | **Fixed** — privacy page now accurately describes GA4, IP anonymization, that inputs never leave the browser, and how to opt out |
+| A4-8 | INFO | No secrets in git history (the `sk_live` hit in f034664 is prose in the commit body, not a key); `npm audit` = 2 moderate, both transitive postcss-in-next build-time (not runtime-exploitable) | git log -S, npm audit | Pass / accepted-risk |
+| A4-9 | LOW | Email unsubscribe: capture copy promises "unsubscribe anytime" but no ESP/unsubscribe mechanism exists yet (no email is sent yet) | copy vs infra | Deferred — becomes required the moment Resend goes live (List-Unsubscribe header + link); noted in email-sequences.md + RISK-REGISTER |

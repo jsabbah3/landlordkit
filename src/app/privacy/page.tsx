@@ -28,9 +28,14 @@ export default function PrivacyPage() {
         </p>
         <h2>Analytics</h2>
         <p>
-          We use privacy-friendly, cookieless analytics to understand which
-          tools are used and how visitors find us. This does not track you
-          across other websites and does not collect personal information.
+          We use Google Analytics 4 to understand which tools are used and how
+          visitors find us. It sets cookies and collects usage data (pages
+          viewed, events like &quot;tool used&quot;, approximate location from
+          an anonymized IP); we configure it with IP anonymization and do not
+          use it for advertising. Your calculator inputs never leave your
+          browser and are not sent to analytics. You can block analytics with
+          any standard content blocker without affecting the tools, or use
+          Google&apos;s opt-out browser add-on.
         </p>
         <h2>Pro accounts</h2>
         <p>
