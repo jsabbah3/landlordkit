@@ -26,10 +26,15 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
   const state = getStateBySlug(slug);
   const rule = state && getDepositReturnRule(state.code);
   if (!state || !rule) return {};
+  const low = rule.cite.confidence === "low";
   return {
-    title: `Security Deposit Return Deadline — ${state.name} (${rule.deadlineDays} Days)`,
-    description: `How long does a landlord have to return a security deposit in ${state.name}? See the ${rule.deadlineDays}-day deadline, itemize deductions, and download a statement. Free.`,
+    // Low-confidence: no number in the title, noindex until statute-verified.
+    title: low
+      ? `Security Deposit Return Tracker — ${state.name}`
+      : `Security Deposit Return Deadline — ${state.name} (${rule.deadlineDays} Days)`,
+    description: `How long does a landlord have to return a security deposit in ${state.name}? See the deadline, itemize deductions, and download a statement. Free.`,
     alternates: { canonical: `${BASE}/${slug}` },
+    ...(low ? { robots: { index: false, follow: true } } : {}),
   };
 }
 

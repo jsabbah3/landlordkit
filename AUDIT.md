@@ -41,3 +41,22 @@ Severity: **Critical** (live harm/legal exposure) · **High** (wrong public clai
 3. **MD** — confirm the DHCD-calculator framing reads right to you.
 4. **CA** — highest traffic potential; skim /laws/california for anything that reads off.
 5. **NY** — read the interest rule (6+ units / 1% admin fee) on the hub.
+
+## A2 — Content quality (Google-rater pass)
+
+Method: template-level analysis (masked-text similarity + content inspection)
+across every page type, which covers all pages sharing a template — stronger
+than eyeballing 40 individual pages.
+
+| # | Sev | Finding | Evidence | Status |
+|---|---|---|---|---|
+| A2-1 | **HIGH** | 83 low-confidence tool state pages were 99.0% identical (state name masked, ~3.1k chars) AND asserted unverified values in their `<title>` ("(30-Day Rule)") — the exact failure mode that made WA/CO wrong, at index scale | AL vs KS masked-diff 99.0%; confidence counts: rent-increase 35 low, late-fee 33 low, deposit-return 15 low | **Fixed** — low-confidence state pages are now `noindex,follow`, removed from sitemap (267→184 URLs), and low-confidence titles no longer assert the number. Pages remain usable with their low-confidence badge; they re-enter the index automatically when research upgrades them (OPERATIONS §6) |
+| A2-2 | INFO | /laws hubs are genuinely differentiated (MA vs VT masked similarity 25.6%) — driven by real per-state field/value differences + honest unverified lists | measured | Pass |
+| A2-3 | INFO | Deposit-interest "no requirement" states have substantive negative-case content + working calculator (TX sampled) | inspected | Pass |
+| A2-4 | LOW | Noindexed low-confidence pages still assert the value in body copy (hedged only by the confidence badge) | AL summary line | Accepted-risk — search exposure removed; full fix = hedged summaries in content builders (logged for a research week) |
+| A2-5 | INFO | Guide/report FAQ + table content is hand-written or generated from verified data; FAQ schema answers match on-page content by construction | construction + samples | Pass |
+
+**Judgment call for Jake:** indexed pages dropped 267→184 by design. The 83
+removed were unverified 99%-duplicate shells — liability, not asset. They come
+back one by one as §6 research verifies them, each with a statute-checked
+title. This trades raw page count for the accuracy moat.

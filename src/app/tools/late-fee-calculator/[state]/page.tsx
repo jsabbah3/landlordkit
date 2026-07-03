@@ -30,6 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ state: st
     title: `Rent Late Fee Calculator — ${state.name} (Cap & Grace Period)`,
     description: `What is the maximum late fee a landlord can charge in ${state.name}? See the cap and grace period, and calculate a compliant fee. Free.`,
     alternates: { canonical: `${BASE}/${slug}` },
+    // Keep unverified states out of the index until statute-checked.
+    ...(rule.cite.confidence === "low" ? { robots: { index: false, follow: true } } : {}),
   };
 }
 

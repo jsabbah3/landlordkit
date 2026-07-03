@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 import { absoluteUrl } from "@/lib/site";
 import { TOOLS } from "@/lib/tools";
 import { US_STATES, getStateByCode } from "@/lib/states";
-import { rentIncreaseStateCodes } from "@/tools/rent-increase-notice/data";
-import { lateFeeStateCodes } from "@/tools/late-fee/data";
-import { depositReturnStateCodes } from "@/tools/security-deposit-return/data";
+import { rentIncreaseStateCodes, RENT_INCREASE } from "@/tools/rent-increase-notice/data";
+import { lateFeeStateCodes, LATE_FEE } from "@/tools/late-fee/data";
+import { depositReturnStateCodes, DEPOSIT_RETURN } from "@/tools/security-deposit-return/data";
 import { publishedGuides } from "@/content/guides";
 import { hubStates } from "@/lib/lawHub";
 
@@ -35,14 +35,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     if (t.status === "live") urls.push(entry(`/tools/${t.slug}`, 0.9, "weekly"));
   }
 
-  // State pages per state-aware tool.
+  // State pages per state-aware tool. Low-confidence states are EXCLUDED
+  // (and noindexed on-page): only statute-verified values get indexed —
+  // fewer, stronger pages (audit A2). They re-enter automatically once
+  // research upgrades their confidence.
   const allStateCodes = US_STATES.map((s) => s.code);
+  const notLow = (codes: string[], data: Record<string, { cite: { confidence: string } }>) =>
+    codes.filter((c) => data[c]?.cite.confidence !== "low");
   const stateAware: Record<string, string[]> = {
-    // Deposit interest now has a substantive page for every state.
+    // Deposit interest has a substantive, verified page for every state.
     "security-deposit-interest-calculator": allStateCodes,
-    "rent-increase-notice-generator": rentIncreaseStateCodes(),
-    "late-fee-calculator": lateFeeStateCodes(),
-    "security-deposit-return-tracker": depositReturnStateCodes(),
+    "rent-increase-notice-generator": notLow(rentIncreaseStateCodes(), RENT_INCREASE),
+    "late-fee-calculator": notLow(lateFeeStateCodes(), LATE_FEE),
+    "security-deposit-return-tracker": notLow(depositReturnStateCodes(), DEPOSIT_RETURN),
   };
   for (const [slug, codes] of Object.entries(stateAware)) {
     for (const code of codes) {

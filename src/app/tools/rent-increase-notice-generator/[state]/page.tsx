@@ -36,10 +36,17 @@ export async function generateMetadata({
   const state = getStateBySlug(slug);
   const rule = state && getRentIncreaseRule(state.code);
   if (!state || !rule) return {};
+  const low = rule.cite.confidence === "low";
   return {
-    title: `Rent Increase Notice — ${state.name} (${rule.baseNoticeDays}-Day Rule)`,
+    // Low-confidence states: don't assert the number in the title, and keep
+    // the page out of the index until the value is statute-verified (the
+    // WA/CO audit lesson). The tool stays usable with its confidence badge.
+    title: low
+      ? `Rent Increase Notice Generator — ${state.name}`
+      : `Rent Increase Notice — ${state.name} (${rule.baseNoticeDays}-Day Rule)`,
     description: `How much notice must ${state.name} landlords give to raise rent? Generate a compliant ${state.name} rent increase letter (PDF) with the correct notice period. Free.`,
     alternates: { canonical: `${BASE}/${slug}` },
+    ...(low ? { robots: { index: false, follow: true } } : {}),
   };
 }
 
