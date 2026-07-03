@@ -27,9 +27,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE.name,
-    title: `${SITE.name} — ${SITE.tagline}`,
-    description: SITE.description,
     url: SITE.url,
+    // No static title/description here: Next falls back to each page's own
+    // title/description for og:title/og:description, so shared links (reports,
+    // state hubs) get page-specific cards instead of the generic homepage one.
   },
   twitter: { card: "summary_large_image", site: SITE.twitter },
   robots: { index: true, follow: true },

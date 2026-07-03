@@ -85,3 +85,17 @@ title. This trades raw page count for the accuracy moat.
 | A4-7 | MEDIUM | Privacy policy said "cookieless analytics… no personal information" but the site runs GA4 (cookies, anonymized IP) — inaccurate disclosure | privacy page vs SiteHeader GA4 | **Fixed** — privacy page now accurately describes GA4, IP anonymization, that inputs never leave the browser, and how to opt out |
 | A4-8 | INFO | No secrets in git history (the `sk_live` hit in f034664 is prose in the commit body, not a key); `npm audit` = 2 moderate, both transitive postcss-in-next build-time (not runtime-exploitable) | git log -S, npm audit | Pass / accepted-risk |
 | A4-9 | LOW | Email unsubscribe: capture copy promises "unsubscribe anytime" but no ESP/unsubscribe mechanism exists yet (no email is sent yet) | copy vs infra | Deferred — becomes required the moment Resend goes live (List-Unsubscribe header + link); noted in email-sequences.md + RISK-REGISTER |
+
+## A5 — Load & launch readiness
+
+| # | Sev | Finding | Evidence | Status |
+|---|---|---|---|---|
+| A5-1 | MEDIUM | **Per-page OG cards were generic** — every shared link (incl. the reports Jake will promote) showed the homepage title/description because layout hardcoded og:title/description | live meta scrape | **Fixed** — removed static og title/desc from layout so each page's own title/description flows to its card; verified reports + hubs now render distinct cards |
+| A5-2 | MEDIUM | **landlordkit.vercel.app serves a fully-indexable duplicate** of the whole site (200, robots Allow: /) | curl | **Mitigated + Jake-action** — canonical tags on every page already point Google to getlandlordkit.com (primary SEO defense, confirmed present). Permanent fix: redirect the vercel.app domain to the apex in Vercel settings (in runbook) |
+| A5-3 | INFO (pass) | **Free-tool isolation holds** — every calculator/PDF runs entirely client-side with no server call; only auth/accounts/email-capture touch Supabase. If Supabase falls over, the core site stays up. This is the single most important launch-resilience property and it's real | architecture review (tools import no server actions; PDFs generated in-browser) | Pass |
+| A5-4 | INFO (pass) | OG image renders (200 image/png); canonicals present on all key pages; robots + sitemap clean | curl | Pass |
+| A5-5 | LOW | Homepage has no explicit canonical tag (self-canonicalizes) | curl | Accepted-risk |
+| A5-6 | INFO | Full Lighthouse/CWV under throttled mobile not runnable from here (no headless browser); pages are static/SSG with minimal JS and the prior sprint verified Lighthouse 95+ mobile — re-run in PageSpeed Insights on the 8 entry pages pre-launch (in runbook) | — | Jake-action (light) |
+
+Deliverable: **LAUNCH-DAY-RUNBOOK.md** — pre-flight checklist, break/fix table
+in likelihood order, launch-day don'ts, and the standing Jake-actions.
