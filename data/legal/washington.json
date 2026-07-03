@@ -14,10 +14,12 @@
     "returnDeadlineDays": {
       "value": 30,
       "statute": "Rev. Code Wash. § 59.18.280",
-      "statuteUrl": null,
-      "lastVerified": "2026-06-01",
-      "confidence": "medium",
-      "sources": []
+      "statuteUrl": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280"
+      ]
     },
     "returnDeadlineIfDeductingDays": {
       "value": null,
@@ -31,10 +33,12 @@
     "itemizationRequired": {
       "value": true,
       "statute": "Rev. Code Wash. § 59.18.280",
-      "statuteUrl": null,
-      "lastVerified": "2026-06-01",
-      "confidence": "medium",
-      "sources": []
+      "statuteUrl": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280"
+      ]
     },
     "interestRequired": {
       "value": null,
@@ -66,15 +70,15 @@
       "notes": "Not yet researched — needs 2-source verification."
     },
     "rentIncreaseDays": {
-      "value": 60,
-      "statute": "Rev. Code Wash. § 59.18.140",
+      "value": 90,
+      "statute": "Rev. Code Wash. § 59.18.140(3) (as amended by HB 1217, 2025)",
       "statuteUrl": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.140",
-      "lastVerified": "2026-06-01",
-      "confidence": "low",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
       "sources": [
         "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.140"
       ],
-      "notes": "Washington's 2025 law (HB 1217) caps most annual increases (around 7% + CPI, max 10%) and requires written notice — verify the current cap and notice period, which were recently revised."
+      "notes": "Washington's rent-stabilization law (HB 1217, effective May 7, 2025) requires at least 90 days' written notice for ANY rent increase and caps most annual increases at 7% + CPI (10% max). Specific notice forms are required, and cap exemptions (e.g. newer buildings) must be claimed in the notice — see the WA Dept. of Commerce HB 1217 landlord resource center."
     },
     "terminationDays": {
       "value": null,
@@ -131,5 +135,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-01"
+  "lastVerified": "2026-07-02"
 }

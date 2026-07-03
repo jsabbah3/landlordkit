@@ -40,7 +40,7 @@
       "value": true,
       "statute": "Conn. Gen. Stat. § 47a-21",
       "statuteUrl": "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates",
-      "lastVerified": "2026-06-10",
+      "lastVerified": "2026-07-02",
       "confidence": "high",
       "sources": [
         "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates"
@@ -50,7 +50,7 @@
       "value": "Interest is paid at the deposit-index rate the CT Banking Commissioner sets each year. The 2026 deposit index is 0.49% — confirm the current year's rate before relying on it.",
       "statute": "Conn. Gen. Stat. § 47a-21",
       "statuteUrl": "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates",
-      "lastVerified": "2026-06-10",
+      "lastVerified": "2026-07-02",
       "confidence": "high",
       "sources": [
         "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates"
@@ -131,5 +131,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }

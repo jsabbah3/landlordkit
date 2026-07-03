@@ -738,13 +738,15 @@
         "notes": "Not yet researched — needs 2-source verification."
       },
       "rentIncreaseDays": {
-        "value": 30,
+        "value": 60,
         "statute": "Colo. Rev. Stat. § 38-12-701",
-        "statuteUrl": null,
-        "lastVerified": "2026-06-01",
-        "confidence": "medium",
-        "sources": [],
-        "notes": "Colorado requires 60 days for some increases under recent law — verify."
+        "statuteUrl": "https://colorado.public.law/statutes/crs_38-12-701",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "https://colorado.public.law/statutes/crs_38-12-701"
+        ],
+        "notes": "C.R.S. § 38-12-701 requires at least 60 days' written notice to raise rent on a tenancy WITHOUT a written agreement, and bars terminating such a tenancy primarily to raise rent in a way inconsistent with the section. With a written lease, increases generally take effect at renewal per the lease terms."
       },
       "terminationDays": {
         "value": null,
@@ -802,7 +804,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "CT": {
     "state": "CT",
@@ -846,7 +848,7 @@
         "value": true,
         "statute": "Conn. Gen. Stat. § 47a-21",
         "statuteUrl": "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates",
-        "lastVerified": "2026-06-10",
+        "lastVerified": "2026-07-02",
         "confidence": "high",
         "sources": [
           "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates"
@@ -856,7 +858,7 @@
         "value": "Interest is paid at the deposit-index rate the CT Banking Commissioner sets each year. The 2026 deposit index is 0.49% — confirm the current year's rate before relying on it.",
         "statute": "Conn. Gen. Stat. § 47a-21",
         "statuteUrl": "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates",
-        "lastVerified": "2026-06-10",
+        "lastVerified": "2026-07-02",
         "confidence": "high",
         "sources": [
           "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates"
@@ -937,7 +939,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "DE": {
     "state": "DE",
@@ -1114,17 +1116,17 @@
         "value": true,
         "statute": "D.C. Mun. Regs. tit. 14, § 311",
         "statuteUrl": "http://dcrules.elaws.us/dcmr/14-311",
-        "lastVerified": "2026-06-12",
+        "lastVerified": "2026-07-02",
         "confidence": "high",
         "sources": [
           "http://dcrules.elaws.us/dcmr/14-311"
         ]
       },
       "interestSummary": {
-        "value": "Deposits earn interest at no less than the statement-savings rate prevailing on January 1 and July 1 for each 6-month period of the tenancy, paid when the tenancy ends. The prefilled 1.5% is an estimate — confirm the actual prevailing rate.",
+        "value": "Deposits earn interest at no less than the statement-savings rate prevailing on January 1 and July 1 for each 6-month period of the tenancy (the rate resets semi-annually — it is not a fixed annual figure), paid when the tenancy ends. The prefilled 1.5% is only an estimate — confirm the actual prevailing rate.",
         "statute": "D.C. Mun. Regs. tit. 14, § 311",
         "statuteUrl": "http://dcrules.elaws.us/dcmr/14-311",
-        "lastVerified": "2026-06-12",
+        "lastVerified": "2026-07-02",
         "confidence": "high",
         "sources": [
           "http://dcrules.elaws.us/dcmr/14-311"
@@ -1206,7 +1208,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "FL": {
     "state": "FL",
@@ -1785,22 +1787,22 @@
       },
       "interestRequired": {
         "value": true,
-        "statute": "765 ILCS 715 (Security Deposit Interest Act)",
-        "statuteUrl": "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/",
-        "lastVerified": "2026-06-12",
+        "statute": "765 ILCS 715; Chicago RLTO § 5-12-080",
+        "statuteUrl": "https://idfpr.illinois.gov/news/2026/interest-rates-affecting-security-deposit-act.html",
+        "lastVerified": "2026-07-02",
         "confidence": "high",
         "sources": [
-          "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/"
+          "https://idfpr.illinois.gov/news/2026/interest-rates-affecting-security-deposit-act.html"
         ]
       },
       "interestSummary": {
-        "value": "In buildings of 25+ units, deposits held six months or more earn interest at the rate the largest IL commercial bank pays on minimum passbook savings as of Dec 31 (the IDFPR publishes it; the 2026 rate is about 0.01% APY).",
-        "statute": "765 ILCS 715 (Security Deposit Interest Act)",
-        "statuteUrl": "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/",
-        "lastVerified": "2026-06-12",
+        "value": "In buildings of 25+ units, deposits held six months or more earn interest at the rate the largest IL commercial bank pays on minimum passbook savings as of Dec 31 (IDFPR-published; the 2026 rate is 0.005%, 0.01% APY). CHICAGO IS DIFFERENT: the RLTO requires interest on most Chicago rentals regardless of building size, at the city's own annual rate (0.01% for 2026) with a required lease addendum — check chicago.gov for the current rate.",
+        "statute": "765 ILCS 715; Chicago RLTO § 5-12-080",
+        "statuteUrl": "https://idfpr.illinois.gov/news/2026/interest-rates-affecting-security-deposit-act.html",
+        "lastVerified": "2026-07-02",
         "confidence": "high",
         "sources": [
-          "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/"
+          "https://idfpr.illinois.gov/news/2026/interest-rates-affecting-security-deposit-act.html"
         ]
       }
     },
@@ -2723,17 +2725,17 @@
         "value": true,
         "statute": "Md. Code, Real Property § 8-203",
         "statuteUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
-        "lastVerified": "2026-06-12",
+        "lastVerified": "2026-07-02",
         "confidence": "high",
         "sources": [
           "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203"
         ]
       },
       "interestSummary": {
-        "value": "Deposits of $50 or more earn simple interest at the greater of 1.5% per year or the 1-year U.S. Treasury (Constant Maturity) yield set each January, accruing monthly, payable only if held at least 6 months. The DHCD publishes the rate and a calculator.",
+        "value": "Deposits of $50 or more earn simple interest at the GREATER of 1.5% per year or the 1-year U.S. Treasury (Constant Maturity) yield set each January — with Treasury yields elevated, the actual current rate is well above the 1.5% floor. Accrues monthly, payable if held at least 6 months. Use the Maryland DHCD's official calculator for the exact amount.",
         "statute": "Md. Code, Real Property § 8-203",
         "statuteUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
-        "lastVerified": "2026-06-12",
+        "lastVerified": "2026-07-02",
         "confidence": "high",
         "sources": [
           "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203"
@@ -2815,7 +2817,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-07-02"
   },
   "MA": {
     "state": "MA",
@@ -6347,10 +6349,12 @@
       "returnDeadlineDays": {
         "value": 30,
         "statute": "Rev. Code Wash. § 59.18.280",
-        "statuteUrl": null,
-        "lastVerified": "2026-06-01",
-        "confidence": "medium",
-        "sources": []
+        "statuteUrl": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280"
+        ]
       },
       "returnDeadlineIfDeductingDays": {
         "value": null,
@@ -6364,10 +6368,12 @@
       "itemizationRequired": {
         "value": true,
         "statute": "Rev. Code Wash. § 59.18.280",
-        "statuteUrl": null,
-        "lastVerified": "2026-06-01",
-        "confidence": "medium",
-        "sources": []
+        "statuteUrl": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
+        "sources": [
+          "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280"
+        ]
       },
       "interestRequired": {
         "value": null,
@@ -6399,15 +6405,15 @@
         "notes": "Not yet researched — needs 2-source verification."
       },
       "rentIncreaseDays": {
-        "value": 60,
-        "statute": "Rev. Code Wash. § 59.18.140",
+        "value": 90,
+        "statute": "Rev. Code Wash. § 59.18.140(3) (as amended by HB 1217, 2025)",
         "statuteUrl": "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.140",
-        "lastVerified": "2026-06-01",
-        "confidence": "low",
+        "lastVerified": "2026-07-02",
+        "confidence": "high",
         "sources": [
           "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.140"
         ],
-        "notes": "Washington's 2025 law (HB 1217) caps most annual increases (around 7% + CPI, max 10%) and requires written notice — verify the current cap and notice period, which were recently revised."
+        "notes": "Washington's rent-stabilization law (HB 1217, effective May 7, 2025) requires at least 90 days' written notice for ANY rent increase and caps most annual increases at 7% + CPI (10% max). Specific notice forms are required, and cap exemptions (e.g. newer buildings) must be claimed in the notice — see the WA Dept. of Commerce HB 1217 landlord resource center."
       },
       "terminationDays": {
         "value": null,
@@ -6464,7 +6470,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-01"
+    "lastVerified": "2026-07-02"
   },
   "WV": {
     "state": "WV",

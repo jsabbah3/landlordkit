@@ -40,17 +40,17 @@
       "value": true,
       "statute": "D.C. Mun. Regs. tit. 14, § 311",
       "statuteUrl": "http://dcrules.elaws.us/dcmr/14-311",
-      "lastVerified": "2026-06-12",
+      "lastVerified": "2026-07-02",
       "confidence": "high",
       "sources": [
         "http://dcrules.elaws.us/dcmr/14-311"
       ]
     },
     "interestSummary": {
-      "value": "Deposits earn interest at no less than the statement-savings rate prevailing on January 1 and July 1 for each 6-month period of the tenancy, paid when the tenancy ends. The prefilled 1.5% is an estimate — confirm the actual prevailing rate.",
+      "value": "Deposits earn interest at no less than the statement-savings rate prevailing on January 1 and July 1 for each 6-month period of the tenancy (the rate resets semi-annually — it is not a fixed annual figure), paid when the tenancy ends. The prefilled 1.5% is only an estimate — confirm the actual prevailing rate.",
       "statute": "D.C. Mun. Regs. tit. 14, § 311",
       "statuteUrl": "http://dcrules.elaws.us/dcmr/14-311",
-      "lastVerified": "2026-06-12",
+      "lastVerified": "2026-07-02",
       "confidence": "high",
       "sources": [
         "http://dcrules.elaws.us/dcmr/14-311"
@@ -132,5 +132,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }

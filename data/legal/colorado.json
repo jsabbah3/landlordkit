@@ -65,13 +65,15 @@
       "notes": "Not yet researched — needs 2-source verification."
     },
     "rentIncreaseDays": {
-      "value": 30,
+      "value": 60,
       "statute": "Colo. Rev. Stat. § 38-12-701",
-      "statuteUrl": null,
-      "lastVerified": "2026-06-01",
-      "confidence": "medium",
-      "sources": [],
-      "notes": "Colorado requires 60 days for some increases under recent law — verify."
+      "statuteUrl": "https://colorado.public.law/statutes/crs_38-12-701",
+      "lastVerified": "2026-07-02",
+      "confidence": "high",
+      "sources": [
+        "https://colorado.public.law/statutes/crs_38-12-701"
+      ],
+      "notes": "C.R.S. § 38-12-701 requires at least 60 days' written notice to raise rent on a tenancy WITHOUT a written agreement, and bars terminating such a tenancy primarily to raise rent in a way inconsistent with the section. With a written lease, increases generally take effect at renewal per the lease terms."
     },
     "terminationDays": {
       "value": null,
@@ -129,5 +131,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }

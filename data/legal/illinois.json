@@ -39,22 +39,22 @@
     },
     "interestRequired": {
       "value": true,
-      "statute": "765 ILCS 715 (Security Deposit Interest Act)",
-      "statuteUrl": "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/",
-      "lastVerified": "2026-06-12",
+      "statute": "765 ILCS 715; Chicago RLTO § 5-12-080",
+      "statuteUrl": "https://idfpr.illinois.gov/news/2026/interest-rates-affecting-security-deposit-act.html",
+      "lastVerified": "2026-07-02",
       "confidence": "high",
       "sources": [
-        "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/"
+        "https://idfpr.illinois.gov/news/2026/interest-rates-affecting-security-deposit-act.html"
       ]
     },
     "interestSummary": {
-      "value": "In buildings of 25+ units, deposits held six months or more earn interest at the rate the largest IL commercial bank pays on minimum passbook savings as of Dec 31 (the IDFPR publishes it; the 2026 rate is about 0.01% APY).",
-      "statute": "765 ILCS 715 (Security Deposit Interest Act)",
-      "statuteUrl": "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/",
-      "lastVerified": "2026-06-12",
+      "value": "In buildings of 25+ units, deposits held six months or more earn interest at the rate the largest IL commercial bank pays on minimum passbook savings as of Dec 31 (IDFPR-published; the 2026 rate is 0.005%, 0.01% APY). CHICAGO IS DIFFERENT: the RLTO requires interest on most Chicago rentals regardless of building size, at the city's own annual rate (0.01% for 2026) with a required lease addendum — check chicago.gov for the current rate.",
+      "statute": "765 ILCS 715; Chicago RLTO § 5-12-080",
+      "statuteUrl": "https://idfpr.illinois.gov/news/2026/interest-rates-affecting-security-deposit-act.html",
+      "lastVerified": "2026-07-02",
       "confidence": "high",
       "sources": [
-        "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/"
+        "https://idfpr.illinois.gov/news/2026/interest-rates-affecting-security-deposit-act.html"
       ]
     }
   },

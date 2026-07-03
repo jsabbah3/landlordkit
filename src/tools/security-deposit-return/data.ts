@@ -84,7 +84,17 @@ export const DEPOSIT_RETURN: Record<string, DepositReturnRule> = {
   UT: rule(30, "medium", "Utah Code § 57-17-3"),
   VT: rule(14, "medium", "9 V.S.A. § 4461"),
   VA: rule(45, "medium", "Va. Code § 55.1-1226"),
-  WA: rule(30, "medium", "Rev. Code Wash. § 59.18.280", { penalty: "Up to 2x for intentional non-compliance." }),
+  WA: {
+    deadlineDays: 30,
+    itemization: true,
+    penalty: "Full deposit forfeited for a late/missing statement; up to 2x for intentional refusal.",
+    cite: {
+      statute: "Rev. Code Wash. § 59.18.280",
+      statuteUrl: "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.280",
+      lastVerified: "2026-07-02",
+      confidence: "high",
+    },
+  },
   WV: rule(60, "low", "W. Va. Code § 37-6A-2", { deadlineDaysIfDeducting: 45 }),
   WI: rule(21, "medium", "Wis. Stat. § 134.06"),
   WY: rule(30, "low", "Wyo. Stat. § 1-21-1208", { deadlineDaysIfDeducting: 60 }),

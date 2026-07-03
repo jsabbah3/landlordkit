@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-02",
+  "generated": "2026-07-03",
   "states": 51,
   "categories": [
     {
@@ -13,16 +13,16 @@
     {
       "path": "securityDeposit.returnDeadlineDays",
       "label": "Deposit return deadline",
-      "high": 2,
-      "medium": 34,
+      "high": 3,
+      "medium": 33,
       "low": 15,
       "unverified": 0
     },
     {
       "path": "securityDeposit.itemizationRequired",
       "label": "Deposit itemization",
-      "high": 2,
-      "medium": 34,
+      "high": 3,
+      "medium": 33,
       "low": 15,
       "unverified": 0
     },
@@ -45,9 +45,9 @@
     {
       "path": "notice.rentIncreaseDays",
       "label": "Rent increase notice",
-      "high": 2,
-      "medium": 13,
-      "low": 36,
+      "high": 4,
+      "medium": 12,
+      "low": 35,
       "unverified": 0
     },
     {

@@ -22,9 +22,10 @@ const write = (file, body) =>
 let t1 = `| State | Rate | Holding period | Statute |\n|---|---|---|---|\n`;
 for (const [code, r] of Object.entries(DEPOSIT_INTEREST)) {
   const rate =
-    r.rateBasis === "fixed" ? `${r.defaultRatePct}%`
+    r.rateLabel ??
+    (r.rateBasis === "fixed" ? `${r.defaultRatePct}%`
     : r.rateBasis === "published-annually" ? `Published annually (~${r.defaultRatePct}%)`
-    : "Bank account rate";
+    : "Bank account rate");
   const hold = r.minHoldingMonths > 0 ? `${r.minHoldingMonths} months` : "None";
   t1 += `| [${NAME.get(code)}](${BASE}/tools/security-deposit-interest-calculator/${SLUG.get(code)}) | ${rate} | ${hold} | ${r.cite.statute} |\n`;
 }

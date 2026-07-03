@@ -40,17 +40,17 @@
       "value": true,
       "statute": "Md. Code, Real Property § 8-203",
       "statuteUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
-      "lastVerified": "2026-06-12",
+      "lastVerified": "2026-07-02",
       "confidence": "high",
       "sources": [
         "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203"
       ]
     },
     "interestSummary": {
-      "value": "Deposits of $50 or more earn simple interest at the greater of 1.5% per year or the 1-year U.S. Treasury (Constant Maturity) yield set each January, accruing monthly, payable only if held at least 6 months. The DHCD publishes the rate and a calculator.",
+      "value": "Deposits of $50 or more earn simple interest at the GREATER of 1.5% per year or the 1-year U.S. Treasury (Constant Maturity) yield set each January — with Treasury yields elevated, the actual current rate is well above the 1.5% floor. Accrues monthly, payable if held at least 6 months. Use the Maryland DHCD's official calculator for the exact amount.",
       "statute": "Md. Code, Real Property § 8-203",
       "statuteUrl": "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
-      "lastVerified": "2026-06-12",
+      "lastVerified": "2026-07-02",
       "confidence": "high",
       "sources": [
         "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203"
@@ -132,5 +132,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-07-02"
 }

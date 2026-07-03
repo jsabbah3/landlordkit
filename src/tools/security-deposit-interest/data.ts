@@ -41,6 +41,9 @@ export interface DepositInterestRule {
   payTiming: string;
   /** One-sentence plain-English summary of the rule. */
   summary: string;
+  /** Short label for table cells when defaultRatePct alone would mislead
+   *  (formula-based rates, floors). Renderers prefer this when present. */
+  rateLabel?: string;
   cite: LegalProvenance;
 }
 
@@ -110,7 +113,7 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
       statute: "Conn. Gen. Stat. § 47a-21",
       statuteUrl:
         "https://portal.ct.gov/dob/rental-security-deposits/rental-security-deposits/deposit-index-and-interest-rates",
-      lastVerified: "2026-06-10",
+      lastVerified: "2026-07-02",
       confidence: "high",
     },
   },
@@ -122,11 +125,11 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     appliesTo: "Buildings with 25 or more units.",
     payTiming: "Annually, within 30 days of the end of each 12-month period.",
     summary:
-      "In buildings of 25+ units, deposits held six months or more earn interest at the rate the largest IL commercial bank pays on minimum passbook savings as of Dec 31 (the IDFPR publishes it; the 2026 rate is about 0.01% APY).",
+      "In buildings of 25+ units, deposits held six months or more earn interest at the rate the largest IL commercial bank pays on minimum passbook savings as of Dec 31 (IDFPR-published; the 2026 rate is 0.005%, 0.01% APY). CHICAGO IS DIFFERENT: the RLTO requires interest on most Chicago rentals regardless of building size, at the city's own annual rate (0.01% for 2026) with a required lease addendum — check chicago.gov for the current rate.",
     cite: {
-      statute: "765 ILCS 715 (Security Deposit Interest Act)",
-      statuteUrl: "https://law.justia.com/codes/illinois/chapter-765/act-765-ilcs-715/",
-      lastVerified: "2026-06-12",
+      statute: "765 ILCS 715; Chicago RLTO § 5-12-080",
+      statuteUrl: "https://idfpr.illinois.gov/news/2026/interest-rates-affecting-security-deposit-act.html",
+      lastVerified: "2026-07-02",
       confidence: "high",
     },
   },
@@ -137,12 +140,13 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     minHoldingMonths: 6,
     payTiming: "At deposit return; simple interest accrues at monthly intervals.",
     summary:
-      "Deposits of $50 or more earn simple interest at the greater of 1.5% per year or the 1-year U.S. Treasury (Constant Maturity) yield set each January, accruing monthly, payable only if held at least 6 months. The DHCD publishes the rate and a calculator.",
+      "Deposits of $50 or more earn simple interest at the GREATER of 1.5% per year or the 1-year U.S. Treasury (Constant Maturity) yield set each January — with Treasury yields elevated, the actual current rate is well above the 1.5% floor. Accrues monthly, payable if held at least 6 months. Use the Maryland DHCD's official calculator for the exact amount.",
+    rateLabel: "Greater of 1.5% or the 1-yr Treasury yield (set each Jan)",
     cite: {
       statute: "Md. Code, Real Property § 8-203",
       statuteUrl:
         "https://mgaleg.maryland.gov/mgawebsite/Laws/StatuteText?article=grp&section=8-203",
-      lastVerified: "2026-06-12",
+      lastVerified: "2026-07-02",
       confidence: "high",
     },
   },
@@ -230,11 +234,12 @@ export const DEPOSIT_INTEREST: Record<string, DepositInterestRule> = {
     minHoldingMonths: 0,
     payTiming: "At the end of the tenancy.",
     summary:
-      "Deposits earn interest at no less than the statement-savings rate prevailing on January 1 and July 1 for each 6-month period of the tenancy, paid when the tenancy ends. The prefilled 1.5% is an estimate — confirm the actual prevailing rate.",
+      "Deposits earn interest at no less than the statement-savings rate prevailing on January 1 and July 1 for each 6-month period of the tenancy (the rate resets semi-annually — it is not a fixed annual figure), paid when the tenancy ends. The prefilled 1.5% is only an estimate — confirm the actual prevailing rate.",
+    rateLabel: "DC statement-savings rate (resets Jan 1 & Jul 1)",
     cite: {
       statute: "D.C. Mun. Regs. tit. 14, § 311",
       statuteUrl: "http://dcrules.elaws.us/dcmr/14-311",
-      lastVerified: "2026-06-12",
+      lastVerified: "2026-07-02",
       confidence: "high",
     },
   },

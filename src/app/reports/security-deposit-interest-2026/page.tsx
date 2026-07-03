@@ -23,10 +23,13 @@ const NAME = new Map(US_STATES.map((s) => [s.code, s.name]));
 
 export default function Page() {
   const entries = Object.entries(DEPOSIT_INTEREST).filter(([, r]) => r.required === "yes");
+  // Chart only states with a true fixed/published percentage; formula-based
+  // rates (MD's Treasury floor, DC's semi-annual savings rate) would chart
+  // misleadingly at their floor value.
   const rated = entries
-    .filter(([, r]) => typeof r.defaultRatePct === "number")
+    .filter(([, r]) => typeof r.defaultRatePct === "number" && !r.rateLabel)
     .sort((a, b) => (b[1].defaultRatePct ?? 0) - (a[1].defaultRatePct ?? 0));
-  const bankRate = entries.filter(([, r]) => typeof r.defaultRatePct !== "number");
+  const bankRate = entries.filter(([, r]) => typeof r.defaultRatePct !== "number" || r.rateLabel);
   const max = Math.max(...rated.map(([, r]) => r.defaultRatePct ?? 0));
   const table = getGuideTable("deposit-interest");
   const barH = 26;
@@ -73,7 +76,10 @@ export default function Page() {
           })}
         </svg>
         <p className="mt-2 text-xs text-ink/55">
-          Published-annually rates shown at their most recent published value. {bankRate.map(([c]) => NAME.get(c)).join(", ")} tie the rate to the deposit&apos;s actual bank account and are not charted.
+          Published-annually rates shown at their most recent published value.
+          Not charted (rate depends on a formula or the deposit&apos;s actual
+          bank account): {bankRate.map(([c]) => NAME.get(c)).join(", ")} — see
+          the table below for each rule.
         </p>
 
         <h2 className="mt-10 mb-4 font-display text-2xl font-semibold">The full table</h2>

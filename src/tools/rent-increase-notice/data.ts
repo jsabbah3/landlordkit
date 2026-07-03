@@ -76,9 +76,18 @@ export const RENT_INCREASE: Record<string, RentIncreaseRule> = {
       confidence: "high",
     },
   },
-  CO: std("Colo. Rev. Stat. § 38-12-701", "medium", {
-    notes: "Colorado requires 60 days for some increases under recent law — verify.",
-  }),
+  CO: {
+    baseNoticeDays: 60,
+    rentControl: "none",
+    notes:
+      "C.R.S. § 38-12-701 requires at least 60 days' written notice to raise rent on a tenancy WITHOUT a written agreement, and bars terminating such a tenancy primarily to raise rent in a way inconsistent with the section. With a written lease, increases generally take effect at renewal per the lease terms.",
+    cite: {
+      statute: "Colo. Rev. Stat. § 38-12-701",
+      statuteUrl: "https://colorado.public.law/statutes/crs_38-12-701",
+      lastVerified: "2026-07-02",
+      confidence: "high",
+    },
+  },
   CT: std("Conn. Gen. Stat. § 47a-23", "low"),
   DE: {
     baseNoticeDays: 60,
@@ -209,15 +218,15 @@ export const RENT_INCREASE: Record<string, RentIncreaseRule> = {
   },
   VA: std("Va. Code § 55.1-1253", "low"),
   WA: {
-    baseNoticeDays: 60,
+    baseNoticeDays: 90,
     rentControl: "statewide",
     controlNote:
-      "Washington's 2025 law (HB 1217) caps most annual increases (around 7% + CPI, max 10%) and requires written notice — verify the current cap and notice period, which were recently revised.",
+      "Washington's rent-stabilization law (HB 1217, effective May 7, 2025) requires at least 90 days' written notice for ANY rent increase and caps most annual increases at 7% + CPI (10% max). Specific notice forms are required, and cap exemptions (e.g. newer buildings) must be claimed in the notice — see the WA Dept. of Commerce HB 1217 landlord resource center.",
     cite: {
-      statute: "Rev. Code Wash. § 59.18.140",
+      statute: "Rev. Code Wash. § 59.18.140(3) (as amended by HB 1217, 2025)",
       statuteUrl: "https://app.leg.wa.gov/rcw/default.aspx?cite=59.18.140",
-      lastVerified: V,
-      confidence: "low",
+      lastVerified: "2026-07-02",
+      confidence: "high",
     },
   },
   WV: std("W. Va. Code § 37-6-5", "low"),

@@ -35,11 +35,12 @@ export interface GuideTable {
 function depositInterestTable(): GuideTable {
   const rows: GuideTableRow[] = Object.entries(DEPOSIT_INTEREST).map(([code, r]) => {
     const rate =
-      r.rateBasis === "fixed"
+      r.rateLabel ??
+      (r.rateBasis === "fixed"
         ? `${r.defaultRatePct}%`
         : r.rateBasis === "published-annually"
           ? `Published annually (~${r.defaultRatePct}%)`
-          : "Bank account rate";
+          : "Bank account rate");
     const hold = r.minHoldingMonths > 0 ? `${r.minHoldingMonths} months` : "None";
     return { stateName: NAME.get(code)!, stateSlug: SLUG.get(code)!, cells: [rate, hold, r.cite.statute] };
   });

@@ -5,7 +5,7 @@
 | [Arizona](https://getlandlordkit.com/tools/rent-increase-notice-generator/arizona) | 30 days | No | Ariz. Rev. Stat. § 33-1375 |
 | [Arkansas](https://getlandlordkit.com/tools/rent-increase-notice-generator/arkansas) | 30 days | No | Ark. Code § 18-17-704 |
 | [California](https://getlandlordkit.com/tools/rent-increase-notice-generator/california) | 30 days (up to 90 in some cases) | statewide | Cal. Civ. Code § 827 |
-| [Colorado](https://getlandlordkit.com/tools/rent-increase-notice-generator/colorado) | 30 days | No | Colo. Rev. Stat. § 38-12-701 |
+| [Colorado](https://getlandlordkit.com/tools/rent-increase-notice-generator/colorado) | 60 days | No | Colo. Rev. Stat. § 38-12-701 |
 | [Connecticut](https://getlandlordkit.com/tools/rent-increase-notice-generator/connecticut) | 30 days | No | Conn. Gen. Stat. § 47a-23 |
 | [Delaware](https://getlandlordkit.com/tools/rent-increase-notice-generator/delaware) | 60 days | No | 25 Del. C. § 5107 |
 | [District of Columbia](https://getlandlordkit.com/tools/rent-increase-notice-generator/district-of-columbia) | 30 days | local | D.C. Code § 42-3509.04 |
@@ -47,7 +47,7 @@
 | [Utah](https://getlandlordkit.com/tools/rent-increase-notice-generator/utah) | 30 days | No | Utah Code § 78B-6-802 |
 | [Vermont](https://getlandlordkit.com/tools/rent-increase-notice-generator/vermont) | 60 days | local | 9 V.S.A. § 4455 |
 | [Virginia](https://getlandlordkit.com/tools/rent-increase-notice-generator/virginia) | 30 days | No | Va. Code § 55.1-1253 |
-| [Washington](https://getlandlordkit.com/tools/rent-increase-notice-generator/washington) | 60 days | statewide | Rev. Code Wash. § 59.18.140 |
+| [Washington](https://getlandlordkit.com/tools/rent-increase-notice-generator/washington) | 90 days | statewide | Rev. Code Wash. § 59.18.140(3) (as amended by HB 1217, 2025) |
 | [West Virginia](https://getlandlordkit.com/tools/rent-increase-notice-generator/west-virginia) | 30 days | No | W. Va. Code § 37-6-5 |
 | [Wisconsin](https://getlandlordkit.com/tools/rent-increase-notice-generator/wisconsin) | 30 days | No | Wis. Stat. § 704.19 |
 | [Wyoming](https://getlandlordkit.com/tools/rent-increase-notice-generator/wyoming) | 30 days | No | Wyo. Stat. § 1-21-1203 |
