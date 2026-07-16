@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { usd, longDate, todayISO } from "@/lib/format";
+import { useEffect, useMemo, useState } from "react";
+import { usd, longDate, todayISO, isoDate } from "@/lib/format";
 import { track } from "@/lib/analytics";
 import { loadProfile, mergeProfile, fetchCloudProfile } from "@/lib/profile";
 import { useProStatus } from "@/lib/useProStatus";
@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/Button";
 import { LegalDisclaimer } from "@/components/LegalDisclaimer";
 import { UpgradeNudge } from "@/components/UpgradeNudge";
 import { SaveDetailsButton } from "@/components/SaveDetailsButton";
+import { TrackDeadlineButton } from "@/components/TrackDeadlineButton";
 
 export function LeaseRenewalTool() {
   const { isPro } = useProStatus();
@@ -23,6 +24,35 @@ export function LeaseRenewalTool() {
   const [newStart, setNewStart] = useState("");
   const [respondBy, setRespondBy] = useState("");
   const [generated, setGenerated] = useState(false);
+  const [mountNow] = useState(() => Date.now()); // stable "today" for pure render
+
+  // Adaptive tracked reminder: follow up on the tenant's decision if a
+  // respond-by date is set; otherwise, if we know the new lease start + term,
+  // remind ~60 days before the NEXT lease ends to start the renewal cycle
+  // again (the yearly re-engagement hook).
+  const trackInfo = useMemo(() => {
+    const who = tenant || property || "unit";
+    if (respondBy) {
+      return {
+        dateISO: respondBy,
+        title: `Follow up on ${tenant || "tenant"}'s lease renewal decision`,
+        key: `respond-${who}`,
+      };
+    }
+    if (newStart) {
+      const end = new Date(newStart);
+      end.setMonth(end.getMonth() + (Number(termMonths) || 12));
+      const remind = new Date(end);
+      remind.setDate(remind.getDate() - 60);
+      if (remind.getTime() <= mountNow) return null; // reminder already passed
+      return {
+        dateISO: isoDate(remind),
+        title: `Start ${tenant ? `${tenant}'s` : "the"} lease renewal — lease ends ${longDate(isoDate(end))}`,
+        key: `renewal-${who}`,
+      };
+    }
+    return null;
+  }, [respondBy, newStart, termMonths, tenant, property, mountNow]);
 
   useEffect(() => {
     const p = loadProfile();
@@ -114,6 +144,25 @@ export function LeaseRenewalTool() {
       </Card>
 
       <div className="space-y-4">
+        {trackInfo && (
+          <Card>
+            <CardBody>
+              <p className="text-sm text-ink/60">Don&apos;t let this slip</p>
+              <p className="mt-1 mb-3 text-sm text-ink/75">
+                {respondBy
+                  ? "Track the response deadline so you remember to follow up."
+                  : "Track when to start the next renewal — before the lease lapses to month-to-month."}
+              </p>
+              <TrackDeadlineButton
+                kind="lease-renewal"
+                dedupeKey={trackInfo.key}
+                dateISO={trackInfo.dateISO}
+                title={trackInfo.title}
+                toolEvent="lease-renewal"
+              />
+            </CardBody>
+          </Card>
+        )}
         {generated && (
           <UpgradeNudge feature="lease-renewal-saved-info" reason="Save your landlord and property details and add your branding to every letter." />
         )}
