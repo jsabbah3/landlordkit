@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/Button";
 import { Callout } from "@/components/ui/Callout";
 import { LegalDisclaimer } from "@/components/LegalDisclaimer";
 import { UpgradeNudge } from "@/components/UpgradeNudge";
+import { TrackDeadlineButton } from "@/components/TrackDeadlineButton";
 
 function toISO(d: Date): string {
   const p = (n: number) => String(n).padStart(2, "0");
@@ -247,7 +248,17 @@ export function RentIncreaseNoticeTool({
               </Callout>
             )}
 
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-4">
+              <TrackDeadlineButton
+                kind="rent-increase"
+                dedupeKey={`${state?.slug ?? stateCode}-${tenant || property || "unit"}`}
+                dateISO={effectiveTooSoon ? toISO(earliest) : effectiveValue}
+                title={`Rent increase takes effect${tenant ? ` — ${tenant}` : ""} (new rent ${usd(Number(newRent))})`}
+                toolEvent="rent-increase-notice"
+              />
+            </div>
+
+            <div className="mt-3 flex flex-wrap gap-2">
               <Button
                 variant="ghost"
                 size="sm"
