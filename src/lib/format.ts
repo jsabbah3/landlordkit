@@ -31,8 +31,10 @@ export function parseISODate(s: string): Date | null {
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
-export const todayISO = (): string => {
-  const d = new Date();
+/** Local-date Date → YYYY-MM-DD string (no UTC shift). */
+export const isoDate = (d: Date): string => {
   const p = (n: number) => String(n).padStart(2, "0");
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
 };
+
+export const todayISO = (): string => isoDate(new Date());

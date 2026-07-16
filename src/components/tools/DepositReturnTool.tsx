@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import { useProStatus } from "@/lib/useProStatus";
 import { US_STATES, getStateByCode } from "@/lib/states";
-import { usd, longDate, todayISO } from "@/lib/format";
+import { usd, longDate, todayISO, isoDate } from "@/lib/format";
 import { track } from "@/lib/analytics";
 import { getDepositReturnRule, DEPOSIT_RETURN } from "@/tools/security-deposit-return/data";
 import { computeDepositReturn, type Deduction } from "@/tools/security-deposit-return/calc";
@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/Button";
 import { Callout } from "@/components/ui/Callout";
 import { LegalDisclaimer } from "@/components/LegalDisclaimer";
 import { UpgradeNudge } from "@/components/UpgradeNudge";
+import { TrackDeadlineButton } from "@/components/TrackDeadlineButton";
 
 export function DepositReturnTool({ lockedStateCode }: { lockedStateCode?: string }) {
   const { isPro } = useProStatus();
@@ -175,6 +176,17 @@ export function DepositReturnTool({ lockedStateCode }: { lockedStateCode?: strin
             <p className="mt-3 text-sm text-ink/60">
               {state?.name} requires return within {result.deadlineDays} days of move-out.
             </p>
+            {result.deadlineDate && (
+              <div className="mt-4">
+                <TrackDeadlineButton
+                  kind="deposit-return"
+                  dedupeKey={`${state?.slug ?? stateCode}-${tenant || "tenant"}`}
+                  dateISO={isoDate(result.deadlineDate)}
+                  title={`Return ${tenant ? `${tenant}'s` : "the"} security deposit${property ? ` (${property})` : ""}`}
+                  toolEvent="security-deposit-return"
+                />
+              </div>
+            )}
           </CardBody>
         </Card>
 
