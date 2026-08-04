@@ -1,14 +1,14 @@
 {
-  "generated": "2026-07-03",
+  "generated": "2026-08-04",
   "states": 51,
   "categories": [
     {
       "path": "securityDeposit.maxLimit",
       "label": "Deposit max limit",
-      "high": 10,
+      "high": 11,
       "medium": 1,
       "low": 0,
-      "unverified": 40
+      "unverified": 39
     },
     {
       "path": "securityDeposit.returnDeadlineDays",
@@ -37,10 +37,10 @@
     {
       "path": "notice.entryHours",
       "label": "Entry notice",
-      "high": 0,
+      "high": 3,
       "medium": 0,
       "low": 0,
-      "unverified": 51
+      "unverified": 48
     },
     {
       "path": "notice.rentIncreaseDays",

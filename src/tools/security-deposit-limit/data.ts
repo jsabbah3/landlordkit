@@ -135,6 +135,18 @@ export const DEPOSIT_LIMIT: Record<string, DepositLimitRule> = {
     },
     sources: [SRC.nolo, SRC.lawdistrict],
   },
+  MO: {
+    summary: "Two months' rent.",
+    cite: {
+      statute: "Mo. Rev. Stat. § 535.300.1",
+      statuteUrl: "https://revisor.mo.gov/main/OneSection.aspx?section=535.300",
+      lastVerified: "2026-08-03",
+      confidence: "high",
+    },
+    sources: [
+      "Mo. Rev. Stat. § 535.300 full text (revisor.mo.gov) — subsection 1 read in full; effective 28 Aug 2018 (S.B. 581, A.L. 2018)",
+    ],
+  },
 };
 
 export const depositLimitStateCodes = (): string[] => Object.keys(DEPOSIT_LIMIT);

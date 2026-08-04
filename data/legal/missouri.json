@@ -3,13 +3,14 @@
   "name": "Missouri",
   "securityDeposit": {
     "maxLimit": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": "Two months' rent.",
+      "statute": "Mo. Rev. Stat. § 535.300.1",
+      "statuteUrl": "https://revisor.mo.gov/main/OneSection.aspx?section=535.300",
+      "lastVerified": "2026-08-03",
+      "confidence": "high",
+      "sources": [
+        "Mo. Rev. Stat. § 535.300 full text (revisor.mo.gov) — subsection 1 read in full; effective 28 Aug 2018 (S.B. 581, A.L. 2018)"
+      ]
     },
     "returnDeadlineDays": {
       "value": 30,
@@ -131,5 +132,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-07-02"
+  "lastVerified": "2026-08-03"
 }

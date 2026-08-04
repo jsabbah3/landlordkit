@@ -60,13 +60,15 @@
   },
   "notice": {
     "entryHours": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 24,
+      "statute": "Fla. Stat. § 83.53(2)",
+      "statuteUrl": "https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0000-0099/0083/Sections/0083.53.html",
+      "lastVerified": "2026-08-03",
+      "confidence": "high",
+      "sources": [
+        "Fla. Stat. § 83.53 full text (leg.state.fl.us)"
+      ],
+      "notes": "Fla. Stat. § 83.53(2) defines 'reasonable notice' as at least 24 hours ONLY for the purpose of repair, and 'reasonable time' as 7:30 a.m.–8:00 p.m. The statute sets no fixed notice period for the other entry purposes in § 83.53(1) (inspection, showings, agreed services); those instead turn on consent, emergency, unreasonably withheld consent, or extended tenant absence. The landlord may enter at any time to protect or preserve the premises."
     },
     "rentIncreaseDays": {
       "value": 30,
@@ -136,5 +138,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-07-02"
+  "lastVerified": "2026-08-03"
 }

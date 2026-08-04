@@ -61,13 +61,15 @@
   },
   "notice": {
     "entryHours": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 48,
+      "statute": "Rev. Code Wash. § 59.18.150(6)",
+      "statuteUrl": "https://app.leg.wa.gov/RCW/default.aspx?cite=59.18.150",
+      "lastVerified": "2026-08-03",
+      "confidence": "high",
+      "sources": [
+        "RCW 59.18.150 full text (app.leg.wa.gov)"
+      ],
+      "notes": "RCW 59.18.150(6) requires at least two days' written notice of intent to enter, except in an emergency or where impracticable. The notice must state the exact date(s) and time (or the earliest and latest possible times) and give a phone number the tenant can use to object or reschedule. A shorter one day's notice applies when the entry is to exhibit the unit to prospective or actual purchasers or tenants. Entry only at reasonable times."
     },
     "rentIncreaseDays": {
       "value": 90,
@@ -135,5 +137,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-07-02"
+  "lastVerified": "2026-08-03"
 }

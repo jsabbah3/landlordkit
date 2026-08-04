@@ -60,13 +60,15 @@
   },
   "notice": {
     "entryHours": {
-      "value": null,
-      "statute": null,
-      "statuteUrl": null,
-      "lastVerified": null,
-      "confidence": "unverified",
-      "sources": [],
-      "notes": "Not yet researched — needs 2-source verification."
+      "value": 24,
+      "statute": "Cal. Civ. Code § 1954(d)(1)",
+      "statuteUrl": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.",
+      "lastVerified": "2026-08-03",
+      "confidence": "high",
+      "sources": [
+        "Cal. Civ. Code § 1954 full text (leginfo.legislature.ca.gov)"
+      ],
+      "notes": "Cal. Civ. Code § 1954(d)(1) requires 'reasonable notice in writing' and states that 24 hours 'shall be presumed to be reasonable notice in absence of evidence to the contrary' — it is a rebuttable presumption, not a fixed minimum. Notice mailed at least 6 days before entry is also presumed reasonable. For showings to prospective or actual purchasers, notice may be given orally if the tenant was notified in writing within the prior 120 days that the property is for sale (24 hours again presumed reasonable)."
     },
     "rentIncreaseDays": {
       "value": 30,
@@ -135,5 +137,5 @@
     "sources": [],
     "notes": "Not yet researched — needs 2-source verification."
   },
-  "lastVerified": "2026-06-12"
+  "lastVerified": "2026-08-03"
 }

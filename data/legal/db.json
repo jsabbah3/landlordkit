@@ -594,13 +594,15 @@
     },
     "notice": {
       "entryHours": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 24,
+        "statute": "Cal. Civ. Code § 1954(d)(1)",
+        "statuteUrl": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.",
+        "lastVerified": "2026-08-03",
+        "confidence": "high",
+        "sources": [
+          "Cal. Civ. Code § 1954 full text (leginfo.legislature.ca.gov)"
+        ],
+        "notes": "Cal. Civ. Code § 1954(d)(1) requires 'reasonable notice in writing' and states that 24 hours 'shall be presumed to be reasonable notice in absence of evidence to the contrary' — it is a rebuttable presumption, not a fixed minimum. Notice mailed at least 6 days before entry is also presumed reasonable. For showings to prospective or actual purchasers, notice may be given orally if the tenant was notified in writing within the prior 120 days that the property is for sale (24 hours again presumed reasonable)."
       },
       "rentIncreaseDays": {
         "value": 30,
@@ -669,7 +671,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-06-12"
+    "lastVerified": "2026-08-03"
   },
   "CO": {
     "state": "CO",
@@ -1272,13 +1274,15 @@
     },
     "notice": {
       "entryHours": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 24,
+        "statute": "Fla. Stat. § 83.53(2)",
+        "statuteUrl": "https://www.leg.state.fl.us/Statutes/index.cfm?App_mode=Display_Statute&URL=0000-0099/0083/Sections/0083.53.html",
+        "lastVerified": "2026-08-03",
+        "confidence": "high",
+        "sources": [
+          "Fla. Stat. § 83.53 full text (leg.state.fl.us)"
+        ],
+        "notes": "Fla. Stat. § 83.53(2) defines 'reasonable notice' as at least 24 hours ONLY for the purpose of repair, and 'reasonable time' as 7:30 a.m.–8:00 p.m. The statute sets no fixed notice period for the other entry purposes in § 83.53(1) (inspection, showings, agreed services); those instead turn on consent, emergency, unreasonably withheld consent, or extended tenant absence. The landlord may enter at any time to protect or preserve the premises."
       },
       "rentIncreaseDays": {
         "value": 30,
@@ -1348,7 +1352,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-07-02"
+    "lastVerified": "2026-08-03"
   },
   "GA": {
     "state": "GA",
@@ -3365,13 +3369,14 @@
     "name": "Missouri",
     "securityDeposit": {
       "maxLimit": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": "Two months' rent.",
+        "statute": "Mo. Rev. Stat. § 535.300.1",
+        "statuteUrl": "https://revisor.mo.gov/main/OneSection.aspx?section=535.300",
+        "lastVerified": "2026-08-03",
+        "confidence": "high",
+        "sources": [
+          "Mo. Rev. Stat. § 535.300 full text (revisor.mo.gov) — subsection 1 read in full; effective 28 Aug 2018 (S.B. 581, A.L. 2018)"
+        ]
       },
       "returnDeadlineDays": {
         "value": 30,
@@ -3493,7 +3498,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-07-02"
+    "lastVerified": "2026-08-03"
   },
   "MT": {
     "state": "MT",
@@ -6396,13 +6401,15 @@
     },
     "notice": {
       "entryHours": {
-        "value": null,
-        "statute": null,
-        "statuteUrl": null,
-        "lastVerified": null,
-        "confidence": "unverified",
-        "sources": [],
-        "notes": "Not yet researched — needs 2-source verification."
+        "value": 48,
+        "statute": "Rev. Code Wash. § 59.18.150(6)",
+        "statuteUrl": "https://app.leg.wa.gov/RCW/default.aspx?cite=59.18.150",
+        "lastVerified": "2026-08-03",
+        "confidence": "high",
+        "sources": [
+          "RCW 59.18.150 full text (app.leg.wa.gov)"
+        ],
+        "notes": "RCW 59.18.150(6) requires at least two days' written notice of intent to enter, except in an emergency or where impracticable. The notice must state the exact date(s) and time (or the earliest and latest possible times) and give a phone number the tenant can use to object or reschedule. A shorter one day's notice applies when the entry is to exhibit the unit to prospective or actual purchasers or tenants. Entry only at reasonable times."
       },
       "rentIncreaseDays": {
         "value": 90,
@@ -6470,7 +6477,7 @@
       "sources": [],
       "notes": "Not yet researched — needs 2-source verification."
     },
-    "lastVerified": "2026-07-02"
+    "lastVerified": "2026-08-03"
   },
   "WV": {
     "state": "WV",
