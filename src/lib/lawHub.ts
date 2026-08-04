@@ -45,6 +45,14 @@ export interface HubRow {
   /** Question form, used for FAQ schema. */
   question: string;
   value: string; // formatted display value
+  /**
+   * Statutory qualifier for the value — presumptions, purpose scoping, tiered
+   * rules, local overrides. MUST be rendered wherever `value` is: several
+   * states' figures are legally wrong without it (Cal. Civ. Code § 1954's
+   * 24 hours is a rebuttable presumption, not a minimum; Fla. Stat. § 83.53's
+   * 24 hours applies only to entry for repairs).
+   */
+  notes?: string;
   field: Field<unknown>;
   toolSlug?: string; // deep link to the matching tool's state page
 }
@@ -99,7 +107,8 @@ export function buildHub(code: string): {
   for (const s of specs) {
     const rows: HubRow[] = [];
     for (const [label, question, field, fmt, toolSlug] of s.fields) {
-      if (isShown(field)) rows.push({ label, question, value: fmt(field.value), field, toolSlug });
+      if (isShown(field))
+        rows.push({ label, question, value: fmt(field.value), notes: field.notes, field, toolSlug });
       else unverified.push(label);
     }
     if (rows.length) sections.push({ title: s.title, rows });

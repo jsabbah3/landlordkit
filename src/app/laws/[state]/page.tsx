@@ -48,7 +48,9 @@ export default async function Page({ params }: { params: Promise<{ state: string
   const faqs = hub.sections.flatMap((s) =>
     s.rows.map((r) => ({
       q: r.question,
-      a: `${r.value}${r.field.statute ? ` (${r.field.statute})` : ""}. ${r.field.lastVerified ? `Last verified ${longDate(r.field.lastVerified.slice(0, 10))}.` : ""} General information, not legal advice.`,
+      // The qualifier goes in the schema answer too — this is the text Google
+      // can surface as a rich result, where a bare number would be misleading.
+      a: `${r.value}${r.field.statute ? ` (${r.field.statute})` : ""}. ${r.notes ? `${r.notes} ` : ""}${r.field.lastVerified ? `Last verified ${longDate(r.field.lastVerified.slice(0, 10))}.` : ""} General information, not legal advice.`,
     })),
   );
   const others = hubStates().filter((s) => s.code !== state.code);
@@ -85,6 +87,9 @@ export default async function Page({ params }: { params: Promise<{ state: string
                         <Badge className={conf.cls}>{conf.label}</Badge>
                       </div>
                       <p className="mt-1 text-lg font-semibold text-brand-700">{row.value}</p>
+                      {row.notes && (
+                        <p className="mt-1.5 text-sm leading-relaxed text-ink/75">{row.notes}</p>
+                      )}
                       <p className="mt-2 text-xs leading-relaxed text-ink/60">
                         {row.field.statute && (
                           <>
