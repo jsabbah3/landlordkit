@@ -62,7 +62,7 @@
     "entryHours": {
       "value": 24,
       "statute": "Cal. Civ. Code § 1954(d)(1)",
-      "statuteUrl": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.",
+      "statuteUrl": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954",
       "lastVerified": "2026-08-03",
       "confidence": "high",
       "sources": [

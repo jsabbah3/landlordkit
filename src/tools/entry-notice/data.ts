@@ -51,7 +51,7 @@ export const ENTRY_NOTICE: Record<string, EntryNoticeRule> = {
     cite: {
       statute: "Cal. Civ. Code § 1954(d)(1)",
       statuteUrl:
-        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954.",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1954",
       lastVerified: V,
       confidence: "high",
     },
