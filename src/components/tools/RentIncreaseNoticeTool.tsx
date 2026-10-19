@@ -103,6 +103,15 @@ export function RentIncreaseNoticeTool({
   const effectiveTooSoon =
     !!effectiveOverride && new Date(effectiveOverride) < earliest;
 
+  // Annual rent-review reminder: 90 days before the increase's first
+  // anniversary, so there's runway to send notice even in 90-day states (WA).
+  const reviewISO = useMemo(() => {
+    const base = new Date(`${effectiveTooSoon ? toISO(earliest) : effectiveValue}T00:00:00`);
+    base.setFullYear(base.getFullYear() + 1);
+    base.setDate(base.getDate() - 90);
+    return toISO(base);
+  }, [effectiveTooSoon, earliest, effectiveValue]);
+
   function letterBody(): string {
     const eff = longDate(effectiveValue);
     return [
@@ -256,6 +265,16 @@ export function RentIncreaseNoticeTool({
                 title={`Rent increase takes effect${tenant ? ` — ${tenant}` : ""} (new rent ${usd(Number(newRent))})`}
                 toolEvent="rent-increase-notice"
               />
+              <div className="mt-2">
+                <TrackDeadlineButton
+                  kind="rent-review"
+                  dedupeKey={`${state?.slug ?? stateCode}-${tenant || property || "unit"}`}
+                  dateISO={reviewISO}
+                  recurrence="annual"
+                  title={`Review rent${tenant ? ` for ${tenant}` : ""}${property ? ` (${property})` : ""} — send any increase notice by now`}
+                  toolEvent="rent-increase-notice"
+                />
+              </div>
             </div>
 
             <div className="mt-3 flex flex-wrap gap-2">

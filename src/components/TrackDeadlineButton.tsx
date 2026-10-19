@@ -19,37 +19,44 @@ export function TrackDeadlineButton({
   dateISO,
   title,
   toolEvent,
+  recurrence = "once",
+  label,
 }: {
   /** Obligation type, e.g. "deposit-return" (part of the dedupe id). */
   kind: string;
   /** Stable per-obligation key (e.g. state slug or tenant) for the dedupe id. */
   dedupeKey: string;
-  /** Deadline date, ISO YYYY-MM-DD. */
+  /** Deadline date, ISO YYYY-MM-DD (first occurrence if recurring). */
   dateISO: string;
   /** Human title shown in the calendar / reminder, e.g. "Return Jane's deposit". */
   title: string;
   /** Analytics tool label. */
   toolEvent: string;
+  /** "once" (default) or "annual" for recurring reminders. */
+  recurrence?: "once" | "annual";
+  /** Override the button label (else a sensible default per recurrence). */
+  label?: string;
 }) {
   const { isPro } = useProStatus();
   const [saved, setSaved] = useState(false);
+  const annual = recurrence === "annual";
 
   function onTrack() {
     addTrackedDeadline({
       id: trackedDeadlineId(kind, dedupeKey, dateISO),
       title,
       date: dateISO,
-      recurrence: "once",
+      recurrence,
     });
     setSaved(true);
-    track("deadline_tracked", { tool: toolEvent, isPro });
+    track("deadline_tracked", { tool: toolEvent, isPro, recurrence });
   }
 
   if (saved) {
     return (
       <div className="rounded-lg border border-brand-300 bg-brand-50 p-3 text-sm">
         <p className="font-medium text-brand-800">
-          ✓ Tracking — due {longDate(dateISO)}
+          {annual ? `✓ Tracking yearly — next ${longDate(dateISO)}` : `✓ Tracking — due ${longDate(dateISO)}`}
         </p>
         <p className="mt-1 text-ink/70">
           {isPro ? (
@@ -78,7 +85,10 @@ export function TrackDeadlineButton({
 
   return (
     <Button variant="secondary" className="w-full" onClick={onTrack}>
-      🔔 Track this deadline — remind me before {longDate(dateISO)}
+      {label ??
+        (annual
+          ? `🔁 Remind me every year (next: ${longDate(dateISO)})`
+          : `🔔 Track this deadline — remind me before ${longDate(dateISO)}`)}
     </Button>
   );
 }
