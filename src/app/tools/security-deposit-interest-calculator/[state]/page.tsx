@@ -22,9 +22,11 @@ import {
   buildObligationsParagraph,
   type ReturnInfo,
 } from "@/tools/security-deposit-interest/content";
+import { citiesForState } from "@/tools/security-deposit-interest/cities";
 
 const BASE = "/tools/security-deposit-interest-calculator";
 const RETURN_TOOL = "/tools/security-deposit-return-tracker";
+const YEAR = new Date().getFullYear();
 
 // Generate a page for every state. States without an interest rule still get a
 // substantive page: the cited "no requirement" answer plus that state's real
@@ -45,7 +47,7 @@ export async function generateMetadata({
   const state = getStateBySlug(slug);
   if (!state) return {};
   return {
-    title: `Security Deposit Interest Calculator — ${state.name}`,
+    title: `${state.name} Security Deposit Interest Calculator (${YEAR})`,
     description: `How much security deposit interest do landlords owe tenants in ${state.name}? Calculate it free with ${state.name}'s exact rate, holding period, and statute. PDF statement included.`,
     alternates: { canonical: `${BASE}/${slug}` },
   };
@@ -108,7 +110,7 @@ export default async function Page({
 
       <header className="mt-4 mb-8 max-w-2xl">
         <h1 className="font-display text-4xl font-semibold tracking-tight text-ink">
-          Security Deposit Interest Calculator — {state.name}
+          {state.name} Security Deposit Interest Calculator ({YEAR})
         </h1>
         <p className="mt-3 text-lg text-ink/70">
           {rule.required === "no"
@@ -116,6 +118,26 @@ export default async function Page({
             : `Calculate the interest you owe a ${state.name} tenant on their security deposit, using the state's own rule and statute.`}
         </p>
       </header>
+
+      {citiesForState(state.code).length > 0 && (
+        <Callout
+          tone="warning"
+          title={`In ${citiesForState(state.code).map((c) => c.city).join(", ")}? Your city has its own rule.`}
+          className="mb-6 max-w-2xl"
+        >
+          {rule.required === "no"
+            ? `${state.name} has no statewide requirement, but these cities require landlords to pay deposit interest at their own published rate: `
+            : `These cities require deposit interest beyond the state rule, at their own published rate: `}
+          {citiesForState(state.code).map((c, i) => (
+            <span key={c.slug}>
+              {i > 0 && " · "}
+              <Link href={`${BASE}/${slug}/${c.slug}`} className="font-medium text-brand-700 underline">
+                {c.city} ({c.rateLabel?.split(" (")[0]})
+              </Link>
+            </span>
+          ))}
+        </Callout>
+      )}
 
       <DepositInterestTool lockedStateCode={state.code} />
 

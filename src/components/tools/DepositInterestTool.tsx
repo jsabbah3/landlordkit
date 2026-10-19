@@ -38,15 +38,21 @@ function monthsBetween(fromISO: string, toISO: string): number {
   return days / 30.4375; // average month length
 }
 
+const rateForRule = (r: DepositInterestRule) =>
+  r.defaultRatePct != null ? String(r.defaultRatePct) : "0";
+
 export function DepositInterestTool({
   lockedStateCode,
+  ruleOverride,
+  jurisdictionLabel,
 }: {
   lockedStateCode?: string;
+  /** City-level rule (e.g. SF, Chicago) used instead of the state rule. */
+  ruleOverride?: DepositInterestRule;
+  /** Display name for the jurisdiction, e.g. "San Francisco, California". */
+  jurisdictionLabel?: string;
 }) {
-  const defaultRateFor = (code: string) => {
-    const r = getDepositRule(code);
-    return r.defaultRatePct != null ? String(r.defaultRatePct) : "0";
-  };
+  const defaultRateFor = (code: string) => rateForRule(ruleOverride ?? getDepositRule(code));
 
   const { isPro } = useProStatus();
   const [stateCode, setStateCode] = useState(lockedStateCode ?? "MA");
@@ -57,8 +63,9 @@ export function DepositInterestTool({
   const [rate, setRate] = useState(() => defaultRateFor(lockedStateCode ?? "MA"));
   const [calculated, setCalculated] = useState(false);
 
-  const rule = useMemo(() => getDepositRule(stateCode), [stateCode]);
+  const rule = useMemo(() => ruleOverride ?? getDepositRule(stateCode), [ruleOverride, stateCode]);
   const state = getStateByCode(stateCode);
+  const placeName = jurisdictionLabel ?? state?.name;
 
   // Hydrate inputs once from a shared URL (?deposit=&movein=&rate=&state=...).
   // We read window.location so the page itself stays fully static (no
@@ -75,7 +82,7 @@ export function DepositInterestTool({
       const s = q.get("state")!.toUpperCase();
       if (getStateByCode(s)) {
         setStateCode(s);
-        if (!q.get("rate")) setRate(defaultRateFor(s));
+        if (!q.get("rate")) setRate(rateForRule(getDepositRule(s)));
       }
     }
     if (q.get("rate")) setRate(q.get("rate")!);
@@ -126,7 +133,7 @@ export function DepositInterestTool({
         { type: "title", text: "Security Deposit Interest Statement" },
         { type: "right", text: new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }) },
         { type: "rule" },
-        { type: "paragraph", text: `State: ${state?.name ?? stateCode}` },
+        { type: "paragraph", text: `${jurisdictionLabel ? "Jurisdiction" : "State"}: ${placeName ?? stateCode}` },
         { type: "paragraph", text: `Security deposit held: ${usd(Number(deposit))}` },
         { type: "paragraph", text: `Period held: ${moveIn} to ${moveOut} (${result.years.toFixed(2)} years)` },
         { type: "paragraph", text: `Annual interest rate applied: ${percent(Number(rate))}` },
@@ -221,7 +228,7 @@ export function DepositInterestTool({
       <div className="space-y-4">
         {notRequired ? (
           <Callout tone="warning" title="No statewide interest requirement">
-            {state?.name} does not require landlords to pay interest on security
+            {placeName} does not require landlords to pay interest on security
             deposits. Some cities have their own rules, and your lease can still
             promise interest. You can still calculate a figure below.
           </Callout>
@@ -277,7 +284,7 @@ export function DepositInterestTool({
         <Card>
           <CardBody className="space-y-3">
             <p className="font-display text-lg font-semibold">
-              {state?.name} rule
+              {placeName} rule
             </p>
             <p className="text-sm text-ink/75">{rule.summary}</p>
             {rule.appliesTo && (

@@ -7,6 +7,7 @@ import { lateFeeStateCodes, LATE_FEE } from "@/tools/late-fee/data";
 import { depositReturnStateCodes, DEPOSIT_RETURN } from "@/tools/security-deposit-return/data";
 import { publishedGuides } from "@/content/guides";
 import { hubStates } from "@/lib/lawHub";
+import { CITY_DEPOSIT_INTEREST } from "@/tools/security-deposit-interest/cities";
 
 /**
  * XML sitemap. Includes static pages, every live tool, each tool's programmatic
@@ -59,6 +60,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const g of publishedGuides()) {
     urls.push(entry(`/guides/${g.slug}`, 0.6));
+  }
+
+  // City deposit-interest pages (local ordinances that override the state answer).
+  for (const c of CITY_DEPOSIT_INTEREST) {
+    const st = getStateByCode(c.stateCode);
+    if (st) urls.push(entry(`/tools/security-deposit-interest-calculator/${st.slug}/${c.slug}`, 0.8));
   }
 
   // State law hubs (only states with enough verified fields publish).

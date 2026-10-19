@@ -70,6 +70,30 @@ each state's statute and shows a last-verified date, no signup:
 [specific tool URL]. Either way, thanks for the article — it's one of the
 better explanations of [topic] out there. — Jake
 
+## 6. The tenant-ready PDF statement (landlord bloggers, city-specific posts)
+Best targets: posts about SF / LA / Berkeley / Chicago deposit interest — the
+city pages are new and these posts are where the weakest competition lives.
+Search: `"security deposit interest" San Francisco landlord`, same for the
+other three; pitch whoever ranks on page 1–2 with a real byline.
+
+**Subject:** A tenant-ready deposit interest statement for your [city] readers
+
+Hi [Name] — your post on [city] security deposit interest is one of the
+clearest I've found. One thing your readers might use: a free calculator that
+applies [city]'s current rate ([rate] — it changed from [prior rate] this
+year) and outputs a PDF statement the landlord can hand the tenant, showing
+the period, rate, and amount owed with the ordinance cited. No signup:
+[city page URL]
+
+Happy to have it as a resource link if it fits — and if you ever update the
+post for the new rate, the source links are on the page. — Jake
+
+City page URLs (clean, no UTM — these are backlinks):
+- getlandlordkit.com/tools/security-deposit-interest-calculator/california/san-francisco (4.2%, was 5.0%)
+- getlandlordkit.com/tools/security-deposit-interest-calculator/california/los-angeles (3.03%, was 4.32%)
+- getlandlordkit.com/tools/security-deposit-interest-calculator/california/berkeley (0.9% annual)
+- getlandlordkit.com/tools/security-deposit-interest-calculator/illinois/chicago (0.01% — pitch the 2x-deposit penalty angle)
+
 ---
 
 **Cadence:** 3–5 sends/week. Track in a simple sheet: site, contact, date,
